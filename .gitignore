@@ -1,0 +1,17 @@
+vworld_key.js
+**/vworld_key.js
+*.db
+*.db-*
+.env
+.env.*
+node_modules/
+__pycache__/
+*.pyc
+00_기획/
+evidence*/
+shots/
+ref/
+test-results/
+playwright-report/
+.run19-*/
+*.log

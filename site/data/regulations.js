@@ -1,0 +1,6 @@
+window.REGULATIONS = [
+  {id:"adj",label:"조정대상지역",set:"adj",verified:true,checked:"2026-11-06",basis:"국토교통부 공고 제2025-1223호(2025-10-16)·제2026-882호(2026-07-01). 서울 25구·경기 15곳. 2026년 추가 지역: 화성 동탄구·용인 기흥구·구리시.",links:[["제2025-1223호 원문","https://www.law.go.kr/LSW/flDownload.do?bylClsCd&flSeq=166503579"],["제2026-882호 원문","https://www.law.go.kr/LSW/flDownload.do?flSeq=166503295"]]},
+  {id:"overheat",label:"투기과열지구",set:"adj",verified:true,checked:"2026-11-06",basis:"국토교통부 공고 제2025-1225호(2025-10-16)·제2026-883호(2026-07-01). 같은 지역 목록. 2026년 추가 지역: 화성 동탄구·용인 기흥구·구리시.",links:[["제2025-1225호 원문","https://www.law.go.kr/LSW/flDownload.do?bylClsCd&flSeq=157417797"],["제2026-883호 원문","https://www.law.go.kr/flDownload.do?flSeq=166503271"]]},
+  {id:"speculation",label:"투기지역",set:"four",verified:true,checked:"2026-11-06",basis:"기획재정부 공고 제2017-114호(2017-08-03)·제2023-1호(2023-01-05). 서울 강남·서초·송파·용산 4구. 2025-10-15 대책에서 현행 유지.",links:[["기획재정부 2023 해제 원문","https://mofe.go.kr/com/cmm/fms/FileDown.do?atchFileId=ATCH_000000000022104&fileSn=2"],["기획재정부 공고","https://www.moef.go.kr/"]]},
+  {id:"cap",label:"분상제",set:"four",verified:true,checked:"2026-11-06",basis:"국토교통부 공고 제2023-3호(2023-01-05·해제 공고). 서울 강남·서초·송파·용산 4구 전 지역이 남음. 민간택지 지정지역 기준, 공공택지는 별개.",links:[["제2023-3호 원문","https://www.law.go.kr/flDownload.do?flSeq=126954755"]]}
+];

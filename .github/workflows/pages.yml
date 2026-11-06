@@ -1,0 +1,41 @@
+name: 재재이야 Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: 선택 지도 열쇠 연결
+        env:
+          VWORLD_KEY: ${{ secrets.VWORLD_KEY }}
+        shell: python
+        run: |
+          import json
+          import os
+          from pathlib import Path
+          key = os.environ.get("VWORLD_KEY", "")
+          if key:
+              Path("site/vworld_key.js").write_text("window.VWORLD_KEY=" + json.dumps(key) + ";\n", encoding="utf-8")
+              page = Path("site/zone.html")
+              text = page.read_text(encoding="utf-8")
+              page.write_text(text.replace('<script defer src="basemap-config.js">', '<script defer src="vworld_key.js"></script><script defer src="basemap-config.js">'), encoding="utf-8")
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Pages 배포
+        id: deployment
+        uses: actions/deploy-pages@v4

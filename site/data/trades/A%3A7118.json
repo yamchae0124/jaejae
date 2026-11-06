@@ -1,0 +1,1 @@
+{"zone_id":"A:7118","asof":"2026-11-06","from":"2024-11-06","months":24,"radius_m":1000,"basis":"전용","covered":false,"located":true,"source":"국토교통부 실거래가 공개시스템 · 지먹 기존 SQLite 수집본","coverage_note":"저장된 자치구 DB와 좌표가 있는 아파트 거래만 · 인접 미수집 지역 거래는 제외","trades":[]}
