@@ -3,6 +3,17 @@
   "use strict";
   const {zones,esc,number,data,search}=window.JJ, api=window.ZoneCore;
   const g=id=>document.getElementById(id);
+  g("zpName").insertAdjacentHTML("afterend",'<p id="zpStage"></p><p id="zpBoundaryNotice" class="map-message" hidden>이 구역은 경계 자료가 없어 위치만 표시해요</p>');
+  g("zonePanel").insertAdjacentHTML("afterbegin",'<div class="panel-tools"><button id="panel-expand" type="button" aria-expanded="false">더 보기</button><button id="panel-collapse" type="button">접기</button></div>');
+  g("zone-count").insertAdjacentHTML("afterend",'<button id="zone-list-open" type="button">목록</button>');
+  const listDialog=document.createElement("dialog");
+  listDialog.id="zone-list-dialog";listDialog.setAttribute("aria-label","구역 목록");
+  listDialog.innerHTML='<div class="list-head"><h2>구역 목록</h2><button type="button" id="zone-list-close">닫기</button></div>';
+  document.body.append(listDialog);
+  g("zone-list-open").addEventListener("click",()=>{listDialog.append(g("zone-list"));listDialog.showModal();});
+  g("zone-list-close").addEventListener("click",()=>listDialog.close());
+  listDialog.addEventListener("click",e=>{if(e.target===listDialog)listDialog.close();});
+  listDialog.addEventListener("close",()=>document.querySelector(".finder").insertBefore(g("zone-list"),document.querySelector(".finder-source")));
   const aiLink=document.createElement("a");
   aiLink.id="zone-ai";aiLink.className="zone-ai-link";aiLink.textContent="이 구역 재재 AI에게 물어보기 →";
   g("zone-calc").insertAdjacentElement("beforebegin",aiLink);
@@ -16,7 +27,11 @@
   }).addTo(map);
   const layer=L.layerGroup().addTo(map);
   const bands=["후보지","구역지정·추진위","조합설립·사업시행","관리처분","착공·준공"];
-  g("map-legend").innerHTML=bands.map((label,i)=>`<span style="--jj-stage:var(--jj-stage-${i})"><i></i>${label}</span>`).join("");
+  g("map-legend").innerHTML='<button id="legend-toggle" type="button" aria-label="범례 접기" aria-expanded="true" aria-controls="legend-bands">접기</button><div id="legend-bands">'+bands.map((label,i)=>`<span style="--jj-stage:var(--jj-stage-${i})"><i></i>${label}</span>`).join("")+"</div>";
+  g("legend-toggle").addEventListener("click",()=>{
+    const hidden=!g("legend-bands").hidden;g("legend-bands").hidden=hidden;
+    g("legend-toggle").setAttribute("aria-expanded",String(!hidden));g("legend-toggle").textContent=hidden?"범례":"접기";g("legend-toggle").setAttribute("aria-label",hidden?"범례 펼치기":"범례 접기");
+  });
   let selected=null,tab="progress",kind="villa",range="12",previousFocus=null;
   const band=z=>{const s=Number(z.stageNo)||0;return s===0?0:s<=2?1:s<=4?2:s<=7?3:4;};
   const tokens=getComputedStyle(document.body);
@@ -47,7 +62,7 @@
       if(!visible&&layer.hasLayer(boundary))layer.removeLayer(boundary);
       if(active&&visible)boundary.bringToFront();
     }
-    g("zone-list").innerHTML=visible.map(({z})=>`<button class="zone-row" data-zone-id="${esc(z.id)}" aria-pressed="${selected?.id===z.id}"><strong>${esc(z.name)}</strong><small>${esc(z.kind)} · ${esc(z.sgg)}<br>${esc(z.stageName||"단계 미상")}${window.ZONE_BOUNDS.items[z.id]?"":" · 경계 자료 없음"}</small></button>`).join("");
+    g("zone-list").innerHTML=[...visible].sort((a,b)=>Number(Boolean(b.boundary))-Number(Boolean(a.boundary))).map(({z})=>`<button class="zone-row" data-zone-id="${esc(z.id)}" aria-pressed="${selected?.id===z.id}"><strong>${esc(z.name)}</strong><small>${esc(z.kind)} · ${esc(z.sgg)}<br>${esc(z.stageName||"단계 미상")}${window.ZONE_BOUNDS.items[z.id]?"":" · 경계 자료 없음"}</small></button>`).join("");
   }
   const districts=[...new Set(zones.map(z=>z.sgg))].sort((a,b)=>a.localeCompare(b,"ko"));
   g("district-filter").insertAdjacentHTML("beforeend",districts.map(d=>`<option>${esc(d)}</option>`).join(""));
@@ -61,7 +76,7 @@
   });
   search(g("map-search"),z=>openZone(z));
   function nearHtml(bundle){
-    if(!bundle.covered)return '<p class="map-message" data-near-scope="outside">수집 범위 밖 · 이 자치구의 아파트 실거래 DB가 없습니다.</p>';
+    if(!bundle.covered)return '<p class="map-message" data-near-scope="outside">이 자치구의 아파트 거래 자료는 아직 모으지 못했어요. <a href="https://rt.molit.go.kr/" target="_blank" rel="noopener noreferrer">국토교통부 실거래가 공개시스템 ↗</a></p>';
     if(!bundle.located)return '<p class="map-message">구역 좌표가 없어 주변 실거래를 계산하지 않았습니다.</p>';
     const trades=bundle.trades,by=new Map();
     let sA=0,sP=0;
@@ -85,7 +100,7 @@
     const source=`<p class="zp-foot">정보몽땅 자료 기준 ${esc(window.ZONES_DATA.asof)} · 공급은 계획값 · 법적 효력 없음</p>`;
     switch(tab){
       case "progress":g("panel-content").innerHTML=`<section id="zpProg">${api.progressHtml(z)}${source}</section>`;break;
-      case "info":g("panel-content").innerHTML=`<section id="zpInfo">${api.infoHtml(z)}<h3>공급 계획</h3>${api.supplyHtml(z)}<h3>생활권·가까운 역</h3>${api.lifeHtml(z)}<h3>관련 문서</h3>${api.docsHtml(z)}<p class="zp-foot">경계: ${esc(window.ZONE_BOUNDS.source)} · ${esc(window.ZONE_BOUNDS.crsNote)}</p></section>`;break;
+      case "info":g("panel-content").innerHTML=`<section id="zpInfo">${api.infoHtml(z)}<h3>공급 계획</h3>${api.supplyHtml(z)}<h3>생활권·가까운 역</h3>${api.lifeHtml(z)}<h3>관련 문서</h3>${api.docsHtml(z)}<p class="zp-foot">경계: 서울 열린데이터광장 · ${esc(window.ZONE_BOUNDS.crsNote)} · <a href="출처.html">자료 출처 보기 →</a></p></section>`;break;
       case "regulation":g("panel-content").innerHTML=`<section id="zpRegulation">${window.MonthlyPanel.permitHtml(z)}<h3>규제 지역</h3>${api.regHtml(z)}</section>`;break;
       case "trade":{
         g("panel-content").innerHTML='<section id="zpTrade" aria-busy="true"><p class="source">저장된 실거래 자료를 읽고 있어요.</p></section>';
@@ -104,18 +119,49 @@
       default:throw new Error("알 수 없는 패널 탭: "+tab);
     }
     g("zpBody").scrollTop=0;
+    g("zonePanel").scrollTop=0;
+    if(tab==="progress")requestAnimationFrame(()=>showCurrentStage());
+  }
+  function showCurrentStage(){
+    const rail=g("panel-content").querySelector(".zp-arrows"),current=rail?.querySelector('[aria-current="step"]');
+    if(current)rail.scrollTo({left:current.offsetLeft-rail.offsetLeft-(rail.clientWidth-current.offsetWidth)/2,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
+  }
+  function frameSelected(){
+    if(!selected)return;
+    const row=rows.find(row=>row.z.id===selected.id),box=map.getContainer().getBoundingClientRect(),panel=g("zonePanel").getBoundingClientRect();
+    const mobile=innerWidth<=760;
+    const right=mobile?20:Math.max(20,box.right-panel.left+20);
+    const bottom=mobile?Math.max(20,box.bottom-panel.top+20):20;
+    const top=mobile?Math.min(64,Math.max(20,(box.height-bottom)/4)):20;
+    const options={paddingTopLeft:[28,top],paddingBottomRight:[right,bottom],maxZoom:16,animate:false};
+    if(row.boundary)map.fitBounds(row.boundary.getBounds(),options);
+    else{
+      const point=L.latLng(selected.lat,selected.lng);
+      map.fitBounds(L.latLngBounds(point,point),{...options,maxZoom:15});
+      const label=row.marker.getElement()?.querySelector(".jj-zone-label");
+      if(label){
+        const rect=label.getBoundingClientRect(),available=box.width-right-28;
+        if(rect.width>available)label.style.maxWidth=Math.max(80,available)+"px";
+        map.panBy([label.getBoundingClientRect().width/2,0],{animate:false});
+      }
+    }
   }
   function openZone(z){
+    if(listDialog.open)listDialog.close();
     if(!g("zonePanel").classList.contains("show"))previousFocus=document.activeElement;
     selected=z;tab="progress";kind="villa";range="12";
+    window.JJ.rememberZone(z);
     g("zpName").textContent=z.name;g("zpAddr").textContent=z.addr||"";g("zpChip").textContent=z.kind;
+    const state=api.stageState(z),detail=!state.done&&state.last>=0&&state.elapsed!=null?
+      `${api.STAGES[state.last+1].replace(/신고$/,"")} 진행 ${Math.floor(state.elapsed)}개월째`:"";
+    g("zpStage").innerHTML=`지금 단계 · <b>${esc(z.stageName||"단계 미상")}</b>${detail?` <span>${esc(detail)}</span>`:""}`;
+    g("zpBoundaryNotice").hidden=Boolean(window.ZONE_BOUNDS.items[z.id]);
     g("zone-calc").href="calc.html?zone="+encodeURIComponent(z.id);
     aiLink.href="ai.html?zone="+encodeURIComponent(z.id);
+    g("zonePanel").classList.remove("expanded");g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");
     g("zonePanel").classList.add("show");render();sync();
     history.replaceState(null,"","zone.html?zone="+encodeURIComponent(z.id));
-    map.setView([z.lat,z.lng],Math.max(15,map.getZoom()),{animate:false});
-    const offset=innerWidth>760?[-g("zonePanel").clientWidth/2,0]:[0,g("zonePanel").clientHeight/3];
-    map.panBy(offset,{animate:false});g("zpClose").focus({preventScroll:true});
+    frameSelected();g("zpClose").focus({preventScroll:true});
   }
   function close(){
     g("zonePanel").classList.remove("show");selected=null;sync();
@@ -123,6 +169,23 @@
     if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true});
   }
   g("zpClose").addEventListener("click",close);
+  g("panel-collapse").addEventListener("click",close);
+  const expand=()=>{
+    g("zonePanel").classList.add("expanded");g("panel-expand").hidden=true;g("panel-expand").setAttribute("aria-expanded","true");
+    g("zonePanel").scrollTop=0;
+  };
+  g("panel-expand").addEventListener("click",expand);
+  const grip=g("zonePanel").querySelector(".panel-tools");
+  let dragY=null;
+  grip.addEventListener("pointerdown",e=>{dragY=e.clientY;});
+  window.addEventListener("pointerup",e=>{
+    if(dragY==null)return;
+    const dy=e.clientY-dragY;dragY=null;
+    if(dy < -40)expand();
+    if(dy > 40){if(g("zonePanel").classList.contains("expanded")){g("zonePanel").classList.remove("expanded");g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");frameSelected();}else close();}
+  });
+  grip.addEventListener("pointercancel",()=>{dragY=null;});
+  new ResizeObserver(()=>{map.invalidateSize({pan:false});if(!g("zonePanel").classList.contains("expanded"))frameSelected();showCurrentStage();}).observe(map.getContainer());
   g("zonePanel").addEventListener("keydown",e=>{e.stopPropagation();if(e.key==="Escape")close();});
   g("zpTabs").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b){tab=b.dataset.tab;render();}});
   g("zpTabs").addEventListener("keydown",e=>{

@@ -48,6 +48,7 @@
     (ref.article.startsWith("부칙")?"":"/"+encodeURIComponent(ref.article.match(/제\d+조(?:의\d+)?/)?.[0]||""));
   const categories=()=>kb.categories.map(c=>`<a href="knowledge.html?category=${encodeURIComponent(c.id)}">${esc(c.name)}</a>`).join("");
   g("ai-categories").innerHTML=categories();
+  const RELATED_CARD_MIN_SCORE=8;
   function retrieve(question){
     const q=normal(question).replace(/[^\p{L}\p{N}]/gu,"");
     const tokens=question.split(/[\s,?.!·]+/).map(s=>s.replace(/(인가요|하나요|있나요|되나요|무엇인가요|은|는|이|가|을|를|에서|으로|과|와)$/,""))
@@ -58,7 +59,7 @@
       const score=exact?100:tokens.reduce((n,t)=>n+(title.includes(t)?8:questions.some(s=>s.includes(t))?5:answer.includes(t)?1:0),0);
       return {item,score};
     }).filter(r=>r.score>0).sort((a,b)=>b.score-a.score);
-    const matches=ranked.filter(r=>r.score>=Math.max(5,(ranked[0]?.score||0)*.35)).slice(0,3).map(r=>r.item);
+    const matches=ranked.filter((r,i)=>i===0||r.score>=RELATED_CARD_MIN_SCORE).slice(0,3).map(r=>r.item);
     const named=zones.filter(z=>normal(question).includes(normal(z.name))).slice(0,3);
     return {items:matches,zones:named.length?named:zone&&/단계|진행|현황|공급|세대|사업|어디/.test(question)?[zone]:[]};
   }

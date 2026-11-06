@@ -313,7 +313,7 @@ const trInk = () => '#4E5968';
     const A = window.ZONES_DATA;
     return `<div class="zp-card"><dl>${kv.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl></div>` +
       (z.approx ? `<div class="zp-foot">위치는 동 단위 대표점입니다</div>` : "") +
-      `<div class="zp-foot">${z.demo ? "예시 값입니다." : "자료 기준일 " + esc((A && A.asof) || "–") + " · " + esc((A && A.source) || "") + " · 계획값 · 법적 효력 없음"} 토지등소유자 수와 조합원 수는 서로 다른 값이라 합치지 않습니다.</div>`;
+      `<div class="zp-foot">${z.demo ? "예시 값입니다." : "자료 기준일 " + esc((A && A.asof) || "–") + " · " + esc((A && A.source) || "").replace(/OA-\d+·?/g, "") + " · 계획값 · 법적 효력 없음"} 토지등소유자 수와 조합원 수는 서로 다른 값이라 합치지 않습니다. <a href="출처.html">자료 출처 보기 →</a></div>`;
   }
   function docsHtml(z) {
     const docs = (Array.isArray(z.docs) ? z.docs : []).concat([

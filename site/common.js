@@ -31,18 +31,44 @@
     }));
     return pending.get(path);
   }
+  function readLocal(key, fallback) {
+    try { return JSON.parse(localStorage.getItem(key)) ?? fallback; }
+    catch (error) { if (error instanceof Error) return fallback; throw error; }
+  }
+  function writeLocal(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); }
+    catch (error) { if (!(error instanceof Error)) throw error; }
+  }
+  const recentKey = "jaejae.recent-zones.v1";
+  const recentZones = () => {
+    const ids = readLocal(recentKey, []);
+    return Array.isArray(ids) ? ids.map(id => zones.find(z => z.id === id)).filter(Boolean).slice(0, 3) : [];
+  };
+  function rememberZone(z) {
+    writeLocal(recentKey, [z.id, ...recentZones().filter(item => item.id !== z.id).map(item => item.id)].slice(0, 3));
+  }
   function search(form, onChoose, onQuestion) {
     const input = form.querySelector("input"), output = form.querySelector("[data-results]");
+    const notice = document.createElement("p");
+    notice.className = "search-notice";
+    notice.setAttribute("role", "status");
+    notice.hidden = true;
+    form.append(notice);
     let matches = [];
-    const render = () => {
+    const render = (showRecent = false) => {
       const q = normal(input.value);
-      matches = q ? zones.filter((z) => normal(z.name + z.addr).includes(q)).slice(0, 8) : [];
-      output.hidden = !q;
-      output.innerHTML = matches.map((z) => `<button type="button" data-zone="${esc(z.id)}"><b>${esc(z.name)}</b><small>${esc(z.sgg)} · ${esc(z.stageName || "단계 미상")}</small></button>`).join("") +
+      notice.hidden = true;
+      matches = q ? zones.filter((z) => normal(z.name + z.addr).includes(q)).slice(0, 8) :
+        showRecent && file === "index.html" ? recentZones() : [];
+      output.hidden = !q && !matches.length;
+      output.innerHTML = (!q && matches.length ? "<p>최근 본 구역</p>" : "") +
+        matches.map((z) => `<button type="button" data-zone="${esc(z.id)}"><b>${esc(z.name)}</b><small>${esc(z.sgg)} · ${esc(z.stageName || "단계 미상")}</small></button>`).join("") +
         (q && !matches.length ? `<p>${onQuestion ? "구역 이름이 아니면 보내기를 눌러 자료에서 답을 찾아보세요." : "일치하는 구역이 없어요. 이름이나 주소를 다시 넣어주세요."}</p>` : "");
     };
-    input.addEventListener("input", render);
-    input.addEventListener("keydown", (e) => { if (e.key === "Escape") { output.hidden = true; input.value = ""; } });
+    input.addEventListener("input", () => render());
+    input.addEventListener("focus", () => render(true));
+    input.addEventListener("keydown", (e) => { if (e.key === "Escape") { output.hidden = true; notice.hidden = true; input.value = ""; } });
+    document.addEventListener("pointerdown", (e) => { if (!form.contains(e.target)) output.hidden = true; });
     output.addEventListener("click", (e) => {
       const b = e.target.closest("[data-zone]");
       if (!b) return;
@@ -50,7 +76,10 @@
     });
     form.addEventListener("submit", (e) => {
       e.preventDefault(); render();
-      if (matches.length) { output.hidden = true; onChoose(matches[0]); }
+      if (!input.value.trim()) {
+        output.hidden = true; notice.textContent = "구역 이름을 입력해 주세요"; notice.hidden = false;
+      }
+      else if (matches.length) { output.hidden = true; onChoose(matches[0]); }
       else if (input.value.trim() && onQuestion) onQuestion(input.value.trim());
     });
   }
@@ -63,7 +92,7 @@
       `<details><summary>${r.label} · 원문 확인일 ${r.checked}</summary><p>${esc(r.basis)}</p>${r.links.map(([label,url]) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`).join(" · ")}</details>`).join("")}</div>
       <p class="zp-foot">이후 추가 지정·해제는 국토부·기재부 공고로 확인하세요. 확인일은 위 공고의 원문 확인일이며, 이후 변경이 없음을 보증하지 않습니다. 목록에 없는 지역은 「미적용」, 시 단위만 알면 「확인 필요」입니다. 토지거래허가는 필지·면적·용도 등에 따라 별도 판단합니다.</p>`;
   }
-  window.JJ = { esc, number, normal, zones, data, search, regHtml };
+  window.JJ = { esc, number, normal, zones, data, search, regHtml, readLocal, writeLocal, rememberZone };
   document.querySelectorAll("[data-zone-search]").forEach((form) => search(form, (z) => {
     location.href = "zone.html?zone=" + encodeURIComponent(z.id);
   }, file === "index.html" ? (question) => {

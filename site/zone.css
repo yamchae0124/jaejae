@@ -2,3 +2,26 @@
 @media(max-width:1000px){.map-shell{grid-template-columns:280px minmax(0,1fr)}.finder{padding:20px 16px 0}.map-legend{display:none}body.mode-jaejae #zonePanel{width:calc(100% - 24px);right:12px;top:12px}}
 @media(max-width:760px){.map-shell{display:flex;flex-direction:column}.finder{padding:12px 16px;flex:0 0 auto;border-right:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:8px}.finder h1,.finder-lead,.finder-source,.zone-list{display:none}.map-filters{margin:0;gap:8px}.map-filters label{display:flex;gap:6px;align-items:center}.map-filters select{min-height:36px;margin:0;padding:4px;flex:1;width:100px}.finder #zone-count{margin:0;font-size:10px}.finder .search input{min-height:44px}.map-wrap{flex:1}body.mode-jaejae #zonePanel{position:absolute;top:18%;bottom:50px;left:8px;right:8px;width:auto;max-height:none}#zonePanel .zp-head{padding:16px 16px 8px}#zonePanel .zp-title h2{font-size:23px}#zonePanel .zp-body{padding:0 16px 20px}#zonePanel .panel-bottom{padding:12px 16px}.map-boundary-credit{font-size:9px;padding:6px 10px;min-height:40px}.jj-zone-name{font-size:11px!important}.jj-zone-status{font-size:10px!important}.leaflet-control-attribution{max-width:270px}}
 .panel-bottom .zone-ai-link{min-height:44px;padding:12px 0;margin-bottom:8px;color:var(--brand-c);font-weight:600;text-decoration:none}
+#zpStage{font-size:13px;line-height:1.7;margin:4px 0 8px}#zpStage span{color:var(--sub);font-size:12px}#zpBoundaryNotice{margin:4px 0 8px}
+.panel-tools,#zone-list-open,#legend-toggle{display:none}
+#zone-list-dialog{border:1px solid var(--line);border-radius:16px;padding:16px 20px;max-width:calc(100% - 16px);width:500px;max-height:80dvh}
+#zone-list-dialog::backdrop{background:#1a1c2044}
+.list-head{display:flex;justify-content:space-between;align-items:center;gap:16px}.list-head h2{font-size:20px;margin:0}
+.list-head button,.panel-tools button,#zone-list-open,#legend-toggle{border:0;background:#fff;color:var(--brand-c);min-height:44px;font:inherit;cursor:pointer}
+#zone-list-dialog[open]{display:flex;flex-direction:column}#zone-list-dialog .zone-list{display:block;overflow:auto}
+@media(max-width:760px){
+  #zone-list-open{display:block;position:absolute;right:16px;bottom:4px;font-size:13px;padding:0 12px}.finder{position:relative;padding-bottom:16px}
+  #zone-list-dialog{position:fixed;inset:auto 8px 8px;margin:0;width:auto;height:65dvh;max-height:calc(100dvh - 120px)}
+  .map-legend{display:flex;align-items:center;left:48px;right:8px;top:8px;bottom:auto;max-width:none;padding:0 8px;font-size:10px;line-height:1.5;box-shadow:none}
+  #legend-toggle{display:block;flex:none;font-size:9px;padding:0 4px}
+  #legend-bands{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0;font-size:9px}
+  .map-legend span{margin:0}.map-legend i{width:6px;height:6px;margin-right:3px}
+  body.mode-jaejae #zonePanel{top:auto;bottom:48px;height:min(50dvh,calc(100% - 112px));display:none;overflow-y:auto;overscroll-behavior:contain}
+  body.mode-jaejae #zonePanel.show{display:block}
+  body.mode-jaejae #zonePanel.expanded{position:fixed;top:112px;bottom:8px;height:auto;z-index:1100}
+  #zonePanel .zp-body{overflow:visible;max-height:none;height:auto;flex:none}
+  #zonePanel .trade-scroll{overflow:visible;max-height:none}
+  #zonePanel .panel-tools{display:flex;justify-content:space-between;padding:0 16px;border-bottom:1px solid var(--line);touch-action:none}
+  .panel-tools button{font-size:13px;padding:0 8px}
+  #zonePanel .zp-head{padding-top:8px}
+}
