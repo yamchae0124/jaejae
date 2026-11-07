@@ -17,7 +17,7 @@
   const aiLink=document.createElement("a");
   aiLink.id="zone-ai";aiLink.className="zone-ai-link";aiLink.textContent="이 구역 재재 AI에게 물어보기 →";
   g("zpBody").append(aiLink);
-  const map=window.zoneMap=L.map("map",{zoomControl:false}).setView([37.5665,126.9780],12);
+  const map=window.zoneMap=L.map("map",{zoomControl:false,trackResize:false}).setView([37.5665,126.9780],12);
   map.attributionControl.setPrefix('<a href="https://leafletjs.com/">Leaflet</a>');
   L.control.zoom({position:"topleft"}).addTo(map);
   const key=window.VWORLD_KEY;
@@ -67,9 +67,11 @@
     const ids=new Set(visible.map(({z})=>z.id));
     for(const {z,marker,boundary} of rows){
       const active=selected?.id===z.id,visible=ids.has(z.id);
+      marker.setLatLng(active&&innerWidth<=760&&boundary?
+        [boundary.getBounds().getNorth(),boundary.getBounds().getCenter().lng]:[z.lat,z.lng]);
       marker.setZIndexOffset(active?1000:700);
       marker.setIcon(L.divIcon({className:"zonemarker jj-zonemarker",iconSize:[0,0],
-        html:`<div class="jj-zone-label${active?" is-selected":map.getZoom()<15?" is-distant":""}" data-jj-stage="${band(z)}" data-zone-id="${esc(z.id)}"><span class="jj-zone-name"><i>${esc(z.kind)}</i>${esc(z.name)}</span><span class="jj-zone-status">${esc(z.stageName||(Number(z.stageNo)===0?"후보지":api.STAGES[Number(z.stageNo)-1])||"단계 미상")}</span></div>`}));
+        html:`<div class="jj-zone-label${boundary?" has-boundary":""}${active?" is-selected":map.getZoom()<15?" is-distant":""}" data-jj-stage="${band(z)}" data-zone-id="${esc(z.id)}"><span class="jj-zone-name"><i>${esc(z.kind)}</i>${esc(z.name)}</span><span class="jj-zone-status">${esc(z.stageName||(Number(z.stageNo)===0?"후보지":api.STAGES[Number(z.stageNo)-1])||"단계 미상")}</span></div>`}));
       if(visible&&!layer.hasLayer(marker))layer.addLayer(marker);
       if(!visible&&layer.hasLayer(marker))layer.removeLayer(marker);
       if(!boundary)continue;
@@ -146,8 +148,8 @@
     const rail=g("panel-content").querySelector(".zp-arrows"),current=rail?.querySelector('[aria-current="step"]');
     if(current)rail.scrollTo({left:current.offsetLeft-rail.offsetLeft-(rail.clientWidth-current.offsetWidth)/2,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
   }
-  function frameSelected(){
-    if(!selected)return;
+  function frameSelected(onClose=false){
+    if(!selected||!onClose&&!g("zonePanel").classList.contains("show"))return;
     const row=rows.find(row=>row.z.id===selected.id),box=map.getContainer().getBoundingClientRect();
     const mobile=innerWidth<=760,open=g("zonePanel").classList.contains("show");
     const panel=g("zonePanel").getBoundingClientRect(),legend=g("map-legend").getBoundingClientRect();
@@ -157,6 +159,7 @@
       if(legend.top<box.top+box.height/2)top=Math.max(top,legend.bottom-box.top+12);
       else bottom=Math.max(bottom,box.bottom-legend.top+12);
     }
+    if(mobile&&row.boundary)top+=row.marker.getElement().querySelector(".jj-zone-label").getBoundingClientRect().height+8;
     const options={paddingTopLeft:[28,top],paddingBottomRight:[right,bottom],maxZoom:16,animate:false};
     if(row.boundary)map.fitBounds(row.boundary.getBounds(),options);
     else{
@@ -177,30 +180,35 @@
     selected=z;tab="progress";kind="villa";range="12";
     window.JJ.rememberZone(z);
     g("zpName").textContent=z.name;g("zpAddr").textContent=z.addr||"";g("zpChip").textContent=z.kind;
-    const state=api.stageState(z),detail=!state.done&&state.last>=0&&state.elapsed!=null?
-      `${api.STAGES[state.last+1].replace(/신고$/,"")} 진행 ${Math.floor(state.elapsed)}개월째`:"";
-    g("zpStage").innerHTML=`지금 단계 · <b>${esc(z.stageName||"단계 미상")}</b>${detail?` <span>${esc(detail)}</span>`:""}`;
+    g("zpStage").innerHTML=`지금 단계 · <b>${esc(z.stageName||"단계 미상")}</b>`;
     g("zpBoundaryNotice").hidden=Boolean(window.ZONE_BOUNDS.items[z.id]);
     g("zone-calc").href="calc.html?zone="+encodeURIComponent(z.id);
     aiLink.href="ai.html?zone="+encodeURIComponent(z.id);
-    g("zonePanel").classList.remove("expanded","collapsed");g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");
+    g("zonePanel").classList.remove("expanded","collapsed");g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");g("panel-collapse").textContent="접기";
     g("zonePanel").classList.add("show");render();sync();
     if(!fromHistory)history[wasOpen?"replaceState":"pushState"]({...history.state,zonePanel:z.id},"","zone.html?zone="+encodeURIComponent(z.id));
     frameSelected();g("zpClose").focus({preventScroll:true});
   }
   function close(navigate=true){
-    g("zonePanel").classList.remove("show","expanded","collapsed");sync();frameSelected();
+    const wasOpen=g("zonePanel").classList.contains("show");
+    g("zonePanel").classList.remove("show","expanded","collapsed");sync();if(wasOpen)frameSelected(true);
     if(navigate&&history.state?.zonePanel)history.back();
     if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true});
   }
   g("zpClose").addEventListener("click",()=>close());
   const collapse=()=>{
     g("zonePanel").classList.remove("expanded");g("zonePanel").classList.add("collapsed");
+    g("panel-collapse").textContent="펼치기";
     g("zonePanel").scrollTop=0;g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");frameSelected();
   };
-  g("panel-collapse").addEventListener("click",collapse);
+  const restore=()=>{
+    g("zonePanel").classList.remove("expanded","collapsed");g("panel-collapse").textContent="접기";
+    g("zonePanel").scrollTop=0;g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");frameSelected();
+  };
+  g("panel-collapse").addEventListener("click",()=>g("zonePanel").classList.contains("collapsed")?restore():collapse());
+  g("zonePanel").querySelector(".zp-head").addEventListener("click",e=>{if(g("zonePanel").classList.contains("collapsed")&&!e.target.closest("button"))restore();});
   const expand=()=>{
-    g("zonePanel").classList.remove("collapsed");g("zonePanel").classList.add("expanded");g("panel-expand").hidden=true;g("panel-expand").setAttribute("aria-expanded","true");
+    g("zonePanel").classList.remove("collapsed");g("zonePanel").classList.add("expanded");g("panel-expand").hidden=true;g("panel-expand").setAttribute("aria-expanded","true");g("panel-collapse").textContent="접기";
     g("zonePanel").scrollTop=0;
   };
   g("panel-expand").addEventListener("click",expand);
@@ -211,10 +219,17 @@
     if(dragY==null)return;
     const dy=e.clientY-dragY;dragY=null;
     if(dy < -40)expand();
-    if(dy > 40){if(g("zonePanel").classList.contains("expanded")){g("zonePanel").classList.remove("expanded");g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");frameSelected();}else collapse();}
+    if(dy > 40){if(g("zonePanel").classList.contains("expanded"))restore();else collapse();}
   });
   grip.addEventListener("pointercancel",()=>{dragY=null;});
-  new ResizeObserver(()=>{map.invalidateSize({pan:false});if(!g("zonePanel").classList.contains("expanded"))frameSelected();showCurrentStage();}).observe(map.getContainer());
+  new ResizeObserver(()=>{
+    const center=map.getCenter(),zoom=map.getZoom();
+    map.invalidateSize({pan:false});
+    if(g("zonePanel").classList.contains("show")){
+      if(!g("zonePanel").classList.contains("expanded"))frameSelected();
+    }else map.setView(center,zoom,{animate:false,reset:true});
+    showCurrentStage();
+  }).observe(map.getContainer());
   g("zonePanel").addEventListener("keydown",e=>{e.stopPropagation();if(e.key==="Escape")close();});
   g("zpTabs").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b){tab=b.dataset.tab;render();}});
   g("zpTabs").addEventListener("keydown",e=>{
@@ -230,6 +245,7 @@
   L.DomEvent.disableScrollPropagation(g("zonePanel"));L.DomEvent.disableClickPropagation(g("zonePanel"));
   map.on("zoomend",()=>{
     sync();
+    if(!g("zonePanel").classList.contains("show"))return;
     const label=map.getContainer().querySelector(".jj-zone-label.is-selected");
     if(!label)return;
     const rect=label.getBoundingClientRect(),box=map.getContainer().getBoundingClientRect();

@@ -4,17 +4,11 @@
   const {esc,number,zones}=window.JJ,g=id=>document.getElementById(id);
   const host=g("calc-content"),mode=host.dataset.calculator;
   const query=new URLSearchParams(location.search),zone=zones.find(z=>z.id===query.get("zone"));
-  // 지도 패널의 stageName을 현금 흐름 칸에 묶는다. 실제 납부 시점을 뜻하지 않는다.
-  const CASH_STAGE_BY_NAME=Object.freeze({
-    "대상지선정":0,"기획완료":0,"정비계획수립":0,"열람공고":0,"구역지정":0,
-    "추진위":0,"추진위구성":0,"조합설립":0,"조합설립인가":0,"건축심의":0,
-    "사업시행":0,"사업시행인가":0,"관리처분":1,"관리처분인가":1,"이주":2,"철거":2,
-    "착공":3,"착공신고":3,"일반분양":3,"준공":4,"준공(일부)":4,"입주":4,"이전고시":4
-  });
   const tabs=[["calc.html","총투자금 타임라인","total"],["calc_share.html","추가분담금","share"],["calc_profit.html","수익 분석","profit"],["calc_zones.html","구역 비교","zones"]];
   document.querySelector("[data-calc-tabs]").innerHTML=tabs.map(([url,label,key])=>`<a href="${url}${zone?"?zone="+encodeURIComponent(zone.id):""}"${mode===key?' aria-current="page"':""}>${label}</a>`).join("");
   const amount=(n)=>{
     const value=Math.round(Math.abs(n)),eok=Math.floor(value/10000),rest=value%10000;
+    if(!value)return "0원";
     return(n<0&&value?"−":"")+(eok?number(eok)+"억":"")+(rest||!eok?(eok?" ":"")+number(rest)+"만원":"원");
   };
   // Original 15b owner: round at won precision, not at displayed manwon precision.
@@ -49,7 +43,7 @@
     const save=()=>window.JJ.writeLocal(key,Object.fromEntries(inputs.map(input=>[input.id,input.value])));
     const transfer=query.get("share");
     if(mode==="total"&&transfer!==null&&/^-?\d+(?:\.\d+)?$/.test(transfer)&&Math.abs(Number(transfer))<=100000000){
-      g("contribution").value=String(Math.abs(Number(transfer)));
+      g("contribution").value=Math.abs(Number(transfer)).toLocaleString("ko-KR",{maximumFractionDigits:20});
       validate(g("contribution"));
       g("direction").value=Number(transfer)<0?"refund":"pay";
       save();query.delete("share");
@@ -62,6 +56,9 @@
       form.reset();delete form.dataset.submitted;inputs.forEach(validate);save();render();
     });
     form.addEventListener("submit",e=>{e.preventDefault();form.dataset.submitted="true";render();});
+    form.addEventListener("keydown",e=>{
+      if(e.key==="Enter"&&!e.isComposing&&e.target.matches("input[data-number]")){e.preventDefault();form.requestSubmit();}
+    });
     form.addEventListener("input",e=>{
       const input=e.target;
       if(input.matches("[data-number]")){
@@ -87,7 +84,7 @@
   }
   switch(mode){
     case "share":{
-      layout(field("appraisal","종전자산 평가액","만원",'내 집의 평가 금액 · 조합이 보낸 감정평가 통지서에서 확인해요. <a href="knowledge.html?item=c3-01#kb-answer">자세히 →</a>')+
+      layout(field("appraisal","종전자산 평가액","만원",'내 집의 평가 금액 · 분양신청 통지 때 조합이 알려 주는 금액이에요. <a href="knowledge.html?item=c3-01#kb-answer">자세히 →</a>')+
         field("ratio","비례율","%",'평가액에 곱해 권리가액을 구하는 비율 · 관리처분계획(안)의 계산 근거에서 확인해요. <a href="knowledge.html?item=c3-02#kb-answer">자세히 →</a>')+
         field("price","조합원 분양가","만원",'분양받을 주택의 조합원 가격 · 조합의 분양신청 안내문에서 확인해요. <a href="knowledge.html?item=c3-03#kb-answer">자세히 →</a>'));
       let offset=0;
@@ -132,6 +129,10 @@
       bind(render);break;
     }
     case "total":{
+      // 지도 패널의 stageName을 현금 흐름 칸에 묶는다. 실제 납부 시점을 뜻하지 않는다.
+      const CASH_STAGE_BY_NAME=Object.freeze(Object.fromEntries(
+        Object.entries(window.ZoneCore.STAGE_BY_NAME).map(([name,i])=>[name,i<4?0:i===4?1:i<7?2:i<9?3:4])
+      ));
       layout(field("purchase","매입 가격")+field("contribution","추가분담금 또는 청산금","만원",`조합 분양신청 안내문·관리처분계획에 나오는 금액 · 모르면 <a href="calc_share.html${zone?"?zone="+encodeURIComponent(zone.id):""}">추가분담금 탭에서 먼저 계산 →</a>`)+`<label class="field" for="direction">분담금 방향<select id="direction"><option value="pay">추가분담금 납부</option><option value="refund">돌려받는 금액</option></select></label>`+
         field("mortgage","매수 담보대출","만원","빈칸은 대출 없이 계산")+field("move-loan","이주비 대출","만원","빈칸은 대출 없이 계산")+
         field("deposit","분담금 계약금 비율","%","조합 안내문의 납부 비율 · 세 칸 합 100")+field("middle","분담금 중도금 비율","%","조합 안내문의 납부 비율 · 세 칸 합 100")+field("balance","분담금 잔금 비율","%","조합 안내문의 납부 비율 · 세 칸 합 100")+field("cash","가진 현금"));

@@ -19,16 +19,22 @@
   function render(){
     const q=normal(query),tokens=query.split(/\s+/).map(normal).filter(token=>token.length>=2);
     const items=kb.items.filter(item=>!category||item.category===category).map(item=>{
-      const text=normal([item.title,...item.questions,item.answer].join(" "));
-      return{item,whole:!q||text.includes(q),parts:tokens.filter(token=>text.includes(token)).length};
-    }).filter(row=>row.whole||row.parts).sort((a,b)=>Number(b.whole)-Number(a.whole)||b.parts-a.parts).map(row=>row.item);
+      const fields=[item.title,item.questions.join(" "),item.answer].map(normal),text=fields.join("");
+      const whole=!q||text.includes(q);
+      const field=fields.findIndex(text=>q&&(text.includes(q)||tokens.some(token=>text.includes(token))));
+      return{item,whole,parts:tokens.filter(token=>text.includes(token)).length,field:field<0?3:field};
+    }).filter(row=>row.whole||row.parts).sort((a,b)=>a.field-b.field||Number(b.whole)-Number(a.whole)||b.parts-a.parts).map(row=>row.item);
     g("kb-categories").innerHTML=[{id:"",name:"전체"},...kb.categories].map(c=>`<button type="button" data-category="${c.id}" aria-pressed="${c.id===category}">${esc(c.name)} <small>${c.id?kb.items.filter(i=>i.category===c.id).length:kb.items.length}</small></button>`).join("");
     g("kb-questions").innerHTML=items.map(item=>`<button type="button" data-item="${item.id}" aria-pressed="${item.id===selected}">${esc(item.title)}</button>`).join("");
     g("kb-count").textContent=items.length+"개 질문";
     answer(items.find(i=>i.id===selected)||items[0]);
   }
-  g("kb-search").addEventListener("input",e=>{query=e.target.value;render();});
+  g("kb-search").addEventListener("input",e=>{query=e.target.value;selected="";render();});
   g("kb-categories").addEventListener("click",e=>{const b=e.target.closest("[data-category]");if(b){category=b.dataset.category;selected="";render();}});
-  g("kb-questions").addEventListener("click",e=>{const b=e.target.closest("[data-item]");if(b)answer(kb.items.find(i=>i.id===b.dataset.item));});
+  g("kb-questions").addEventListener("click",e=>{
+    const b=e.target.closest("[data-item]");if(!b)return;
+    answer(kb.items.find(i=>i.id===b.dataset.item));
+    if(matchMedia("(max-width:760px)").matches)g("kb-answer").scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
+  });
   render();
 })();

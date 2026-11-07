@@ -23,6 +23,17 @@ const trInk = () => '#4E5968';
   };
   // 정비사업 정보몽땅 「추진경과」 분류(2026-11-03 Sol 조사 · 원문 단계명) — 이름이 있다고 해당 단계를 마친 것은 아니다
   const STAGES = ["정비구역지정", "조합설립추진위원회승인", "조합설립인가", "사업시행인가", "관리처분인가", "이주", "철거신고", "착공신고", "일반분양승인", "준공인가", "이전고시"];
+  // 공식 단계 이름 → 진행 줄 칸. -1은 정비구역 지정 전이며 날짜 기록과 별개다.
+  const STAGE_BY_NAME = Object.freeze({
+    "": -1, "대상지선정": -1, "기획완료": -1, "정비계획수립": -1, "열람공고": -1,
+    "구역지정": 0, "정비구역지정": 0,
+    "추진위": 1, "추진위구성": 1, "조합설립추진위원회승인": 1,
+    "조합설립": 2, "조합설립인가": 2, "건축심의": 2,
+    "사업시행": 3, "사업시행인가": 3, "관리처분": 4, "관리처분인가": 4,
+    "이주": 5, "철거": 6, "철거신고": 6, "착공": 7, "착공신고": 7,
+    "일반분양": 8, "일반분양승인": 8, "준공": 9, "준공인가": 9,
+    "준공(일부)": 9, "입주": 9, "이전고시": 10
+  });
 
   // ── 규제 4칸 — 국토부 공고 지역 목록(시군구 이름 기준 · 코드표 매핑 오류를 피하려고 이름으로 비교) ──
   const SEOUL = "종로구 중구 용산구 성동구 광진구 동대문구 중랑구 성북구 강북구 도봉구 노원구 은평구 서대문구 마포구 양천구 강서구 구로구 금천구 영등포구 동작구 관악구 서초구 강남구 송파구 강동구".split(" ").map((n) => "서울" + n);
@@ -237,7 +248,7 @@ const trInk = () => '#4E5968';
     if (z.demo) return "";
     const state = stageState(z), s = state.last < 0 ? null : pairStats(z.kind, state.last, state.last + 1);
     const speed = state.done ? "완료" : state.elapsed == null ? "자료 없음" : s ? state.elapsed <= s.median ? "중앙값 이내" : "중앙값 넘김" : "비교 표본 부족";
-    const elapsed = !state.done && state.elapsed != null ? `<span class="zp-unit">${Math.floor(state.elapsed)}개월째</span>` + (s ? ` · 중앙값 <span class="zp-unit">${Math.round(s.median)}개월</span> · 표본 <span class="zp-unit">${s.n}곳</span>` : "") : "";
+    const elapsed = !state.done && state.elapsed != null ? `직전 날짜 단계(${esc(STAGES[state.last])})부터 <span class="zp-unit">${Math.floor(state.elapsed)}개월</span>` + (s ? ` · 중앙값 <span class="zp-unit">${Math.round(s.median)}개월</span> · 표본 <span class="zp-unit">${s.n}곳</span>` : "") : "";
     const left = state.done ? null : moveEstimate(z), moveStats = renewalMoveStatistics();
     const wide = left && left.q75-left.q25 >= 120;
     const spreadTip = wide && left.spread ? ` 가장 편차가 큰 단계: ${esc(left.spread.from)}→${esc(left.spread.to)}(25~75% 구간 ${left.spread.q25.toFixed(1)}~${left.spread.q75.toFixed(1)}개월)` : "";
@@ -248,14 +259,14 @@ const trInk = () => '#4E5968';
       `<div class="zp-metric${document.body.classList.contains("mode-jaejae") ? transfer.label.includes("가능") || transfer.label === "제한 없음" ? " jj-positive" : transfer.label.startsWith("제한") ? " jj-critical" : "" : ""}" data-metric="transfer"><span>조합원 지위 양도</span><b>${transfer.label}</b><p>${transfer.detail}</p><details><summary>법령과 예외 ⓘ</summary>도시 및 주거환경정비법 제39조 제2항 · 법률 제14943호 부칙 제2조. 상속·이혼, 근무·질병·해외이주·1세대1주택 장기보유 등 예외가 있습니다. 실제 거래 전 조합·전문가 확인이 필요합니다.</details>${window.__jaejae ? window.__jaejae.transferHtml(z) : ""}</div></div>`;
   }
   function stageClass(z, state, i) {
-    const current = z.demo ? (Number(z.stageNo) || 1) - 1 : state.done || state.last < 0 ? -1 : state.last + 1;
-    return i === current ? "cur" : i < current || !z.demo && i <= state.last ? "done" : "";
+    const current = STAGE_BY_NAME[z.stageName] ?? -1;
+    return i === current ? "cur" : (z.demo ? i < current : i <= state.last) ? "done" : "";
   }
   function arrowsHtml(z, state) {
     const names = ["구역지정", "추진위", "조합설립", "사업시행", "관리처분", "이주", "철거", "착공", "일반분양", "준공", "이전고시"];
     return `<ol class="zp-arrows" tabindex="0" aria-label="정비사업 단계">` + names.map((n, i) => {
       const cls = stageClass(z, state, i);
-      return `<li class="zp-arrow${cls === "done" ? " done" : ""}"${cls === "cur" ? ' aria-current="step"' : ""}>${cls === "cur" ? "<em>지금</em>" : ""}${n}</li>`;
+      return `<li class="zp-arrow${cls === "done" ? " done" : ""}"${cls === "cur" ? ' aria-current="step"' : ""}>${cls === "cur" ? `<em>${n === z.stageName ? "지금" : "지금 · " + esc(z.stageName)}</em>` : ""}${n}</li>`;
     }).join("") + `</ol>`;
   }
   // ── 진행상황 · 실거래 · 구역정보 · 관련문서 · 생활권 ──
@@ -272,7 +283,7 @@ const trInk = () => '#4E5968';
           duration = months <= 0 ? "날짜 순서 확인 필요" : "직전 날짜 단계부터 " + Math.round(months) + "개월" + (s ? " · " + pace(months, s.median) + " (중앙값 " + Math.round(s.median) + "개월)" : " · 비교 표본 부족");
         }
         previous = i;
-      } else if (!z.demo && stageClass(z, state, i) === "cur" && state.elapsed != null) duration = Math.floor(state.elapsed) + "개월째 진행";
+      }
       return `<li class="${stageClass(z, state, i)}">${esc(nm)}${d ? `<small>${esc(d)}</small>` : ""}${duration ? `<span class="zp-duration">${duration}</span>` : ""}</li>`;
     }).join("");
     return summaryHtml(z) + arrowsHtml(z, state) + `<div class="zp-card">${Number(z.stageNo) === 0 ? `<div class="zp-pre">정비구역 지정 전 · ${esc(z.stageName || "단계 미상")}</div>` : ""}<ol class="zp-steps">${li}</ol></div><div class="zp-foot">단계 이름은 서울시 정비사업 정보몽땅의 추진경과 분류를 따릅니다. 이름이 있다고 그 단계를 마친 것은 아니며, 추진위원회를 구역지정 전에 구성하거나 생략하는 사업도 있어 모든 사업이 같은 순서는 아닙니다.${z.demo ? "" : "<br>비교 표본: 같은 종류 서울 구역 10곳 이상 · 같은 단계 쌍의 날짜 순서가 거꾸로이거나 기간이 0인 경우 제외."}</div>` + (window.__jaejae ? window.__jaejae.faqHtml(z) : "");
@@ -326,7 +337,7 @@ const trInk = () => '#4E5968';
 
 
 function regHtml(z) { return window.JJ.regHtml(z, flag, REG); }
-window.ZoneCore = { STAGES, REGIONS, REG, flag, regionOf, stageState, moveSummary, moveEstimate, transferStatus, progressHtml, infoHtml, lifeHtml, supplyHtml, docsHtml, regHtml, num, nz };
+window.ZoneCore = { STAGES, STAGE_BY_NAME, REGIONS, REG, flag, regionOf, stageState, moveSummary, moveEstimate, transferStatus, progressHtml, infoHtml, lifeHtml, supplyHtml, docsHtml, regHtml, num, nz };
 function havDistM(lat1, lng1, lat2, lng2){     // haversine 표준 공식 R=6371000m (스펙 §6.1)
   const R = 6371000, rad = Math.PI / 180;
   const dLat = (lat2 - lat1) * rad, dLng = (lng2 - lng1) * rad;
