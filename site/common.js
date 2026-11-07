@@ -58,7 +58,12 @@
     const render = (showRecent = false) => {
       const q = normal(input.value);
       notice.hidden = true;
-      matches = q ? zones.filter((z) => normal(z.name + z.addr).includes(q)).slice(0, 8) :
+      const found = q ? zones.filter((z) => normal(z.name + z.addr).includes(q)) : [];
+      if (q && file === "index.html") {
+        const rank = (z) => { const name = normal(z.name); return name === q ? 3 : name.startsWith(q) ? 2 : name.includes(q) ? 1 : 0; };
+        found.sort((a, b) => rank(b) - rank(a) || a.name.localeCompare(b.name, "ko", { numeric: true }));
+      }
+      matches = q ? found.slice(0, 8) :
         showRecent && file === "index.html" ? recentZones() : [];
       output.hidden = !q && !matches.length;
       output.innerHTML = (!q && matches.length ? "<p>최근 본 구역</p>" : "") +

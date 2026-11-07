@@ -4,6 +4,13 @@
   const {esc,number,zones}=window.JJ,g=id=>document.getElementById(id);
   const host=g("calc-content"),mode=host.dataset.calculator;
   const query=new URLSearchParams(location.search),zone=zones.find(z=>z.id===query.get("zone"));
+  // 지도 패널의 stageName을 현금 흐름 칸에 묶는다. 실제 납부 시점을 뜻하지 않는다.
+  const CASH_STAGE_BY_NAME=Object.freeze({
+    "대상지선정":0,"기획완료":0,"정비계획수립":0,"열람공고":0,"구역지정":0,
+    "추진위":0,"추진위구성":0,"조합설립":0,"조합설립인가":0,"건축심의":0,
+    "사업시행":0,"사업시행인가":0,"관리처분":1,"관리처분인가":1,"이주":2,"철거":2,
+    "착공":3,"착공신고":3,"일반분양":3,"준공":4,"준공(일부)":4,"입주":4,"이전고시":4
+  });
   const tabs=[["calc.html","총투자금 타임라인","total"],["calc_share.html","추가분담금","share"],["calc_profit.html","수익 분석","profit"],["calc_zones.html","구역 비교","zones"]];
   document.querySelector("[data-calc-tabs]").innerHTML=tabs.map(([url,label,key])=>`<a href="${url}${zone?"?zone="+encodeURIComponent(zone.id):""}"${mode===key?' aria-current="page"':""}>${label}</a>`).join("");
   const amount=(n)=>{
@@ -16,7 +23,8 @@
     return{right,additional:won(price-right),low:won(price-appraisal*(ratio+10)/100),high:won(price-appraisal*Math.max(0,ratio-10)/100)};
   };
   const field=(id,label,unit="만원",hint="")=>`<label class="field" for="${id}"><b class="field-name">${label}</b><span><input id="${id}" type="text" inputmode="decimal" data-number="${unit}" autocomplete="off" maxlength="20" value=""><small>${unit}</small></span>${hint?`<small>${hint}</small>`:""}</label>`;
-  const foot=`<footer class="calc-foot">입력한 값 기준의 관행적 계산 · 법정 산식이 아니며 투자 권유가 아닙니다. <b>세금·수수료 별도</b> · 비례율·분양가·대출 약정은 조합·금융기관에 확인하세요. 실제 납부 순서·비율·시기는 사업마다 다릅니다. <a href="knowledge.html">근거 지식 보기 →</a></footer>`;
+  const knowledgeItem={share:"c3-03",total:"c3-04",profit:"c3-04",zones:"c1-07"}[mode];
+  const foot=`<footer class="calc-foot">입력한 값 기준의 관행적 계산 · 법정 산식이 아니며 투자 권유가 아닙니다. <b>세금·수수료 별도</b> · 비례율·분양가·대출 약정은 조합·금융기관에 확인하세요. 실제 납부 순서·비율·시기는 사업마다 다릅니다. <a href="knowledge.html?item=${knowledgeItem}#kb-answer">근거 지식 보기 →</a></footer>`;
   const selectedZone=`<p class="source wide">${zone?`계산하는 구역 <b>${esc(zone.name)}</b> · ${esc(zone.stageName||"단계 미상")}`:"구역을 고르지 않아도 계산할 수 있어요."} <a href="zone.html">지도에서 구역 고르기 →</a></p>`;
   function inputValue(id){
     const input=g(id),raw=input.value.replaceAll(",","").trim();
@@ -39,13 +47,21 @@
       validate(input);
     }
     const save=()=>window.JJ.writeLocal(key,Object.fromEntries(inputs.map(input=>[input.id,input.value])));
+    const transfer=query.get("share");
+    if(mode==="total"&&transfer!==null&&/^-?\d+(?:\.\d+)?$/.test(transfer)&&Math.abs(Number(transfer))<=100000000){
+      g("contribution").value=String(Math.abs(Number(transfer)));
+      validate(g("contribution"));
+      g("direction").value=Number(transfer)<0?"refund":"pay";
+      save();query.delete("share");
+      history.replaceState(history.state,"",location.pathname+(query.size?"?"+query.toString():"")+location.hash);
+    }
     const clear=document.createElement("button");
     clear.type="button";clear.className="clear-inputs wide";clear.textContent="입력 지우기";clear.id="clear-inputs";
     form.append(clear);
     clear.addEventListener("click",()=>{
-      form.reset();inputs.forEach(validate);save();render();
+      form.reset();delete form.dataset.submitted;inputs.forEach(validate);save();render();
     });
-    form.addEventListener("submit",e=>{e.preventDefault();render();});
+    form.addEventListener("submit",e=>{e.preventDefault();form.dataset.submitted="true";render();});
     form.addEventListener("input",e=>{
       const input=e.target;
       if(input.matches("[data-number]")){
@@ -59,7 +75,7 @@
   function layout(inputs){host.innerHTML=`${selectedZone}<div class="calc-layout"><form id="calc-form" class="calc-inputs" autocomplete="off">${inputs}</form><section class="calc-output" id="calc-result" aria-live="polite"></section></div>${foot}`;}
   function invalid(required){
     const missing=required.filter(id=>!g(id).value.trim());
-    const started=[...host.querySelectorAll("input[data-number]")].some(input=>input.value.trim());
+    const started=g("calc-form").dataset.submitted==="true"||[...host.querySelectorAll("input[data-number]")].some(input=>input.value.trim());
     host.querySelectorAll(".field-name").forEach(name=>{
       name.classList.toggle("missing",started&&missing.includes(name.closest("label").htmlFor));
     });
@@ -71,7 +87,9 @@
   }
   switch(mode){
     case "share":{
-      layout(field("appraisal","종전자산 평가액")+field("ratio","비례율","%")+field("price","조합원 분양가"));
+      layout(field("appraisal","종전자산 평가액","만원",'내 집의 평가 금액 · 조합이 보낸 감정평가 통지서에서 확인해요. <a href="knowledge.html?item=c3-01#kb-answer">자세히 →</a>')+
+        field("ratio","비례율","%",'평가액에 곱해 권리가액을 구하는 비율 · 관리처분계획(안)의 계산 근거에서 확인해요. <a href="knowledge.html?item=c3-02#kb-answer">자세히 →</a>')+
+        field("price","조합원 분양가","만원",'분양받을 주택의 조합원 가격 · 조합의 분양신청 안내문에서 확인해요. <a href="knowledge.html?item=c3-03#kb-answer">자세히 →</a>'));
       let offset=0;
       const render=()=>{
         const out=g("calc-result"),message=invalid(["appraisal","ratio","price"]);
@@ -82,8 +100,9 @@
         const index=cases.findIndex(c=>c.offset===offset),r=cases[index],base=calculation(appraisal,ratio,price);
         out.innerHTML=`<div class="result-top"><div><p class="source">선택 가정 · 비례율 ${number(r.ratio)}%</p><h2>${r.additional<0?"돌려받는 금액(청산금)":"예상 추가분담금"}</h2><output class="big-value" id="additional" data-value="${r.additional}">${amount(Math.abs(r.additional))}</output></div><div><p class="source">입력한 조합원 분양가</p><b>${amount(price)}</b></div></div>
           <div class="stops" style="grid-template-columns:repeat(${cases.length},minmax(0,1fr));--stop-end:${100/cases.length}%" role="group" aria-label="비례율 가정 선택">${cases.map(c=>`<button type="button" class="stop${c.offset===offset?" sel":""}" data-scenario="${c.offset}" aria-pressed="${c.offset===offset}"><i></i><b>${number(c.ratio)}%</b><small>${amount(c.additional)}</small></button>`).join("")}</div>
-          <div class="det"><div><h2>비례율 ${number(r.ratio)}%일 때</h2><p class="why">평가액 × 비례율 = 권리가액.<br>조합원 분양가에서 권리가액을 빼면 분담금이에요.</p><p class="source">왼쪽 입력 ${number(ratio)}%를 기준으로 ±10·20%p 가정만 바꿉니다. 0% 미만 가정은 제외해요.</p><div class="progress"><i style="width:${(index+1)/cases.length*100}%"></i></div><div class="pn"><button type="button" data-scenario="${cases[Math.max(0,index-1)].offset}"${index===0?" disabled":""}>← 이전 가정</button><span class="source">${index+1} / ${cases.length}</span><button type="button" data-scenario="${cases[Math.min(cases.length-1,index+1)].offset}"${index===cases.length-1?" disabled":""}>다음 가정 →</button></div></div><div>${line("종전자산 평가액",appraisal)}${line("선택 가정의 권리가액",r.right,"right-value")}${line("조합원 분양가",price)}</div></div>
+          <div class="det"><div><h2>비례율 ${number(r.ratio)}%일 때</h2><p class="why">평가액 × 비례율 = 권리가액.<br>조합원 분양가에서 권리가액을 빼면 분담금이에요.</p><p class="source">입력한 값 ${number(ratio)}%를 기준으로 ±10·20%p 가정만 바꿉니다. 0% 미만 가정은 제외해요.</p><div class="progress"><i style="width:${(index+1)/cases.length*100}%"></i></div><div class="pn"><button type="button" data-scenario="${cases[Math.max(0,index-1)].offset}"${index===0?" disabled":""}>← 이전 가정</button><span class="source">${index+1} / ${cases.length}</span><button type="button" data-scenario="${cases[Math.min(cases.length-1,index+1)].offset}"${index===cases.length-1?" disabled":""}>다음 가정 →</button></div></div><div>${line("종전자산 평가액",appraisal)}${line("선택 가정의 권리가액",r.right,"right-value")}${line("조합원 분양가",price)}</div></div>
           <div class="cash-check"><div><p>입력 비례율 −10%p</p><b id="high-value" data-value="${base.high}">${amount(base.high)}</b></div><div><p>선택 가정 ${number(r.ratio)}%</p><b>${amount(r.additional)}</b></div><div><p>입력 비례율 +10%p</p><b id="low-value" data-value="${base.low}">${amount(base.low)}</b></div></div><p class="source">비례율 변화에 따른 참고 계산 · 인가된 관리처분계획과 다를 수 있습니다.</p>`;
+        out.insertAdjacentHTML("beforeend",`<nav class="calc-next"><a id="share-to-total" href="calc.html?${zone?"zone="+encodeURIComponent(zone.id)+"&":""}share=${r.additional}">이 금액으로 총투자금 계산 →</a></nav>`);
         out.querySelectorAll("[data-scenario]").forEach(b=>b.addEventListener("click",()=>{offset=Number(b.dataset.scenario);render();}));
       };
       bind(render);break;
@@ -134,10 +153,10 @@
         const flows=[purchase-mortgage,0,-loan,refund?0:contribution*(ratios[0]+ratios[1])/100,loan+(refund?-contribution:contribution*ratios[2]/100)];
         const cumulative=[];let sum=0;for(const value of flows){sum+=value;cumulative.push(sum);}
         const peak=Math.max(0,...cumulative),shortage=Math.max(0,peak-cash),total=purchase+(refund?-contribution:contribution);
-        const current=zone?window.ZoneCore.stageState(zone):null;
-        const stageNo=current?(current.done?4:current.last<0?0:current.last<4?1:current.last<5?2:current.last<9?3:4):-1;
+        const stageNo=CASH_STAGE_BY_NAME[zone?.stageName]??-1;
+
         out.innerHTML=`<div class="result-top"><div><p class="source">매입부터 입주·청산까지 총투자금</p><output class="big-value" id="total-investment" data-value="${total}">${amount(total)}</output><p class="source">대출은 조달 수단 · 세금·수수료·이자는 별도</p></div><div><p class="source">현금으로 더 모아야 할 돈</p><output id="shortage" class="${shortage?"negative":"positive"}" data-value="${shortage}">${amount(shortage)}</output></div></div>`+
-          `<div class="stops" role="group" aria-label="현금 단계">${labels.map((label,i)=>`<button type="button" class="stop${i<step?" done":""}${i===step?" sel":""}" data-step="${i}" aria-pressed="${i===step}"><i></i><b>${label}</b><small>${i===stageNo?"지금 · ":""}${flows[i]===0?"현금 납부 없음":amount(flows[i])}</small></button>`).join("")}</div>`+
+          `<div class="stops" role="group" aria-label="현금 단계">${labels.map((label,i)=>`<button type="button" class="stop${i<step?" done":""}${i===step?" sel":""}" data-step="${i}" aria-pressed="${i===step}">${i===stageNo?'<span class="current-stage">지금 단계</span>':""}<i></i><b>${label}</b><small>${flows[i]===0?"현금 납부 없음":amount(flows[i])}</small></button>`).join("")}</div>`+
           `<div class="det"><div><h2>${labels[step]}</h2><p class="why">${descriptions[step]}</p><p class="source">여기까지의 누적 필요 현금 ${amount(cumulative[step])}</p><div class="progress"><i style="width:${total>0?Math.max(0,Math.min(100,cumulative[step]/total*100)):0}%"></i></div><div class="pn"><button type="button" data-next="${step-1}"${step===0?" disabled":""}>← 이전 단계</button><span class="source">${step+1} / 5</span><button type="button" data-next="${step+1}"${step===4?" disabled":""}>다음 단계 →</button></div></div><div>${line(flows[step]<0?"이번에 들어오는 현금":"이번에 낼 현금",Math.abs(flows[step]),"stage-cash")}${line("이번 단계의 대출 수령",step===0?mortgage:step===2?loan:0)}${line("쌓인 필요 현금",cumulative[step],"cumulative-cash")}</div></div>`+
           `<div class="cash-check"><div><p>최대로 필요한 현금</p><b id="peak-cash" data-value="${peak}">${amount(peak)}</b></div><div><p>가진 현금</p><b>${amount(cash)}</b></div><div><p>더 모아야 할 돈</p><b class="${shortage?"negative":"positive"}">${amount(shortage)}</b></div></div><p class="source">선택 구역의 현재 단계와 별개로 매입부터 전체 흐름을 계산합니다. 빈 대출 항목은 0원으로 제외해요.</p>`;
         out.insertAdjacentHTML("beforeend",`<nav class="calc-next" aria-label="다음 계산"><a href="calc_profit.html${zone?"?zone="+encodeURIComponent(zone.id):""}">수익 분석 보기 →</a><a href="calc_zones.html${zone?"?zone="+encodeURIComponent(zone.id):""}">다른 구역과 비교 →</a></nav>`);

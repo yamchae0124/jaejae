@@ -17,7 +17,11 @@
     g("kb-questions").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.item===selected)));
   }
   function render(){
-    const items=kb.items.filter(item=>(!category||item.category===category)&&(!query||normal([item.title,...item.questions,item.answer].join(" ")).includes(normal(query))));
+    const q=normal(query),tokens=query.split(/\s+/).map(normal).filter(token=>token.length>=2);
+    const items=kb.items.filter(item=>!category||item.category===category).map(item=>{
+      const text=normal([item.title,...item.questions,item.answer].join(" "));
+      return{item,whole:!q||text.includes(q),parts:tokens.filter(token=>text.includes(token)).length};
+    }).filter(row=>row.whole||row.parts).sort((a,b)=>Number(b.whole)-Number(a.whole)||b.parts-a.parts).map(row=>row.item);
     g("kb-categories").innerHTML=[{id:"",name:"전체"},...kb.categories].map(c=>`<button type="button" data-category="${c.id}" aria-pressed="${c.id===category}">${esc(c.name)} <small>${c.id?kb.items.filter(i=>i.category===c.id).length:kb.items.length}</small></button>`).join("");
     g("kb-questions").innerHTML=items.map(item=>`<button type="button" data-item="${item.id}" aria-pressed="${item.id===selected}">${esc(item.title)}</button>`).join("");
     g("kb-count").textContent=items.length+"개 질문";

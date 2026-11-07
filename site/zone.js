@@ -16,7 +16,7 @@
   listDialog.addEventListener("close",()=>document.querySelector(".finder").insertBefore(g("zone-list"),document.querySelector(".finder-source")));
   const aiLink=document.createElement("a");
   aiLink.id="zone-ai";aiLink.className="zone-ai-link";aiLink.textContent="이 구역 재재 AI에게 물어보기 →";
-  g("zone-calc").insertAdjacentElement("beforebegin",aiLink);
+  g("zpBody").append(aiLink);
   const map=window.zoneMap=L.map("map",{zoomControl:false}).setView([37.5665,126.9780],12);
   map.attributionControl.setPrefix('<a href="https://leafletjs.com/">Leaflet</a>');
   L.control.zoom({position:"topleft"}).addTo(map);
@@ -27,7 +27,7 @@
   }).addTo(map);
   const layer=L.layerGroup().addTo(map);
   const bands=["후보지","구역지정·추진위","조합설립·사업시행","관리처분","착공·준공"];
-  g("map-legend").innerHTML='<button id="legend-toggle" type="button" aria-label="범례 접기" aria-expanded="true" aria-controls="legend-bands">접기</button><div id="legend-bands">'+bands.map((label,i)=>`<span style="--jj-stage:var(--jj-stage-${i})"><i></i>${label}</span>`).join("")+"</div>";
+  g("map-legend").innerHTML='<div id="legend-bands">'+bands.map((label,i)=>`<span style="--jj-stage:var(--jj-stage-${i})"><i></i>${label}</span>`).join("")+'</div><button id="legend-toggle" type="button" aria-label="범례 접기" aria-expanded="true" aria-controls="legend-bands">접기</button>';
   g("legend-toggle").addEventListener("click",()=>{
     const hidden=!g("legend-bands").hidden;g("legend-bands").hidden=hidden;
     g("legend-toggle").setAttribute("aria-expanded",String(!hidden));g("legend-toggle").textContent=hidden?"범례":"접기";g("legend-toggle").setAttribute("aria-label",hidden?"범례 펼치기":"범례 접기");
@@ -42,8 +42,24 @@
     if(boundary)boundary.on("add",()=>{boundary.getElement().dataset.zoneId=z.id;});
     const marker=L.marker([z.lat,z.lng],{icon:L.divIcon({className:"jj-zonemarker",iconSize:[0,0],html:""}),title:z.name,alt:z.name,zIndexOffset:700})
       .on("click",()=>openZone(z));
-    return {z,boundary,marker};
+    return {z,boundary,marker,area:Number(z.area_m2)||0};
   });
+  function placeLabels(){
+    const candidates=rows.filter(({marker})=>layer.hasLayer(marker)).map(row=>({
+      ...row,label:row.marker.getElement()?.querySelector(".jj-zone-label")
+    })).filter(row=>row.label);
+    candidates.forEach(({label})=>{label.hidden=false;});
+    if(map.getZoom()<15)return;
+    candidates.sort((a,b)=>Number(b.z.id===selected?.id)-Number(a.z.id===selected?.id)||b.area-a.area);
+    const box=map.getContainer().getBoundingClientRect(),kept=[];
+    for(const {z,label} of candidates){
+      const rect=label.getBoundingClientRect(),active=z.id===selected?.id;
+      const outside=rect.right<box.left||rect.left>box.right||rect.bottom<box.top||rect.top>box.bottom;
+      const overlaps=kept.some(r=>rect.left<r.right+4&&rect.right>r.left-4&&rect.top<r.bottom+4&&rect.bottom>r.top-4);
+      if(!active&&(outside||overlaps))label.hidden=true;
+      else kept.push(rect);
+    }
+  }
   function sync(){
     const gu=g("district-filter").value,k=g("kind-filter").value;
     const visible=rows.filter(({z})=>(!gu||z.sgg===gu)&&(!k||z.kind===k));
@@ -51,6 +67,7 @@
     const ids=new Set(visible.map(({z})=>z.id));
     for(const {z,marker,boundary} of rows){
       const active=selected?.id===z.id,visible=ids.has(z.id);
+      marker.setZIndexOffset(active?1000:700);
       marker.setIcon(L.divIcon({className:"zonemarker jj-zonemarker",iconSize:[0,0],
         html:`<div class="jj-zone-label${active?" is-selected":map.getZoom()<15?" is-distant":""}" data-jj-stage="${band(z)}" data-zone-id="${esc(z.id)}"><span class="jj-zone-name"><i>${esc(z.kind)}</i>${esc(z.name)}</span><span class="jj-zone-status">${esc(z.stageName||(Number(z.stageNo)===0?"후보지":api.STAGES[Number(z.stageNo)-1])||"단계 미상")}</span></div>`}));
       if(visible&&!layer.hasLayer(marker))layer.addLayer(marker);
@@ -62,6 +79,7 @@
       if(!visible&&layer.hasLayer(boundary))layer.removeLayer(boundary);
       if(active&&visible)boundary.bringToFront();
     }
+    placeLabels();
     g("zone-list").innerHTML=[...visible].sort((a,b)=>Number(Boolean(b.boundary))-Number(Boolean(a.boundary))).map(({z})=>`<button class="zone-row" data-zone-id="${esc(z.id)}" aria-pressed="${selected?.id===z.id}"><strong>${esc(z.name)}</strong><small>${esc(z.kind)} · ${esc(z.sgg)}<br>${esc(z.stageName||"단계 미상")}${window.ZONE_BOUNDS.items[z.id]?"":" · 경계 자료 없음"}</small></button>`).join("");
   }
   const districts=[...new Set(zones.map(z=>z.sgg))].sort((a,b)=>a.localeCompare(b,"ko"));
@@ -100,7 +118,7 @@
     const source=`<p class="zp-foot">정보몽땅 자료 기준 ${esc(window.ZONES_DATA.asof)} · 공급은 계획값 · 법적 효력 없음</p>`;
     switch(tab){
       case "progress":g("panel-content").innerHTML=`<section id="zpProg">${api.progressHtml(z)}${source}</section>`;break;
-      case "info":g("panel-content").innerHTML=`<section id="zpInfo">${api.infoHtml(z)}<h3>공급 계획</h3>${api.supplyHtml(z)}<h3>생활권·가까운 역</h3>${api.lifeHtml(z)}<h3>관련 문서</h3>${api.docsHtml(z)}<p class="zp-foot">경계: 서울 열린데이터광장 · ${esc(window.ZONE_BOUNDS.crsNote)} · <a href="출처.html">자료 출처 보기 →</a></p></section>`;break;
+      case "info":g("panel-content").innerHTML=`<section id="zpInfo">${api.infoHtml(z)}<h3>공급 계획</h3>${api.supplyHtml(z)}<h3>생활권·가까운 역</h3>${api.lifeHtml(z)}<h3>관련 문서</h3>${api.docsHtml(z)}<p class="zp-foot">경계: 서울 열린데이터광장 · <a href="출처.html">자료 출처 보기 →</a></p></section>`;break;
       case "regulation":g("panel-content").innerHTML=`<section id="zpRegulation">${window.MonthlyPanel.permitHtml(z)}<h3>규제 지역</h3>${api.regHtml(z)}</section>`;break;
       case "trade":{
         g("panel-content").innerHTML='<section id="zpTrade" aria-busy="true"><p class="source">저장된 실거래 자료를 읽고 있어요.</p></section>';
@@ -118,6 +136,8 @@
       }
       default:throw new Error("알 수 없는 패널 탭: "+tab);
     }
+    const knowledgeItem={progress:"c1-07",info:"c1-06",regulation:"c2-07",trade:"c3-04"}[tab];
+    g("panel-content").insertAdjacentHTML("beforeend",`<p class="zp-foot"><a href="knowledge.html?item=${knowledgeItem}#kb-answer">근거 지식 보기 →</a></p>`);
     g("zpBody").scrollTop=0;
     g("zonePanel").scrollTop=0;
     if(tab==="progress")requestAnimationFrame(()=>showCurrentStage());
@@ -128,11 +148,15 @@
   }
   function frameSelected(){
     if(!selected)return;
-    const row=rows.find(row=>row.z.id===selected.id),box=map.getContainer().getBoundingClientRect(),panel=g("zonePanel").getBoundingClientRect();
-    const mobile=innerWidth<=760;
-    const right=mobile?20:Math.max(20,box.right-panel.left+20);
-    const bottom=mobile?Math.max(20,box.bottom-panel.top+20):20;
-    const top=mobile?Math.min(64,Math.max(20,(box.height-bottom)/4)):20;
+    const row=rows.find(row=>row.z.id===selected.id),box=map.getContainer().getBoundingClientRect();
+    const mobile=innerWidth<=760,open=g("zonePanel").classList.contains("show");
+    const panel=g("zonePanel").getBoundingClientRect(),legend=g("map-legend").getBoundingClientRect();
+    const right=!mobile&&open?Math.max(20,box.right-panel.left+20):20;
+    let bottom=mobile&&open?Math.max(20,box.bottom-panel.top+20):20,top=20;
+    if(legend.height&&legend.left<box.right-right&&legend.right>box.left){
+      if(legend.top<box.top+box.height/2)top=Math.max(top,legend.bottom-box.top+12);
+      else bottom=Math.max(bottom,box.bottom-legend.top+12);
+    }
     const options={paddingTopLeft:[28,top],paddingBottomRight:[right,bottom],maxZoom:16,animate:false};
     if(row.boundary)map.fitBounds(row.boundary.getBounds(),options);
     else{
@@ -146,9 +170,10 @@
       }
     }
   }
-  function openZone(z){
+  function openZone(z,fromHistory=false){
     if(listDialog.open)listDialog.close();
-    if(!g("zonePanel").classList.contains("show"))previousFocus=document.activeElement;
+    const wasOpen=g("zonePanel").classList.contains("show");
+    if(!wasOpen)previousFocus=document.activeElement;
     selected=z;tab="progress";kind="villa";range="12";
     window.JJ.rememberZone(z);
     g("zpName").textContent=z.name;g("zpAddr").textContent=z.addr||"";g("zpChip").textContent=z.kind;
@@ -158,20 +183,24 @@
     g("zpBoundaryNotice").hidden=Boolean(window.ZONE_BOUNDS.items[z.id]);
     g("zone-calc").href="calc.html?zone="+encodeURIComponent(z.id);
     aiLink.href="ai.html?zone="+encodeURIComponent(z.id);
-    g("zonePanel").classList.remove("expanded");g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");
+    g("zonePanel").classList.remove("expanded","collapsed");g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");
     g("zonePanel").classList.add("show");render();sync();
-    history.replaceState(null,"","zone.html?zone="+encodeURIComponent(z.id));
+    if(!fromHistory)history[wasOpen?"replaceState":"pushState"]({...history.state,zonePanel:z.id},"","zone.html?zone="+encodeURIComponent(z.id));
     frameSelected();g("zpClose").focus({preventScroll:true});
   }
-  function close(){
-    g("zonePanel").classList.remove("show");selected=null;sync();
-    history.replaceState(null,"","zone.html");
+  function close(navigate=true){
+    g("zonePanel").classList.remove("show","expanded","collapsed");sync();frameSelected();
+    if(navigate&&history.state?.zonePanel)history.back();
     if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true});
   }
-  g("zpClose").addEventListener("click",close);
-  g("panel-collapse").addEventListener("click",close);
+  g("zpClose").addEventListener("click",()=>close());
+  const collapse=()=>{
+    g("zonePanel").classList.remove("expanded");g("zonePanel").classList.add("collapsed");
+    g("zonePanel").scrollTop=0;g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");frameSelected();
+  };
+  g("panel-collapse").addEventListener("click",collapse);
   const expand=()=>{
-    g("zonePanel").classList.add("expanded");g("panel-expand").hidden=true;g("panel-expand").setAttribute("aria-expanded","true");
+    g("zonePanel").classList.remove("collapsed");g("zonePanel").classList.add("expanded");g("panel-expand").hidden=true;g("panel-expand").setAttribute("aria-expanded","true");
     g("zonePanel").scrollTop=0;
   };
   g("panel-expand").addEventListener("click",expand);
@@ -182,7 +211,7 @@
     if(dragY==null)return;
     const dy=e.clientY-dragY;dragY=null;
     if(dy < -40)expand();
-    if(dy > 40){if(g("zonePanel").classList.contains("expanded")){g("zonePanel").classList.remove("expanded");g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");frameSelected();}else close();}
+    if(dy > 40){if(g("zonePanel").classList.contains("expanded")){g("zonePanel").classList.remove("expanded");g("panel-expand").hidden=false;g("panel-expand").setAttribute("aria-expanded","false");frameSelected();}else collapse();}
   });
   grip.addEventListener("pointercancel",()=>{dragY=null;});
   new ResizeObserver(()=>{map.invalidateSize({pan:false});if(!g("zonePanel").classList.contains("expanded"))frameSelected();showCurrentStage();}).observe(map.getContainer());
@@ -199,8 +228,31 @@
     if(b.dataset.kind)kind=b.dataset.kind;if(b.dataset.range)range=b.dataset.range;render();
   });
   L.DomEvent.disableScrollPropagation(g("zonePanel"));L.DomEvent.disableClickPropagation(g("zonePanel"));
-  map.on("zoomend",sync);sync();
+  map.on("zoomend",()=>{
+    sync();
+    const label=map.getContainer().querySelector(".jj-zone-label.is-selected");
+    if(!label)return;
+    const rect=label.getBoundingClientRect(),box=map.getContainer().getBoundingClientRect();
+    const legend=g("map-legend").getBoundingClientRect(),panel=g("zonePanel").getBoundingClientRect();
+    let right=box.right-12,top=box.top+12,bottom=box.bottom-12;
+    if(g("zonePanel").classList.contains("show")){
+      if(innerWidth<=760)bottom=Math.min(bottom,panel.top-8);else right=Math.min(right,panel.left-8);
+    }
+    if(legend.height){
+      if(legend.top<box.top+box.height/2)top=Math.max(top,legend.bottom+8);
+      else bottom=Math.min(bottom,legend.top-8);
+    }
+    const dx=rect.left<box.left+12?rect.left-box.left-12:Math.max(0,rect.right-right);
+    const dy=rect.top<top?rect.top-top:Math.max(0,rect.bottom-bottom);
+    if(dx||dy)map.panBy([dx,dy],{animate:false});
+  });
+  map.on("moveend",placeLabels);sync();
+  new ResizeObserver(()=>frameSelected()).observe(g("map-legend"));
+  window.addEventListener("popstate",e=>{
+    const z=zones.find(z=>z.id===e.state?.zonePanel);
+    if(z)openZone(z,true);else close(false);
+  });
   const id=new URLSearchParams(location.search).get("zone");
-  if(id){const z=zones.find(z=>z.id===id);if(z)openZone(z);else g("zone-count").textContent="해당 구역을 찾지 못했어요. 이름으로 다시 검색해주세요.";}
+  if(id){const z=zones.find(z=>z.id===id);if(z){history.replaceState({...history.state,zonePanel:null},"","zone.html");openZone(z);}else g("zone-count").textContent="해당 구역을 찾지 못했어요. 이름으로 다시 검색해주세요.";}
   document.documentElement.dataset.mapReady="true";
 })();
