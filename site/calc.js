@@ -37,7 +37,7 @@
     };
     const saved=window.JJ.readLocal(key,{});
     for(const input of inputs){
-      if(saved&&typeof saved[input.id]==="string")input.value=saved[input.id];
+      if(saved&&typeof saved[input.id]==="string")input.value=saved[input.id]||input.defaultValue||"";
       validate(input);
     }
     const save=()=>window.JJ.writeLocal(key,Object.fromEntries(inputs.map(input=>[input.id,input.value])));
@@ -72,7 +72,7 @@
   function layout(inputs){host.innerHTML=`${selectedZone}<div class="calc-layout"><form id="calc-form" class="calc-inputs" autocomplete="off">${inputs}</form><section class="calc-output" id="calc-result" aria-live="polite"></section></div>${foot}`;}
   function invalid(required){
     const missing=required.filter(id=>!g(id).value.trim());
-    const started=g("calc-form").dataset.submitted==="true"||[...host.querySelectorAll("input[data-number]")].some(input=>input.value.trim());
+    const started=g("calc-form").dataset.submitted==="true"||[...host.querySelectorAll("input[data-number]")].some(input=>input.value.trim()&&input.value!==input.defaultValue);
     host.querySelectorAll(".field-name").forEach(name=>{
       name.classList.toggle("missing",started&&missing.includes(name.closest("label").htmlFor));
     });
@@ -135,7 +135,8 @@
       ));
       layout(field("purchase","매입 가격")+field("contribution","추가분담금 또는 청산금","만원",`조합 분양신청 안내문·관리처분계획에 나오는 금액 · 모르면 <a href="calc_share.html${zone?"?zone="+encodeURIComponent(zone.id):""}">추가분담금 탭에서 먼저 계산 →</a>`)+`<label class="field" for="direction">분담금 방향<select id="direction"><option value="pay">추가분담금 납부</option><option value="refund">돌려받는 금액</option></select></label>`+
         field("mortgage","매수 담보대출","만원","빈칸은 대출 없이 계산")+field("move-loan","이주비 대출","만원","빈칸은 대출 없이 계산")+
-        field("deposit","분담금 계약금 비율","%","조합 안내문의 납부 비율 · 세 칸 합 100")+field("middle","분담금 중도금 비율","%","조합 안내문의 납부 비율 · 세 칸 합 100")+field("balance","분담금 잔금 비율","%","조합 안내문의 납부 비율 · 세 칸 합 100")+field("cash","가진 현금"));
+        field("deposit","분담금 계약금 비율","%","흔한 예 10·60·30을 넣어 뒀어요 · 조합 안내문 비율로 바꾸세요 · 세 칸 합 100")+field("middle","분담금 중도금 비율","%")+field("balance","분담금 잔금 비율","%")+field("cash","가진 현금"));
+      g("deposit").defaultValue="10";g("middle").defaultValue="60";g("balance").defaultValue="30";
       let step=0;
       const labels=["매입","관리처분","이주","착공·중도금","입주·청산"];
       const descriptions=["매입 가격에서 매수 담보대출을 뺀 현금이에요. 세금·수수료는 별도예요.","이 단계에서 분담금이 정해질 수 있어요. 실제 납부 일정은 조합 계획을 확인하세요.","직접 입력한 이주비 대출을 받는 것으로 계산해요. 받은 대출은 입주 때 갚아요.","추가분담금의 계약금과 중도금을 납부하는 구간을 묶었어요.","분담금 잔금과 이주비 대출을 상환해요. 돌려받는 청산금은 이전고시 후의 값으로 같은 구간에 묶었어요."];
@@ -157,6 +158,7 @@
         const stageNo=CASH_STAGE_BY_NAME[zone?.stageName]??-1;
 
         out.innerHTML=`<div class="result-top"><div><p class="source">매입부터 입주·청산까지 총투자금</p><output class="big-value" id="total-investment" data-value="${total}">${amount(total)}</output><p class="source">대출은 조달 수단 · 세금·수수료·이자는 별도</p></div><div><p class="source">현금으로 더 모아야 할 돈</p><output id="shortage" class="${shortage?"negative":"positive"}" data-value="${shortage}">${amount(shortage)}</output></div></div>`+
+          (!refund&&ratios.every((value,i)=>value===[10,60,30][i])?'<p class="source">분담금 납부 비율은 흔한 예(10·60·30)로 계산했어요</p>':"")+
           `<div class="stops" role="group" aria-label="현금 단계">${labels.map((label,i)=>`<button type="button" class="stop${i<step?" done":""}${i===step?" sel":""}" data-step="${i}" aria-pressed="${i===step}">${i===stageNo?'<span class="current-stage">지금 단계</span>':""}<i></i><b>${label}</b><small>${flows[i]===0?"현금 납부 없음":amount(flows[i])}</small></button>`).join("")}</div>`+
           `<div class="det"><div><h2>${labels[step]}</h2><p class="why">${descriptions[step]}</p><p class="source">여기까지의 누적 필요 현금 ${amount(cumulative[step])}</p><div class="progress"><i style="width:${total>0?Math.max(0,Math.min(100,cumulative[step]/total*100)):0}%"></i></div><div class="pn"><button type="button" data-next="${step-1}"${step===0?" disabled":""}>← 이전 단계</button><span class="source">${step+1} / 5</span><button type="button" data-next="${step+1}"${step===4?" disabled":""}>다음 단계 →</button></div></div><div>${line(flows[step]<0?"이번에 들어오는 현금":"이번에 낼 현금",Math.abs(flows[step]),"stage-cash")}${line("이번 단계의 대출 수령",step===0?mortgage:step===2?loan:0)}${line("쌓인 필요 현금",cumulative[step],"cumulative-cash")}</div></div>`+
           `<div class="cash-check"><div><p>최대로 필요한 현금</p><b id="peak-cash" data-value="${peak}">${amount(peak)}</b></div><div><p>가진 현금</p><b>${amount(cash)}</b></div><div><p>더 모아야 할 돈</p><b class="${shortage?"negative":"positive"}">${amount(shortage)}</b></div></div><p class="source">선택 구역의 현재 단계와 별개로 매입부터 전체 흐름을 계산합니다. 빈 대출 항목은 0원으로 제외해요.</p>`;
