@@ -158,18 +158,34 @@ body.mode-jaejae #zonePanel .zp-arrow[aria-current="step"] {
 }
 body.mode-jaejae #zonePanel .zp-steps li.cur::before { outline-color: var(--accent-soft); }
 body.mode-jaejae #zonePanel .zp-reg > div {
-  border: 0; border-radius: 0; background: none; padding: 8px 4px; text-align: left;
+  border: 0; border-radius: 0; background: none; padding: 8px 0; text-align: left;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; min-width: 0;
 }
+body.mode-jaejae #zonePanel .zp-reg { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 16px; }
+body.mode-jaejae #zonePanel .zp-reg-name { font-size: 13px; font-weight: 600; white-space: nowrap; }
+body.mode-jaejae #zonePanel .zp-reg span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-size: 12px; }
 body.mode-jaejae #zonePanel .zp-reg .on,
 body.mode-jaejae #zonePanel .zp-reg .on span { color: var(--ink); }
 body.mode-jaejae #zonePanel .zp-reg i {
-  display: inline-block; width: 6px; height: 6px; margin: 0 6px; vertical-align: 2px;
+  display: inline-block; flex: none; width: 6px; height: 6px; margin: 0; vertical-align: 2px;
   border-width: 1px; background: var(--ink-4); border-color: var(--ink-4);
 }
 body.mode-jaejae #zonePanel .zp-reg .on i { background: var(--accent); border-color: var(--accent); }
 body.mode-jaejae #zonePanel .zp-reg .on i::after { display: none; }
 body.mode-jaejae #zonePanel .zp-demo { background: var(--card); color: var(--ink-2); }
-body.mode-jaejae #zonePanel .zp-line { border: 0; padding: 0; color: var(--ink-2) !important; }
+body.mode-jaejae #zonePanel .zp-stations li { display: flex; align-items: center; gap: 8px; padding: 12px 0; }
+body.mode-jaejae #zonePanel .zp-lines { flex: none; display: flex; gap: 4px; margin: 0; }
+body.mode-jaejae #zonePanel .zp-line { display: inline-flex; align-items: center; justify-content: center; flex: none; height: 20px; min-width: 20px; border: 0; border-radius: 999px; padding: 0 6px; background: var(--line-color); color: var(--line-ink); font: 700 11px/1 var(--font-base); white-space: nowrap; }
+body.mode-jaejae #zonePanel .zp-line.is-number { width: 20px; padding: 0; font-size: 12px; border-radius: 50%; }
+body.mode-jaejae #zonePanel .zp-station-name { min-width: 0; word-break: keep-all; }
+body.mode-jaejae #zonePanel .zp-distance { flex: none; margin-left: auto; font-size: 12px; white-space: nowrap; }
+@media(max-width:760px){
+  body.mode-jaejae #zonePanel .zp-stations li{gap:4px}
+  body.mode-jaejae #zonePanel .zp-lines{gap:3px}
+  body.mode-jaejae #zonePanel .zp-line:not(.is-number){padding:0 3px;font-size:10px}
+  body.mode-jaejae #zonePanel .zp-station-name{font-size:12px;white-space:nowrap}
+  body.mode-jaejae #zonePanel .zp-distance{font-size:11px}
+}
 body.mode-jaejae #zonePanel .zp-tip { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--hairline); }
 body.mode-jaejae #zonePanel .zp-tip > div:first-child { display: none; }
 body.mode-jaejae #zonePanel .zp-bldg [fill="#0071E3"] { fill: var(--accent); }

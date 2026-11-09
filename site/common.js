@@ -92,7 +92,7 @@
     const items = window.REGULATIONS;
     return `<div class="zp-reg">${items.map((r) => {
       const v = flag(REG[r.set], z.sgg);
-      return `<div class="${v === true ? "on" : v === null ? "unk" : ""}" data-reg="${r.id}" data-verified="${r.verified}">${r.label}<i></i><span>${v === true ? "적용" : v === null ? "확인 필요" : "미적용"}</span></div>`;
+      return `<div class="${v === true ? "on" : v === null ? "unk" : ""}" data-reg="${r.id}" data-verified="${r.verified}"><b class="zp-reg-name">${r.label}</b><span><i aria-hidden="true"></i>${v === true ? "적용" : v === null ? "확인 필요" : "미적용"}</span></div>`;
     }).join("")}</div><div class="reg-bases">${items.map((r) =>
       `<details><summary>${r.label} · 원문 확인일 ${r.checked}</summary><p>${esc(r.basis)}</p>${r.links.map(([label,url]) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`).join(" · ")}</details>`).join("")}</div>
       <p class="zp-foot">이후 추가 지정·해제는 국토부·기재부 공고로 확인하세요. 확인일은 위 공고의 원문 확인일이며, 이후 변경이 없음을 보증하지 않습니다. 목록에 없는 지역은 「미적용」, 시 단위만 알면 「확인 필요」입니다. 토지거래허가는 필지·면적·용도 등에 따라 별도 판단합니다.</p>`;

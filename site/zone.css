@@ -2,6 +2,21 @@
 @media(max-width:1000px){.map-shell{grid-template-columns:280px minmax(0,1fr)}.finder{padding:20px 16px 0}.map-legend{display:none}body.mode-jaejae #zonePanel{width:calc(100% - 24px);right:12px;top:12px}}
 @media(max-width:760px){.map-shell{display:flex;flex-direction:column}.finder{padding:12px 16px;flex:0 0 auto;border-right:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:8px}.finder h1,.finder-lead,.finder-source,.zone-list{display:none}.map-filters{margin:0;gap:8px}.map-filters label{display:flex;gap:6px;align-items:center}.map-filters select{min-height:36px;margin:0;padding:4px;flex:1;width:100px}.finder #zone-count{margin:0;font-size:10px}.finder .search input{min-height:44px}.map-wrap{flex:1}body.mode-jaejae #zonePanel{position:absolute;top:18%;bottom:50px;left:8px;right:8px;width:auto;max-height:none}#zonePanel .zp-head{padding:16px 16px 8px}#zonePanel .zp-title h2{font-size:23px}#zonePanel .zp-body{padding:0 16px 20px}#zonePanel .panel-bottom{padding:12px 16px}.map-boundary-credit{font-size:9px;padding:6px 10px;min-height:40px}.jj-zone-name{font-size:12px!important}.jj-zone-status{font-size:11px!important}.leaflet-control-attribution{max-width:270px}}
 .panel-bottom .zone-ai-link{min-height:44px;padding:12px 0;margin-bottom:8px;color:var(--brand-c);font-weight:600;text-decoration:none}
+#zonePanel,#zonePanel .zp-body{overflow-anchor:none}
+#zonePanel h3.panel-section-title{margin:0 0 20px}
+#zonePanel .zp-tabs{background:#fff}
+.finder-toggle{display:none;border:0;background:#fff;color:var(--brand-c);min-height:44px;padding:8px 12px;font-size:13px}
+@media(min-width:761px){
+  .finder{position:relative}.finder h1{padding-right:56px}#finder-collapse{display:block;position:absolute;right:12px;top:20px}
+  .map-shell.finder-collapsed{grid-template-columns:minmax(0,1fr)}.finder-collapsed .finder{display:none}
+  .finder-collapsed #finder-open{display:flex;align-items:center;gap:8px;position:absolute;left:16px;top:12px;z-index:750;border:1px solid var(--line);border-radius:8px}
+  .finder-collapsed .leaflet-top.leaflet-left{top:60px}
+}
+#zone-hover{position:absolute;z-index:800;pointer-events:none;width:360px;max-width:calc(100% - 24px);padding:20px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 2px 12px #1a1c2014;color:var(--fg);font-family:var(--font)}
+.hover-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px}.hover-title>span{font-size:12px;white-space:nowrap}.hover-title i{display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%;background:var(--jj-stage)}.hover-title strong{font-size:22px;line-height:1.35;word-break:keep-all;overflow-wrap:anywhere}
+#zone-hover .hover-stage{font-size:13px;line-height:1.6;color:var(--sub);margin:8px 0 20px}
+.hover-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.hover-metrics>div+div{border-left:1px solid var(--line);padding-left:12px}.hover-metrics span{display:block;color:var(--sub);font-size:12px;line-height:1.5;margin-bottom:8px}.hover-metrics b{font-size:20px;line-height:1.4;letter-spacing:-.03em;font-variant-numeric:tabular-nums;word-break:keep-all;overflow-wrap:anywhere}.hover-metrics small{font-size:12px;margin-left:2px;color:var(--muted)}
+@media(hover:hover) and (pointer:fine){.jj-zone-boundary{cursor:pointer}.jj-zone-label:hover .jj-zone-name{background:var(--band)}}
 #zpStage{font-size:13px;line-height:1.7;margin:4px 0 8px}#zpStage span{color:var(--sub);font-size:12px}#zpBoundaryNotice{margin:4px 0 8px}
 .panel-tools,#zone-list-open,#legend-toggle{display:none}
 #zone-list-dialog{border:1px solid var(--line);border-radius:16px;padding:16px 20px;max-width:calc(100% - 16px);width:500px;max-height:80dvh}
@@ -27,8 +42,9 @@
   .panel-tools button{font-size:13px;padding:0 8px}
   #zonePanel .zp-head{padding-top:8px}
   #zonePanel .panel-bottom{position:sticky;bottom:0;z-index:2;background:#fff}
-  body.mode-jaejae #zonePanel.collapsed{height:112px;overflow:hidden}
-  #zonePanel.collapsed :is(.zp-chip,#zpAddr,#zpStage,#zpBoundaryNotice,#zpTabs,#zpBody,.panel-bottom){display:none}
+  #zonePanel .zp-tabs{position:sticky;top:0;z-index:3}
+  body.mode-jaejae #zonePanel.collapsed{height:156px;overflow:hidden}
+  #zonePanel.collapsed :is(.zp-chip,#zpAddr,#zpStage,#zpBoundaryNotice,#zpBody,.panel-bottom){display:none}
   #zonePanel.collapsed .zp-head{align-items:center;padding:4px 16px}
   #zonePanel.collapsed .zp-title h2{font-size:20px;line-height:44px;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   #zonePanel.collapsed .zp-head{cursor:pointer}

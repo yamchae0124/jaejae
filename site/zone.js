@@ -18,6 +18,19 @@
   aiLink.id="zone-ai";aiLink.className="zone-ai-link";aiLink.textContent="이 구역 재재 AI에게 물어보기 →";
   g("zpBody").append(aiLink);
   const map=window.zoneMap=L.map("map",{zoomControl:false,trackResize:false}).setView([37.5665,126.9780],12);
+  const finderKey="jaejae.finder-collapsed.v1",desktop=matchMedia("(min-width: 761px)");
+  let finderCollapsed=window.JJ.readLocal(finderKey,false)===true;
+  function setFinderCollapsed(value,focus=false){
+    finderCollapsed=value;
+    const collapsed=desktop.matches&&value;
+    document.querySelector(".map-shell").classList.toggle("finder-collapsed",collapsed);
+    for(const id of ["finder-collapse","finder-open"])g(id).setAttribute("aria-expanded",String(!collapsed));
+    if(focus)g(collapsed?"finder-open":"finder-collapse").focus({preventScroll:true});
+  }
+  g("finder-collapse").addEventListener("click",()=>{setFinderCollapsed(true,true);window.JJ.writeLocal(finderKey,true);});
+  g("finder-open").addEventListener("click",()=>{setFinderCollapsed(false,true);window.JJ.writeLocal(finderKey,false);});
+  desktop.addEventListener("change",()=>setFinderCollapsed(finderCollapsed));
+  setFinderCollapsed(finderCollapsed);
   map.attributionControl.setPrefix('<a href="https://leafletjs.com/">Leaflet</a>');
   L.control.zoom({position:"topleft"}).addTo(map);
   const key=window.VWORLD_KEY;
@@ -35,6 +48,51 @@
   let selected=null,tab="progress",kind="villa",range="12",previousFocus=null;
   const band=z=>{const s=Number(z.stageNo)||0;return s===0?0:s<=2?1:s<=4?2:s<=7?3:4;};
   const tokens=getComputedStyle(document.body);
+  const hoverPointer=matchMedia("(hover: hover) and (pointer: fine)");
+  const hoverCard=document.createElement("div");
+  hoverCard.id="zone-hover";hoverCard.hidden=true;hoverCard.setAttribute("aria-hidden","true");
+  map.getContainer().append(hoverCard);
+  let hovered=null,moving=false;
+  function paint(z,boundary){
+    if(!boundary)return;
+    const active=selected?.id===z.id,over=hovered?.z.id===z.id;
+    const color=tokens.getPropertyValue(active?"--accent":"--jj-stage-"+band(z)).trim();
+    boundary.setStyle({color,fillColor:color,weight:active?3.5:over?3:2,fillOpacity:active?.24:over?.34:.26});
+  }
+  function hideHover(){
+    hoverCard.hidden=true;
+    const row=hovered;hovered=null;
+    if(row)paint(row.z,row.boundary);
+  }
+  function showHover(row){
+    hideHover();
+    if(!hoverPointer.matches||moving||selected?.id===row.z.id&&g("zonePanel").classList.contains("show"))return;
+    hovered=row;paint(row.z,row.boundary);
+    const z=row.z,move=document.createElement("div");
+    move.innerHTML=api.moveSummary(z);
+    const estimate=move.querySelector("b").textContent,total=api.nz(z.plan?.total),area=api.nz(z.area_m2,true);
+    hoverCard.style.setProperty("--jj-stage",tokens.getPropertyValue("--jj-stage-"+band(z)));
+    hoverCard.innerHTML=`<div class="hover-title"><span><i></i>${esc(z.kind)}</span><strong>${esc(z.name)}</strong></div><p class="hover-stage">${esc(z.sgg)} · ${esc(z.stageName||"단계 미상")}</p><div class="hover-metrics"><div><span>입주 예상</span><b>${esc(estimate==="계산 불가"?"–":estimate)}</b></div><div><span>총 세대</span><b>${total==null?"–":number(total)}</b></div><div><span>면적</span><b>${area>0?number(Math.round(area/3.305785)):"–"}</b>${area>0?"<small>평</small>":""}</div></div>`;
+    hoverCard.hidden=false;
+    const box=map.getContainer().getBoundingClientRect(),label=row.marker.getElement().querySelector(".jj-zone-label").getBoundingClientRect();
+    const boundary=row.boundary?.getElement().getBoundingClientRect();
+    const anchor=boundary?label.width&&label.height?{left:Math.min(boundary.left,label.left),right:Math.max(boundary.right,label.right),top:Math.min(boundary.top,label.top),bottom:Math.max(boundary.bottom,label.bottom)}:boundary:label;
+    const w=hoverCard.offsetWidth,h=hoverCard.offsetHeight;
+    const clamp=(value,min,max)=>Math.max(min,Math.min(value,max));
+    let x=clamp((anchor.left+anchor.right)/2-box.left-w/2,12,box.width-w-12);
+    let y=anchor.top-box.top-h-12;
+    if(y<12){
+      y=anchor.bottom-box.top+12;
+      if(y+h>box.height-12){
+        x=anchor.right+12+w<=box.right?anchor.right-box.left+12:anchor.left-box.left-w-12;
+        x=clamp(x,12,box.width-w-12);y=clamp((anchor.top+anchor.bottom)/2-box.top-h/2,12,box.height-h-12);
+      }
+    }
+    hoverCard.style.left=x+"px";hoverCard.style.top=y+"px";
+  }
+  hoverPointer.addEventListener("change",hideHover);
+  map.on("movestart zoomstart",()=>{moving=true;hideHover();});
+  map.on("moveend zoomend",()=>{moving=false;});
   const rows=zones.map(z=>{
     const geometry=window.ZONE_BOUNDS.items[z.id];
     const boundary=geometry?L.polygon(geometry,{className:"jj-zone-boundary",smoothFactor:0,noClip:true,bubblingMouseEvents:false})
@@ -42,7 +100,9 @@
     if(boundary)boundary.on("add",()=>{boundary.getElement().dataset.zoneId=z.id;});
     const marker=L.marker([z.lat,z.lng],{icon:L.divIcon({className:"jj-zonemarker",iconSize:[0,0],html:""}),title:z.name,alt:z.name,zIndexOffset:700})
       .on("click",()=>openZone(z));
-    return {z,boundary,marker,area:Number(z.area_m2)||0};
+    const row={z,boundary,marker,area:Number(z.area_m2)||0};
+    for(const target of [boundary,marker].filter(Boolean))target.on("mouseover",()=>showHover(row)).on("mouseout",hideHover);
+    return row;
   });
   function placeLabels(){
     const candidates=rows.filter(({marker})=>layer.hasLayer(marker)).map(row=>({
@@ -61,6 +121,7 @@
     }
   }
   function sync(){
+    hideHover();
     const gu=g("district-filter").value,k=g("kind-filter").value;
     const visible=rows.filter(({z})=>(!gu||z.sgg===gu)&&(!k||z.kind===k));
     g("zone-count").textContent=`${number(visible.length)}곳 · 자료 ${window.ZONES_DATA.asof}`;
@@ -75,8 +136,7 @@
       if(visible&&!layer.hasLayer(marker))layer.addLayer(marker);
       if(!visible&&layer.hasLayer(marker))layer.removeLayer(marker);
       if(!boundary)continue;
-      const color=tokens.getPropertyValue(active?"--accent":"--jj-stage-"+band(z)).trim();
-      boundary.setStyle({color,fillColor:color,weight:active?3.5:2,fillOpacity:active?.24:.26});
+      paint(z,boundary);
       if(visible&&!layer.hasLayer(boundary))layer.addLayer(boundary);
       if(!visible&&layer.hasLayer(boundary))layer.removeLayer(boundary);
       if(active&&visible)boundary.bringToFront();
@@ -111,38 +171,64 @@
       `<p class="source">${bundle.from}~${bundle.asof} · 국토교통부 기존 수집본 · 직거래 포함 · 구역 대표 좌표에서 직선거리입니다.<br>${esc(bundle.coverage_note)}${selected.approx?" · 구역은 동 단위 대표점입니다.":""}</p>`+
       (trades.length?`<details><summary>최근 거래 내역 ${number(trades.length)}건</summary><div class="trade-scroll"><table><thead><tr><th>계약일·단지</th><th>전용㎡</th><th>매매(만원)</th></tr></thead><tbody>${trades.map(t=>`<tr><td>${t.date}<br>${esc(t.name)} · ${t.floor??"미상"}층</td><td>${t.area}</td><td>${number(t.amt)}</td></tr>`).join("")}</tbody></table></div></details>`:"");
   }
-  async function render(){
-    const z=selected;if(!z)return;
-    g("panel-content").setAttribute("aria-labelledby","tab-"+tab);
+  const panelScroller=()=>innerWidth<=760?g("zonePanel"):g("zpBody");
+  const readingLine=()=>innerWidth<=760?Math.max(g("zonePanel").getBoundingClientRect().top,g("zpTabs").getBoundingClientRect().bottom):g("zpBody").getBoundingClientRect().top;
+  let contentsTarget=null;
+  function scrollSection(id){
+    const root=panelScroller(),section=g(id);
+    root.scrollBy({top:section.getBoundingClientRect().top-root.getBoundingClientRect().top-(innerWidth<=760?g("zpTabs").offsetHeight:0),
+      behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
+  }
+  function updateContents(){
+    const sections=[...g("panel-content").children];if(!sections.length)return;
+    const root=panelScroller(),line=readingLine()+2;
+    const current=root.scrollTop>0&&root.scrollHeight-root.clientHeight-root.scrollTop<2?sections.at(-1):
+      sections.findLast(s=>s.getBoundingClientRect().top<=line)||sections[0];
+    tab=current.dataset.section;
     g("zpTabs").querySelectorAll("button").forEach(b=>{
-      const on=b.dataset.tab===tab;b.classList.toggle("on",on);b.setAttribute("aria-selected",String(on));b.tabIndex=on?0:-1;
+      const on=b.dataset.tab===tab;b.classList.toggle("on",on);
+      if(on)b.setAttribute("aria-current","true");else b.removeAttribute("aria-current");
     });
-    const source=`<p class="zp-foot">정보몽땅 자료 기준 ${esc(window.ZONES_DATA.asof)} · 공급은 계획값 · 법적 효력 없음</p>`;
-    switch(tab){
-      case "progress":g("panel-content").innerHTML=`<section id="zpProg">${api.progressHtml(z)}${source}</section>`;break;
-      case "info":g("panel-content").innerHTML=`<section id="zpInfo">${api.infoHtml(z)}<h3>공급 계획</h3>${api.supplyHtml(z)}<h3>생활권·가까운 역</h3>${api.lifeHtml(z)}<h3>관련 문서</h3>${api.docsHtml(z)}<p class="zp-foot">경계: 서울 열린데이터광장 · <a href="출처.html">자료 출처 보기 →</a></p></section>`;break;
-      case "regulation":g("panel-content").innerHTML=`<section id="zpRegulation">${window.MonthlyPanel.permitHtml(z)}<h3>규제 지역</h3>${api.regHtml(z)}</section>`;break;
-      case "trade":{
-        g("panel-content").innerHTML='<section id="zpTrade" aria-busy="true"><p class="source">저장된 실거래 자료를 읽고 있어요.</p></section>';
-        try{
-          const index=await data("data/zone_panel/index.json");
-          const [bundle,near]=await Promise.all([data("data/zone_panel/"+index.districts[z.sgg]+".json"),data("data/trades/"+encodeURIComponent(encodeURIComponent(z.id))+".json")]);
-          if(selected?.id!==z.id||tab!=="trade")return;
-          g("panel-content").innerHTML=`<section id="zpTrade"><div class="jj-actual-trades">${window.MonthlyPanel.tradePanelHtml(bundle,z,kind,range)}</div><h3>주변 아파트 실거래</h3>${nearHtml(near)}<div class="jj-permit-block">${window.MonthlyPanel.permitHtml(z)}</div><h3>규제 지역</h3>${api.regHtml(z)}</section>`;
-          g("zpTrade").dataset.ready="true";
-        }catch(error){
-          if(!(error instanceof Error))throw error;
-          if(selected?.id===z.id&&tab==="trade")g("panel-content").innerHTML=`<p class="load-error" role="alert">${esc(error.message)}</p>`;
-        }
-        break;
+  }
+  let tradeRequest=0;
+  async function renderTrade(){
+    const z=selected,request=++tradeRequest,tradeKind=kind,tradeRange=range;
+    delete g("zpTrade").dataset.ready;
+    g("zpTradeData").setAttribute("aria-busy","true");
+    try{
+      const index=await data("data/zone_panel/index.json");
+      const [bundle,near]=await Promise.all([data("data/zone_panel/"+index.districts[z.sgg]+".json"),data("data/trades/"+encodeURIComponent(encodeURIComponent(z.id))+".json")]);
+      if(selected?.id!==z.id||request!==tradeRequest)return;
+      const root=panelScroller(),anchor=[...g("panel-content").children].findLast(s=>s.getBoundingClientRect().top<=readingLine()+2);
+      const before=anchor?.getBoundingClientRect().top;
+      g("zpTradeData").innerHTML=`<div class="jj-actual-trades">${window.MonthlyPanel.tradePanelHtml(bundle,z,tradeKind,tradeRange)}</div><h4>주변 아파트 실거래</h4>${nearHtml(near)}`;
+      g("zpTradeData").setAttribute("aria-busy","false");g("zpTrade").dataset.ready="true";
+      if(contentsTarget)scrollSection(contentsTarget);
+      else if(anchor){
+        const shift=anchor.getBoundingClientRect().top-before;
+        if(shift)root.scrollTop+=shift;
       }
-      default:throw new Error("알 수 없는 패널 탭: "+tab);
+      updateContents();
+    }catch(error){
+      if(!(error instanceof Error))throw error;
+      if(selected?.id!==z.id||request!==tradeRequest)return;
+      g("zpTradeData").innerHTML=`<p class="load-error" role="alert">${esc(error.message)}</p>`;
+      g("zpTradeData").setAttribute("aria-busy","false");
     }
-    const knowledgeItem={progress:"c1-07",info:"c1-06",regulation:"c2-07",trade:"c3-04"}[tab];
-    g("panel-content").insertAdjacentHTML("beforeend",`<p class="zp-foot"><a href="knowledge.html?item=${knowledgeItem}#kb-answer">근거 지식 보기 →</a></p>`);
+  }
+  function render(){
+    const z=selected;if(!z)return;
+    contentsTarget=null;
+    const source=`<p class="zp-foot">정보몽땅 자료 기준 ${esc(window.ZONES_DATA.asof)} · 공급은 계획값 · 법적 효력 없음</p>`;
+    const section=(id,key,title,item,html)=>`<section id="${id}" data-section="${key}" aria-labelledby="heading-${key}"><h3 class="panel-section-title" id="heading-${key}">${title}</h3>${html}<p class="zp-foot"><a href="knowledge.html?item=${item}#kb-answer">근거 지식 보기 →</a></p></section>`;
+    g("panel-content").innerHTML=
+      section("zpProg","progress","진행상황","c1-07",api.progressHtml(z)+source)+
+      section("zpTrade","trade","실거래","c3-04",'<div id="zpTradeData" aria-busy="true"><p class="source">저장된 실거래 자료를 읽고 있어요.</p></div>')+
+      section("zpInfo","info","구역정보","c1-06",`${api.infoHtml(z)}<h4>공급 계획</h4>${api.supplyHtml(z)}<h4>생활권·가까운 역</h4>${api.lifeHtml(z)}<h4>관련 문서</h4>${api.docsHtml(z)}<p class="zp-foot">경계: 서울 열린데이터광장 · <a href="출처.html">자료 출처 보기 →</a></p>`)+
+      section("zpRegulation","regulation","규제","c2-07",`${window.MonthlyPanel.permitHtml(z)}<h4>규제 지역</h4>${api.regHtml(z)}`);
     g("zpBody").scrollTop=0;
     g("zonePanel").scrollTop=0;
-    if(tab==="progress")requestAnimationFrame(()=>showCurrentStage());
+    updateContents();renderTrade();requestAnimationFrame(()=>showCurrentStage());
   }
   function showCurrentStage(){
     const rail=g("panel-content").querySelector(".zp-arrows"),current=rail?.querySelector('[aria-current="step"]');
@@ -231,7 +317,16 @@
     showCurrentStage();
   }).observe(map.getContainer());
   g("zonePanel").addEventListener("keydown",e=>{e.stopPropagation();if(e.key==="Escape")close();});
-  g("zpTabs").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b){tab=b.dataset.tab;render();}});
+  for(const id of ["zonePanel","zpBody"]){
+    g(id).addEventListener("scroll",updateContents,{passive:true});
+    g(id).addEventListener("scrollend",()=>{contentsTarget=null;});
+  }
+  g("zpTabs").addEventListener("click",e=>{
+    const b=e.target.closest("[data-tab]");if(!b)return;
+    if(g("zonePanel").classList.contains("collapsed"))restore();
+    contentsTarget=b.getAttribute("aria-controls");scrollSection(contentsTarget);
+    updateContents();
+  });
   g("zpTabs").addEventListener("keydown",e=>{
     if(!["ArrowLeft","ArrowRight","Home","End"].includes(e.key))return;
     const buttons=[...g("zpTabs").querySelectorAll("button")],i=buttons.indexOf(document.activeElement);
@@ -240,7 +335,7 @@
   });
   g("panel-content").addEventListener("click",e=>{
     const b=e.target.closest("[data-kind],[data-range]");if(!b)return;
-    if(b.dataset.kind)kind=b.dataset.kind;if(b.dataset.range)range=b.dataset.range;render();
+    if(b.dataset.kind)kind=b.dataset.kind;if(b.dataset.range)range=b.dataset.range;renderTrade();
   });
   L.DomEvent.disableScrollPropagation(g("zonePanel"));L.DomEvent.disableClickPropagation(g("zonePanel"));
   map.on("zoomend",()=>{

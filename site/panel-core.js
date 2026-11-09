@@ -2,7 +2,6 @@
 (function () {
 'use strict';
 const esc = window.JJ.esc;
-const trInk = () => '#4E5968';
   const norm = (s) => String(s || "").replace(/\s+/g, "");
   const SIDO = { "서울특별시": "서울", "서울시": "서울", "경기도": "경기", "부산광역시": "부산", "대구광역시": "대구", "인천광역시": "인천", "광주광역시": "광주", "대전광역시": "대전", "울산광역시": "울산", "세종특별자치시": "세종", "강원특별자치도": "강원", "강원도": "강원", "충청북도": "충북", "충청남도": "충남", "전북특별자치도": "전북", "전라북도": "전북", "전라남도": "전남", "경상북도": "경북", "경상남도": "경남", "제주특별자치도": "제주" };
   const PROVINCES = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
@@ -301,17 +300,28 @@ const trInk = () => '#4E5968';
       const parts = s.name.trim().split(/\s+/), last = parts.findLastIndex((p) => p.endsWith("역"));
       const name = last >= 0 ? parts.slice(0, last + 1).join(" ") : s.name;
       const line = last >= 0 && last < parts.length - 1 ? parts.slice(last + 1).join(" ") : s.line;
-      const key = Array.isArray(s.lines) ? s : name;
+      const key = name;
       if (!stations.has(key)) stations.set(key, { name, m: s.m, lines: new Set() });
       const row = stations.get(key); row.m = Math.min(row.m, s.m);
       for (const label of Array.isArray(s.lines) ? s.lines : line ? [line] : []) if (label) row.lines.add(label);
     }
     const color = (name) => {
       const line = ((window.TRANSIT_DATA && window.TRANSIT_DATA.lines) || []).find((l) => norm(l.n) === norm(name) || norm(l.n).replace(/^수도권/, "") === norm(name));
-      return line && /^#[0-9a-f]{6}$/i.test(line.c) ? trInk(line.c) : "#6B7280";
+      // 지도 수집기의 기존 노선색. 정적 공개판에는 TRANSIT_DATA가 없어 같은 색표를 쓴다.
+      const colors = {"1호선":"#263C96","2호선":"#3AB449","3호선":"#F77636","4호선":"#2C9EDE","5호선":"#833EDB","6호선":"#B5500C","7호선":"#697215","8호선":"#E41E6E","9호선":"#C9A754","경의중앙선":"#4FC39E","공항철도":"#73B6E4","신분당선":"#B5283B","수인분당선":"#F3D81F","경춘선":"#0C8E72","우이신설선":"#B0CE18","신림선":"#6789CA","서해선":"#8BC53F","김포골드라인":"#96710A","GTX-A":"#9A6292"};
+      return line && /^#[0-9a-f]{6}$/i.test(line.c) ? line.c : colors[norm(name).replace(/^수도권/,"")] || "#6B7280";
+    };
+    const badge = (line) => {
+      const numeric = /^([1-9])호선$/.exec(line);
+      const short = numeric ? numeric[1] : {"공항철도":"공항","우이신설선":"우이","김포골드라인":"김포"}[line] || line.replace(/선$/,"");
+      const background = color(line), rgb = background.slice(1).match(/../g).map(v => {
+        const n = parseInt(v,16)/255;return n<=.04045?n/12.92:((n+.055)/1.055)**2.4;
+      });
+      const luminance = .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];
+      return `<span class="zp-line${numeric?" is-number":""}" data-line="${esc(line)}" role="img" aria-label="${esc(line)}" style="--line-color:${background};--line-ink:${1.05/(luminance+.05)<4.5?"#000":"#fff"}">${esc(short)}</span>`;
     };
     const rows = [...stations.values()].sort((a, b) => a.m - b.m);
-    const stationHtml = z.approx ? "위치가 동 단위 대표점이라 역 거리를 계산하지 않았습니다" : !Array.isArray(z.stations) ? "지하철역 자료를 수집하지 못했습니다" : !rows.length ? "반경 1km 안 지하철역 없음" : `<ul class="zp-stations">${rows.map((s) => `<li><span class="zp-lines">${[...s.lines].map((l) => `<span class="zp-line" style="color:${color(l)}">${esc(l)}</span>`).join("")}</span>${esc(s.name)}<span class="zp-distance">직선 ${s.m}m · 도보 약 ${Math.ceil(s.m / 67)}분</span></li>`).join("")}</ul>`;
+    const stationHtml = z.approx ? "위치가 동 단위 대표점이라 역 거리를 계산하지 않았습니다" : !Array.isArray(z.stations) ? "지하철역 자료를 수집하지 못했습니다" : !rows.length ? "반경 1km 안 지하철역 없음" : `<ul class="zp-stations">${rows.map((s) => `<li><span class="zp-lines">${[...s.lines].map(badge).join("")}</span><span class="zp-station-name">${esc(s.name)}</span><span class="zp-distance">${num(s.m)}m · 도보 ${Math.ceil(s.m / 67)}분</span></li>`).join("")}</ul>`;
     return `<div class="zp-card">${area}</div><h4 style="margin-top:20px">지하철 ${z.approx || !Array.isArray(z.stations) ? "–" : rows.length}</h4><div class="zp-card">${stationHtml}</div><div class="zp-foot">서울시 역사마스터 정보(서울 열린데이터광장 · 공공누리 제1유형) · 구역 대표 좌표 기준 직선거리<br>도보 시간은 직선거리 기준으로 분당 67m를 걸을 때의 환산값입니다.<br><small>노선은 역사마스터 행 기준 — 일부 환승 노선이 빠질 수 있음</small></div>`;
   }
   function infoHtml(z) {
@@ -372,8 +382,6 @@ const districtOf=(z)=>Object.values(REGIONS).flatMap(s=>s.split(' ')).find(d=>St
     // 패널 생산 함수의 출력에서 표시값을 읽는다. 속도·규제·역 정제/산식을 복제하지 않는다.
     const node = document.createElement("div");
     node.innerHTML = api.progressHtml(z) + api.infoHtml(z) + api.lifeHtml(z) + api.regHtml(z);
-    const ownText = (el) => [...el.childNodes].filter((n) => n.nodeType === Node.TEXT_NODE)
-      .map((n) => n.textContent.trim()).filter(Boolean).join(" ");
     const metric = (name) => [...node.querySelectorAll(`[data-metric="${name}"] > b, [data-metric="${name}"] > p`)]
       .map((el) => el.textContent.trim()).filter(Boolean).join(" · ") || "자료 없음";
     const info = (label) => [...node.querySelectorAll("dt")].find((el) => el.textContent === label)?.nextElementSibling.textContent || "자료 없음";
@@ -387,13 +395,13 @@ const districtOf=(z)=>Object.values(REGIONS).flatMap(s=>s.split(' ')).find(d=>St
     const units = (value) => value == null ? "자료 없음" : api.num(value) + "세대";
     const linked = announcements.filter((a) => linkedZones(a).some(({ z: zone }) => zone.id === z.id));
     const station = node.querySelector(".zp-stations li");
-    const lines = station ? [...station.querySelectorAll(".zp-line")].map((el) => el.textContent.trim()) : [];
+    const lines = station ? [...station.querySelectorAll(".zp-line")].map((el) => el.dataset.line || el.textContent.trim()) : [];
     return { kind: info("구분"), district: districtOf(z) || "자료 없음", region: api.regionOf(z) || "자료 없음",
       stage, speed: metric("speed"), move: metric("move"), transfer: metric("transfer"),
-      regulations: [...node.querySelectorAll(".zp-reg > div")].map((el) => ownText(el) + " " + el.querySelector("span").textContent.trim()).join(" · "),
+      regulations: [...node.querySelectorAll(".zp-reg > div")].map((el) => el.querySelector(".zp-reg-name").textContent + " " + el.querySelector("span").textContent.trim()).join(" · "),
       area: info("사업면적"), existing: info("현존 세대수"),
       supply: `총 ${supply.querySelector(".zp-tot b")?.textContent || units(api.nz(p.total))} · 분양 ${units(api.nz(p.sale))} · 임대 ${units(api.nz(p.rent))} · 계획값`,
-      station: station ? ownText(station) + (lines.length ? "(" + lines.join("·") + ")" : "") + " " + station.querySelector(".zp-distance").textContent.trim() : "자료 없음", linked };
+      station: station ? station.querySelector(".zp-station-name").textContent + (lines.length ? "(" + lines.join("·") + ")" : "") + " " + station.querySelector(".zp-distance").textContent.trim() : "자료 없음", linked };
   }
 
 Object.assign(window.ZoneCore,{linkedZones,panelValues});
