@@ -325,9 +325,12 @@ const esc = window.JJ.esc;
         return pending.length ? `<li class="zp-future"><span class="tf-icon" aria-hidden="true">${icons[pending[0]]}</span><span>${pending.map(i=>esc(STAGES[i])).join(" · ")}</span><small>–</small></li>` : "";
       }).join("");
       const status = transfer.querySelector("b").textContent;
+      const dated = state.dates.filter(d => d != null);
+      const reversed = dated.some((d, i) => i > 0 && d < dated[i - 1]);
       return `<p class="zp-move-sentence" data-metric="move">${intro}</p>${move.querySelector("details").outerHTML}`+
         `${Number(z.stageNo)===0?`<p class="zp-pre">정비구역 지정 전 · ${esc(z.stageName||"단계 미상")}</p>`:""}`+
         `<ol class="zp-steps" aria-label="정비사업 단계">${li}${future}</ol>`+
+        (reversed ? `<p class="zp-foot zp-date-order">단계 이름과 순서는 공식 분류예요. 날짜는 구역마다 앞뒤가 다를 수 있어요.</p>` : "")+
         `<div class="zp-transfer" data-metric="transfer"><span>조합원 지위 양도 · <b class="${status.startsWith("제한")?"jj-critical":status.includes("가능")||status==="제한 없음"?"jj-positive":""}">${esc(status.startsWith("제한")?"제한":status)}</b>${status.includes("경과규정")?" · 경과규정 확인 필요":""}</span>${transfer.querySelector("details").outerHTML}</div>`+
         `<p class="zp-foot">${esc(transfer.querySelector("p").textContent)} · 단계 이름은 정보몽땅 공식 추진경과 분류예요. 날짜는 완료 기록이며 현재 단계와 다를 수 있어요. 비교 표본은 같은 종류 서울 구역 10곳 이상이며 날짜 역순·0개월은 제외해요.</p>`;
     }

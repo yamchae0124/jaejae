@@ -197,7 +197,12 @@
     delete g("zpTrade").dataset.ready;
     g("zpTradeData").setAttribute("aria-busy","true");
     try{
-      const bundle=await data("data/zone_trades/"+encodeURIComponent(encodeURIComponent(z.id))+".json");
+      let bundle=await data("data/zone_trades/"+encodeURIComponent(encodeURIComponent(z.id))+".json");
+      if(bundle.series_ref){
+        const {series_ref,...metadata}=bundle;
+        const series=await data("data/zone_trades/"+series_ref);
+        bundle={...metadata,source:"국토교통부 실거래가 공개시스템 · 연속지적도(브이월드)",basis:"대지 평당가 · 만원/평",series};
+      }
       if(selected?.id!==z.id||request!==tradeRequest)return;
       const root=panelScroller(),anchor=[...g("panel-content").children].findLast(s=>s.getBoundingClientRect().top<=readingLine()+2);
       const before=anchor?.getBoundingClientRect().top;
