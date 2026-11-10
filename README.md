@@ -27,6 +27,8 @@ GitHub Pages의 `/jaejae/`에서 `site/index.html`을 첫 화면으로 엽니다
 
 ## 라이선스와 계산
 
+- 토스페이스: 토스팀 제공 · 공식 배포 커밋 37720aa5cf2e의 웹폰트와 CSS 원본 · `site/vendor/tossface/LICENSE`와 저작권 안내 동봉 · https://toss.im/tossface/copyright.
+
 코드는 루트 `LICENSE`의 MIT를 따릅니다. 자료는 원 출처의 조건을 따릅니다. 특히 OA-22712 경계는 **출처표시·비상업·변경금지(공공누리 제4유형)**이며 광고·유료 서비스에 쓰지 않습니다. Leaflet은 BSD-2-Clause, Pretendard는 SIL OFL입니다.
 
 **투자 권유가 아닌 계산입니다.** 입력값으로 계산하며 가짜 금액을 기본값으로 쓰지 않습니다. 세금·수수료 별도입니다. 계획·추정·근사값은 확정 인가·가격·입주 일정이 아닙니다.

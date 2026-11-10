@@ -70,6 +70,23 @@ const esc = window.JJ.esc;
   }
   function supplyHtml(z) {
     const p = z.plan;
+    if (document.body.classList.contains("mode-jaejae")) {
+      const sale = nz(p?.sale), rent = nz(p?.rent), total = nz(p?.total);
+      const valid = sale != null && rent != null && sale + rent > 0;
+      const percent = valid ? sale / (sale + rent) : null;
+      const buildings = valid ? [[104,58,128],[170,34,152],[236,46,140],[302,74,112]].map(([x,y,height])=>{
+        const split = y + height * percent;
+        const windows = Array.from({length:Math.floor((height-12)/14)},(_,row)=>
+          [8,22,36].map(dx=>`<rect x="${x+dx}" y="${y+8+row*14}" width="8" height="6" fill="${y+11+row*14<split?"#1F4FB5":"#8b95a1"}"/>`).join("")).join("");
+        return `<g class="zp-building"><rect x="${x}" y="${y}" width="56" height="${height}" rx="3" fill="#dfe6f3"/><rect class="zp-rental-floors" x="${x}" y="${split}" width="56" height="${height*(1-percent)}" fill="#eceff3"/>${windows}</g>`;
+      }).join("") : "";
+      const art = valid ? `<svg class="zp-neighborhood" viewBox="0 0 432 200" role="img" aria-label="분양·임대 비율 예시 아파트 네 동" data-sale="${sale}" data-rent="${rent}" data-total="${sale+rent}"><path d="M0 186H432" stroke="#d1d6db" stroke-width="2"/><ellipse cx="64" cy="180" rx="26" ry="9" fill="#e6f6f1"/><path d="M64 180V160" stroke="#8bc4a8" stroke-width="2"/><circle cx="64" cy="152" r="12" fill="#cfe9dc"/><ellipse cx="392" cy="180" rx="24" ry="8" fill="#e6f6f1"/><path d="M392 180V162" stroke="#8bc4a8" stroke-width="2"/><circle cx="392" cy="155" r="11" fill="#cfe9dc"/>${buildings}</svg>` : '<p class="zp-foot">계획 세대 자료 없음</p>';
+      const floors = typeof z.floors==="string" && /지상\s*\d+층/.exec(z.floors);
+      const owners = nz(z.owners);
+      return `<p class="zp-supply-lead">지금 ${nz(z.existing)==null?"자료 없음":num(z.existing)+"세대"} → 새 단지 <b>${total==null?"자료 없음":num(total)+"세대"}</b>${floors?" · "+esc(floors[0]):""}</p>${art}`+
+        (valid?`<div class="zp-supply-counts"><div><span><i></i>분양(조합원+일반)</span><b>${num(sale)}세대 <small>${Math.round(percent*100)}%</small></b></div><div><span><i></i>임대</span><b>${num(rent)}세대 <small>${Math.round((1-percent)*100)}%</small></b></div></div>`:"")+
+        `<p class="zp-foot">그림은 비율 예시(동 수·모양은 실제 배치가 아님) · ${owners>0?"토지등소유자 "+num(owners)+"명 · 실제 조합원·일반분양 구분은 조합 계획을 확인해요":"토지등소유자 수 미확인 · 조합원·일반분양은 나누지 않았어요"}${valid&&total!=null&&total!==sale+rent?" · 합계와 분양+임대가 달라요(원자료)":""}</p>`;
+    }
     if (!p || ![p.total, p.sale, p.rent].some((v) => nz(v) > 0)) return `<div class="zp-card zp-foot" style="margin:0">공급계획 자료가 없습니다</div>`;
     const sale = nz(p.sale), rent = nz(p.rent), sum = sale != null && rent != null ? sale + rent : null;
     const total = p.total === null ? null : nz(p.total) ?? (Number.isFinite(sum) ? sum : null);
@@ -271,6 +288,8 @@ const esc = window.JJ.esc;
   // ── 진행상황 · 실거래 · 구역정보 · 관련문서 · 생활권 ──
   function progressHtml(z) {
     const state = stageState(z);
+    const panel = document.body.classList.contains("mode-jaejae");
+    const icons = ["🚩","🚩","👥","📄","📋","🚚","🏗️","🏗️","🏗️","🔑","🔑"];
     let previous = -1;
     const li = STAGES.map((nm, i) => {
       const entry = Array.isArray(z.stages) && z.stages[i];
@@ -283,11 +302,38 @@ const esc = window.JJ.esc;
         }
         previous = i;
       }
+      if (panel) {
+        const current = (STAGE_BY_NAME[z.stageName] ?? -1) === i;
+        if (!d && !current) return "";
+        const detail = duration.replace("직전 날짜 단계부터 ", "").replace(/ · (빠른 편|느린 편|중앙값 수준) \(중앙값 (\d+)개월\)/,
+          (_, speed, median) => ` · <span class="zp-pace${speed === "빠른 편" ? " fast" : ""}">${speed}</span> · 중앙값 ${median}개월`);
+        return `<li class="${stageClass(z,state,i)}"${current?' aria-current="step"':""} data-stage-index="${i}"><span class="tf-icon" aria-hidden="true">${icons[i]}</span><span class="zp-step-text"><b>${esc(nm)}${current ? " · 지금" : i > (STAGE_BY_NAME[z.stageName] ?? -1) ? ' <span class="zp-record">(날짜 기록)</span>' : ""}</b>${detail?`<span class="zp-duration">${detail}</span>`:""}</span><small>${d?esc(d):"–"}</small></li>`;
+      }
       return `<li class="${stageClass(z, state, i)}">${esc(nm)}${d ? `<small>${esc(d)}</small>` : ""}${duration ? `<span class="zp-duration">${duration}</span>` : ""}</li>`;
     }).join("");
+    if (panel) {
+      // Keep the existing estimation and legal explanations, not a second calculation.
+      const summary = document.createElement("div");
+      summary.innerHTML = summaryHtml(z);
+      const move = summary.querySelector('[data-metric="move"]');
+      const transfer = summary.querySelector('[data-metric="transfer"]');
+      const estimate = move.querySelector("b").textContent;
+      const range = move.querySelector("p span")?.textContent;
+      const intro = estimate.startsWith("약 ") ? `입주까지 <b>${esc(estimate.replace(/ 후$/,""))}</b> 남았어요${range?" · "+esc(range)+" 예상":""}` : "입주 예상은 아직 계산할 수 없어요";
+      const future = [[0,1,2,3,4,5,6,7,8],[9,10]].map(group => {
+        const pending = group.filter(i => !state.dates[i] && i > (STAGE_BY_NAME[z.stageName] ?? -1));
+        return pending.length ? `<li class="zp-future"><span class="tf-icon" aria-hidden="true">${icons[pending[0]]}</span><span>${pending.map(i=>esc(STAGES[i])).join(" · ")}</span><small>–</small></li>` : "";
+      }).join("");
+      const status = transfer.querySelector("b").textContent;
+      return `<p class="zp-move-sentence" data-metric="move">${intro}</p>${move.querySelector("details").outerHTML}`+
+        `${Number(z.stageNo)===0?`<p class="zp-pre">정비구역 지정 전 · ${esc(z.stageName||"단계 미상")}</p>`:""}`+
+        `<ol class="zp-steps" aria-label="정비사업 단계">${li}${future}</ol>`+
+        `<div class="zp-transfer" data-metric="transfer"><span>조합원 지위 양도 · <b class="${status.startsWith("제한")?"jj-critical":status.includes("가능")||status==="제한 없음"?"jj-positive":""}">${esc(status.startsWith("제한")?"제한":status)}</b>${status.includes("경과규정")?" · 경과규정 확인 필요":""}</span>${transfer.querySelector("details").outerHTML}</div>`+
+        `<p class="zp-foot">${esc(transfer.querySelector("p").textContent)} · 단계 이름은 정보몽땅 공식 추진경과 분류예요. 날짜는 완료 기록이며 현재 단계와 다를 수 있어요. 비교 표본은 같은 종류 서울 구역 10곳 이상이며 날짜 역순·0개월은 제외해요.</p>`;
+    }
     return summaryHtml(z) + arrowsHtml(z, state) + `<div class="zp-card">${Number(z.stageNo) === 0 ? `<div class="zp-pre">정비구역 지정 전 · ${esc(z.stageName || "단계 미상")}</div>` : ""}<ol class="zp-steps">${li}</ol></div><div class="zp-foot">단계 이름은 서울시 정비사업 정보몽땅의 추진경과 분류를 따릅니다. 이름이 있다고 그 단계를 마친 것은 아니며, 추진위원회를 구역지정 전에 구성하거나 생략하는 사업도 있어 모든 사업이 같은 순서는 아닙니다.${z.demo ? "" : "<br>비교 표본: 같은 종류 서울 구역 10곳 이상 · 같은 단계 쌍의 날짜 순서가 거꾸로이거나 기간이 0인 경우 제외."}</div>` + (window.__jaejae ? window.__jaejae.faqHtml(z) : "");
   }
-  function lifeHtml(z) {
+  function lifeHtml(z, stationsOnly = false) {
     if (z.demo) return `<div class="zp-card zp-foot">예시 구역은 생활권 통계를 계산하지 않습니다.</div>`;
     const region = regionOf(z), group = region && stageStatistics().regions[region];
     const chips = Object.keys(REGIONS).map((r) => `<span class="zp-region${r === region ? " on" : ""}"${r === region ? ' aria-current="true"' : ""}>${r}</span>`).join("");
@@ -321,13 +367,21 @@ const esc = window.JJ.esc;
       return `<span class="zp-line${numeric?" is-number":""}" data-line="${esc(line)}" role="img" aria-label="${esc(line)}" style="--line-color:${background};--line-ink:${1.05/(luminance+.05)<4.5?"#000":"#fff"}">${esc(short)}</span>`;
     };
     const rows = [...stations.values()].sort((a, b) => a.m - b.m);
-    const stationHtml = z.approx ? "위치가 동 단위 대표점이라 역 거리를 계산하지 않았습니다" : !Array.isArray(z.stations) ? "지하철역 자료를 수집하지 못했습니다" : !rows.length ? "반경 1km 안 지하철역 없음" : `<ul class="zp-stations">${rows.map((s) => `<li><span class="zp-lines">${[...s.lines].map(badge).join("")}</span><span class="zp-station-name">${esc(s.name)}</span><span class="zp-distance">${num(s.m)}m · 도보 ${Math.ceil(s.m / 67)}분</span></li>`).join("")}</ul>`;
+    const stationHtml = z.approx ? "위치가 동 단위 대표점이라 역 거리를 계산하지 않았습니다" : !Array.isArray(z.stations) ? "지하철역 자료를 수집하지 못했습니다" : !rows.length ? "반경 1km 안 지하철역 없음" : `<ul class="zp-stations">${rows.map((s) => `<li><span class="zp-lines">${[...s.lines].map(badge).join("")}</span><span class="zp-station-name">${esc(s.name)}</span>${stationsOnly?'<span class="tf-icon" aria-hidden="true">🚶</span>':""}<span class="zp-distance">${stationsOnly?`${Math.ceil(s.m/67)}분 · ${num(s.m)}m`:`${num(s.m)}m · 도보 ${Math.ceil(s.m / 67)}분`}</span></li>`).join("")}</ul>`;
+    if (stationsOnly) return `${stationHtml}<p class="zp-foot">구역 대표 좌표에서 직선거리 · 도보는 분당 67m로 어림 · 서울시 역사마스터 정보(서울 열린데이터광장 · 공공누리 제1유형). 노선은 역사마스터 행 기준으로 일부 환승 노선이 빠질 수 있어요.</p>`;
     return `<div class="zp-card">${area}</div><h4 style="margin-top:20px">지하철 ${z.approx || !Array.isArray(z.stations) ? "–" : rows.length}</h4><div class="zp-card">${stationHtml}</div><div class="zp-foot">서울시 역사마스터 정보(서울 열린데이터광장 · 공공누리 제1유형) · 구역 대표 좌표 기준 직선거리<br>도보 시간은 직선거리 기준으로 분당 67m를 걸을 때의 환산값입니다.<br><small>노선은 역사마스터 행 기준 — 일부 환승 노선이 빠질 수 있음</small></div>`;
   }
   function infoHtml(z) {
     const owners = nz(z.owners), area = nz(z.area_m2, true), members = nz(z.members), dongs = nz(z.dongs);
     const existing = nz(z.existing);
     const floors = typeof z.floors === "string" && /지상\s*(\d+)층\s*\/\s*지하\s*(\d+)층/.exec(z.floors);
+    if (document.body.classList.contains("mode-jaejae")) {
+      const region = regionOf(z), group = region && stageStatistics().regions[region];
+      const row = (icon,label,value)=>`<div class="zp-info-row"><span class="tf-icon" aria-hidden="true">${icon}</span><span>${label}</span><b>${value}</b></div>`;
+      return row("📐","사업 면적",area>0?`${num(Math.round(area/3.305785))}평 <small>${num(area)}㎡</small>`:"자료 없음")+
+        row("🏢","계획 층수",floors&&Number(floors[1])<Number(floors[2])?"자료 없음":esc(z.floors||"자료 없음"))+
+        row("📍","생활권",group?`${esc(region)} <small>재개발 ${num(group.kinds["재개발"]||0)}곳</small>`:"생활권 자료 없음");
+    }
     const kv = [["구분", z.kind], ["위치", z.addr], ["사업면적", area > 0 ? num(area) + "㎡" : null], ["현존 세대수", existing != null ? num(existing) + "세대" : null], ["토지등소유자", owners > 0 ? num(owners) + "명" : null],
       ["조합원", members != null ? num(members) + "명" : null], ["층수", floors && Number(floors[1]) < Number(floors[2]) ? null : z.floors], ["동수", dongs != null ? num(dongs) + "개동" : null]]
       .filter((x) => x[1] != null && x[1] !== "");

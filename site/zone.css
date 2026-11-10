@@ -5,6 +5,137 @@
 #zonePanel,#zonePanel .zp-body{overflow-anchor:none}
 #zonePanel h3.panel-section-title{margin:0 0 20px}
 #zonePanel .zp-tabs{background:#fff}
+#zonePanel .zp-move-sentence{font-size:15px;color:var(--muted);line-height:1.7;margin:0 0 8px}
+#zonePanel .zp-move-sentence b{color:var(--fg)}
+#zonePanel h3.panel-section-title{margin-bottom:6px}
+#zonePanel #zpProg>details>summary{padding:0;min-height:24px}
+#zonePanel #zpProg>details{font-size:12px;color:var(--sub);line-height:1.7;margin-bottom:12px}
+#zonePanel .zp-steps{list-style:none;display:flex;flex-direction:column;margin:0;padding:0;border:0}
+#zonePanel .zp-steps li{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 0;margin:0;border:0;background:none;min-height:0;color:var(--fg)}
+#zonePanel .zp-steps li:before,#zonePanel .zp-steps li:after{display:none}
+#zonePanel .zp-steps .tf-icon{font-size:20px;text-align:center}
+#zonePanel .zp-step-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+#zonePanel .zp-step-text b{font-size:14px;font-weight:600;line-height:1.5}
+#zonePanel .zp-steps li small{font-size:13px;color:var(--muted);white-space:nowrap}
+#zonePanel .zp-steps .zp-duration{font-size:12px;color:var(--muted);margin:0;line-height:1.7}
+#zonePanel .zp-steps li.cur{background:#e8f3ff;padding:10px 8px;margin:0 -8px;border-radius:12px}
+#zonePanel .zp-steps li.cur .tf-icon{font-size:22px}
+#zonePanel .zp-steps li.cur b,#zonePanel .zp-steps li.cur small{color:var(--brand-c)}
+#zonePanel .zp-steps li.cur b{font-size:15px}
+#zonePanel .zp-pace{padding:1px 8px;border-radius:999px;background:var(--band);font-weight:700;white-space:nowrap}
+#zonePanel .cur .zp-pace{background:#fff}
+#zonePanel .zp-pace.fast{color:#079171;background:#e6f6f1}
+#zonePanel .zp-record{font-weight:400;color:var(--sub)}
+#zonePanel .zp-steps .zp-future{color:#8b95a1;font-size:14px}
+#zonePanel .zp-transfer{border-top:1px solid var(--line);padding-top:14px;margin-top:16px;font-size:14px;line-height:1.7}
+#zonePanel .zp-transfer details{font-size:12px;color:var(--sub)}
+#zonePanel .jj-critical{color:#e5372b}
+#zonePanel .jj-positive{color:#079171}
+#zonePanel .zp-title h2{font-size:28px}
+#zonePanel #zpStage{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--sub);margin:0 0 4px}
+#zpStage i{width:8px;height:8px;border-radius:50%;flex:none}
+#zonePanel .zp-tab{font-size:15px;font-weight:500}
+#zonePanel .zp-tab.on{font-weight:700}
+#zonePanel .zp-info-row{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+#zonePanel .zp-info-row>.tf-icon{font-size:24px}
+#zonePanel .zp-info-row>span:nth-child(2){flex:1;color:var(--muted);white-space:nowrap}
+#zonePanel .zp-info-row>b{font-size:15px;text-align:right;line-height:1.7}
+#zonePanel .zp-info-row small{font-size:13px;font-weight:400;color:var(--sub)}
+#zonePanel .zp-supply-lead{font-size:14px;color:var(--muted);margin:0;line-height:1.7}
+#zonePanel .zp-supply-lead b{color:var(--fg)}
+#zonePanel .zp-neighborhood{display:block;width:100%;height:auto;margin-top:10px}
+#zonePanel .zp-supply-counts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+#zonePanel .zp-supply-counts>div{display:flex;flex-direction:column;gap:2px}
+#zonePanel .zp-supply-counts span{font-size:13px;color:var(--muted)}
+#zonePanel .zp-supply-counts b{font-size:20px}
+#zonePanel .zp-supply-counts small{font-size:13px;font-weight:400;color:var(--sub)}
+#zonePanel .zp-supply-counts i{display:inline-block;width:10px;height:8px;margin-right:6px;background:#1F4FB5;border-radius:2px}
+#zonePanel .zp-supply-counts>div+div i{background:#8b95a1}
+#zonePanel .zp-trade-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+#zonePanel .zp-trade-summary>div{display:flex;align-items:center;gap:10px;min-width:0}
+#zonePanel .zp-trade-summary .tf-icon{font-size:32px}
+#zonePanel .zp-trade-summary small,#zonePanel .zp-trade-summary b{display:block}
+#zonePanel .zp-trade-summary small{font-size:12px;color:var(--sub)}
+#zonePanel .zp-trade-summary b{font-size:17px;line-height:1.7}
+#zonePanel .zp-trade-summary em{font-size:13px;font-style:normal;white-space:nowrap}
+#zonePanel .zp-trade-summary .jj-summary-count{display:block;font-size:12px;line-height:1.7;font-weight:400;color:var(--sub);white-space:nowrap}
+#zonePanel .jj-summary-basis{font-size:12px;color:var(--sub);margin:6px 0 12px}
+#zonePanel .jj-trade-controls{display:flex;gap:6px;margin:8px 0 12px}
+#zonePanel .jj-trade-controls button,#zonePanel .jj-trades-more{min-height:44px;min-width:44px;padding:8px 14px;border:0;border-radius:8px;background:var(--card-2);color:var(--ink-2);font:600 13px var(--font-base);cursor:pointer}
+#zonePanel .jj-trade-controls button[aria-pressed=true]{background:var(--ink);color:var(--canvas)}
+#zonePanel .jj-trade-controls button:hover,#zonePanel .jj-trades-more:hover{box-shadow:inset 0 0 0 1px var(--sub)}
+#zonePanel .jj-trade-controls button:focus-visible,#zonePanel .jj-trades-more:focus-visible,#zonePanel .jj-zone-chart:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#zonePanel .jj-trade-chart{position:relative;margin-top:12px}
+#zonePanel .jj-trade-unit{font-size:12px;color:var(--sub);text-align:right;margin:4px 0 -6px}
+#zonePanel .jj-zone-chart{display:block;width:100%;height:auto;overflow:visible;font:10px var(--font-base);color:var(--ink);touch-action:pan-y}
+#zonePanel .jj-zone-chart text{fill:var(--sub)}
+#zonePanel .jj-chart-grid{stroke:var(--hairline);stroke-width:1}
+#zonePanel .jj-moving-line{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round;pointer-events:none}
+#zonePanel .jj-moving-line.detached{stroke:var(--sub)}
+#zonePanel .jj-trade-point{fill:var(--ink);fill-opacity:.28;cursor:crosshair}
+#zonePanel .jj-trade-point.detached{fill:var(--sub);fill-opacity:.55}
+#zonePanel .jj-trade-point.jj-outlier{fill-opacity:1}
+#zonePanel .jj-quarter{fill:var(--hairline)}
+#zonePanel .jj-month-hit{fill:transparent;pointer-events:all}
+#zonePanel .jj-stage-date{pointer-events:none}
+#zonePanel .jj-stage-date line{stroke:currentColor;stroke-dasharray:3 3;stroke-width:1}
+#zonePanel .jj-stage-date text{fill:currentColor;font-weight:600;font-size:9px}
+#zonePanel .jj-trade-tooltip{position:absolute;left:0;right:0;bottom:36px;padding:10px 12px;border-radius:8px;background:var(--ink);color:var(--canvas);font-size:12px;line-height:1.6;pointer-events:none;box-shadow:0 4px 16px #0002}
+#zonePanel .jj-trade-tooltip[hidden]{display:none}
+#zonePanel .jj-trade-scope{font-size:11px;line-height:1.7;color:var(--sub);margin:6px 0}
+#zonePanel .jj-trade-scope b{color:var(--ink-2)}
+#zonePanel .jj-trade-method,#zonePanel .jj-outlier-values{font-size:12px;line-height:1.6;color:var(--sub);margin:12px 0}
+#zonePanel .jj-trade-method summary,#zonePanel .jj-outlier-values summary{min-height:24px;cursor:pointer}
+#zonePanel .jj-trade-method p,#zonePanel .jj-outlier-values p{margin:6px 0}
+#zonePanel h4.jj-history-heading{margin:24px 0 6px}
+#zonePanel .jj-trade-history{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
+#zonePanel .jj-trade-history td,#zonePanel .jj-trade-history th{padding:10px 4px;text-align:left;border-bottom:1px solid var(--hairline);vertical-align:top}
+#zonePanel .jj-trade-history th{font-weight:600;color:var(--sub)}
+#zonePanel .jj-trade-history td:last-child,#zonePanel .jj-trade-history th:last-child{text-align:right;white-space:nowrap}
+#zonePanel .jj-trades-more{display:block;width:100%;margin:12px 0 24px}
+#zonePanel .jj-trade-empty{font-size:14px;line-height:1.6;padding:18px 0}
+@media(max-width:760px){#zonePanel .jj-trade-point{display:none}#zonePanel .zp-trade-summary>div{gap:6px}#zonePanel .zp-trade-summary .tf-icon{font-size:28px}#zonePanel .zp-trade-summary b{font-size:16px}}
+#zonePanel .zp-regulation-row{display:flex;align-items:center;gap:10px;font-size:14px;margin-top:16px}
+#zonePanel .zp-regulation-row .tf-icon{font-size:22px}
+#zonePanel .zp-stations li{gap:8px;padding:12px 0}
+#zonePanel .zp-stations .tf-icon{font-size:18px}
+#zonePanel .zp-distance{font-size:14px;color:var(--muted);white-space:nowrap}
+@media(min-width:1001px){body.mode-jaejae #zonePanel{width:480px}}
+body.mode-jaejae .jj-zone-label{display:flex;flex-direction:column;align-items:stretch;gap:1px;padding:4px 8px;background:#fff;border:1px solid #e5e8eb;border-radius:8px;box-shadow:0 1px 4px #1a1c2020}
+body.mode-jaejae .jj-zone-name{display:flex;align-items:center;gap:5px;background:none;padding:0;box-shadow:none;border-radius:0;font-size:13px}
+body.mode-jaejae .jj-zone-name em{display:block;width:8px;height:8px;background:var(--jj-stage);border-radius:50%;flex:none}
+body.mode-jaejae .jj-zone-name i{font-size:11px;color:#6b7684;margin:0}
+body.mode-jaejae .jj-zone-name b{font-size:13px;font-weight:700}
+body.mode-jaejae .jj-zone-status{font-size:11px;font-weight:400;padding:0 0 0 13px;background:none;color:#4e5968}
+body.mode-jaejae .jj-zone-status:before{display:none}
+body.mode-jaejae .jj-zone-label.is-selected{background:#3182F6;border-color:#3182F6}
+body.mode-jaejae .jj-zone-label.is-selected .jj-zone-name,body.mode-jaejae .jj-zone-label.is-selected .jj-zone-status,body.mode-jaejae .jj-zone-label.is-selected i{color:#fff}
+@media(hover:hover) and (pointer:fine){
+  body.mode-jaejae .jj-zone-label:hover{border:2px solid var(--jj-stage);padding:3px 7px}
+  body.mode-jaejae .jj-zone-label:hover .jj-zone-name{background:none}
+}
+#zone-hover{width:264px;padding:16px}
+.hover-title{gap:6px}
+.hover-title strong{font-size:19px}
+#zone-hover .hover-stage{font-size:12px;margin:6px 0 14px}
+.hover-metrics{gap:8px}
+.hover-metrics>div+div{padding-left:8px}
+.hover-metrics b{font-size:15px}
+.hover-metrics span{font-size:11px;margin-bottom:6px}
+.hover-hint{font-size:11px;line-height:1.5;color:var(--sub);margin:10px 0 0}
+#zonePanel .jj-permit dt{display:flex;align-items:center;gap:10px}
+body.mode-jaejae #zonePanel .jj-permit>div{grid-template-columns:86px minmax(0,1fr)}
+body.mode-jaejae #zonePanel .jj-permit dt{white-space:nowrap}
+body.mode-jaejae #zonePanel .jj-permit dd{text-align:right}
+body.mode-jaejae #zonePanel .jj-permit-required{color:#e5372b}
+#zonePanel .jj-permit .tf-icon{font-size:22px}
+body.mode-jaejae #zonePanel .zp-station-name{flex:1;font-size:15px}
+body.mode-jaejae #zonePanel .zp-stations .tf-icon{margin-left:auto}
+body.mode-jaejae #zonePanel .zp-stations .zp-distance{margin-left:0;font-weight:400}
+body.mode-jaejae #zonePanel .zp-regulation-row{float:left;margin:8px 12px 0 0}
+body.mode-jaejae #zonePanel .zp-reg{display:flex;flex-wrap:wrap;gap:0 12px}
+body.mode-jaejae #zonePanel .zp-reg>div{padding:8px 0;gap:4px}
+body.mode-jaejae #zonePanel .reg-bases{clear:both}
 .finder-toggle{display:none;border:0;background:#fff;color:var(--brand-c);min-height:44px;padding:8px 12px;font-size:13px}
 @media(min-width:761px){
   .finder{position:relative}.finder h1{padding-right:56px}#finder-collapse{display:block;position:absolute;right:12px;top:20px}
@@ -12,10 +143,10 @@
   .finder-collapsed #finder-open{display:flex;align-items:center;gap:8px;position:absolute;left:16px;top:12px;z-index:750;border:1px solid var(--line);border-radius:8px}
   .finder-collapsed .leaflet-top.leaflet-left{top:60px}
 }
-#zone-hover{position:absolute;z-index:800;pointer-events:none;width:360px;max-width:calc(100% - 24px);padding:20px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 2px 12px #1a1c2014;color:var(--fg);font-family:var(--font)}
-.hover-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px}.hover-title>span{font-size:12px;white-space:nowrap}.hover-title i{display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%;background:var(--jj-stage)}.hover-title strong{font-size:22px;line-height:1.35;word-break:keep-all;overflow-wrap:anywhere}
-#zone-hover .hover-stage{font-size:13px;line-height:1.6;color:var(--sub);margin:8px 0 20px}
-.hover-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.hover-metrics>div+div{border-left:1px solid var(--line);padding-left:12px}.hover-metrics span{display:block;color:var(--sub);font-size:12px;line-height:1.5;margin-bottom:8px}.hover-metrics b{font-size:20px;line-height:1.4;letter-spacing:-.03em;font-variant-numeric:tabular-nums;word-break:keep-all;overflow-wrap:anywhere}.hover-metrics small{font-size:12px;margin-left:2px;color:var(--muted)}
+#zone-hover{position:absolute;z-index:800;pointer-events:none;width:264px;max-width:calc(100% - 24px);padding:14px 16px 12px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 2px 12px #1a1c2014;color:var(--fg);font-family:var(--font)}
+.hover-title{display:flex;flex-direction:column;align-items:flex-start;gap:3px}.hover-title>span{font-size:12px;white-space:nowrap}.hover-title i{display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%;background:var(--jj-stage)}.hover-title strong{font-size:19px;line-height:1.35;word-break:keep-all;overflow-wrap:anywhere}
+#zone-hover .hover-stage{font-size:12px;line-height:1.5;color:var(--sub);margin:3px 0 10px}
+.hover-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;border-top:1px solid var(--line);padding-top:10px}.hover-metrics>div+div{border-left:1px solid var(--line);padding-left:12px}.hover-metrics span{display:block;color:var(--sub);font-size:11px;line-height:1.5;margin-bottom:2px}.hover-metrics b{font-size:15px;line-height:1.4;letter-spacing:-.03em;font-variant-numeric:tabular-nums;word-break:keep-all;overflow-wrap:anywhere}.hover-metrics small{font-size:12px;margin-left:2px;color:var(--muted)}
 @media(hover:hover) and (pointer:fine){.jj-zone-boundary{cursor:pointer}.jj-zone-label:hover .jj-zone-name{background:var(--band)}}
 #zpStage{font-size:13px;line-height:1.7;margin:4px 0 8px}#zpStage span{color:var(--sub);font-size:12px}#zpBoundaryNotice{margin:4px 0 8px}
 .panel-tools,#zone-list-open,#legend-toggle{display:none}
@@ -52,3 +183,5 @@
   .leaflet-control-attribution{position:fixed;right:0;bottom:0;margin:0;max-width:none}
   .map-boundary-credit{padding-bottom:20px}
 }
+
+body.mode-jaejae .jj-zone-label.is-selected .jj-zone-name em{background:#fff}

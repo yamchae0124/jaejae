@@ -1,0 +1,6347 @@
+{
+  "asof": "2026-11-10",
+  "period": [
+    "2016-01",
+    "2026-10"
+  ],
+  "zones": {
+    "A:4893670": {
+      "file": "A%3A4893670.json",
+      "scope": "dong",
+      "villa": 2111,
+      "detached": 354,
+      "missing": 0,
+      "bytes": 139492,
+      "sha256": "cfe94b0ff7b3719bde9ba257d094ad05bdcf09d369f5123ff55f2c0471d66ab1"
+    },
+    "A:4893446": {
+      "file": "A%3A4893446.json",
+      "scope": "dong",
+      "villa": 5546,
+      "detached": 1265,
+      "missing": 0,
+      "bytes": 375091,
+      "sha256": "327d9346c6fe83727e29b52d97e988613fb84d1fa67da518f18a546793a28c14"
+    },
+    "A:4893377": {
+      "file": "A%3A4893377.json",
+      "scope": "dong",
+      "villa": 954,
+      "detached": 150,
+      "missing": 0,
+      "bytes": 65249,
+      "sha256": "8e77e6faf084ab6499e611b43a0601aedd123b8abc58fac975a400f7aaee35df"
+    },
+    "A:4893180": {
+      "file": "A%3A4893180.json",
+      "scope": "dong",
+      "villa": 5289,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 332793,
+      "sha256": "5219639aeff0fffe676e6e16e43f5861cc0a8ba960434995c869724264ccf686"
+    },
+    "A:4892117": {
+      "file": "A%3A4892117.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 16,
+      "missing": 0,
+      "bytes": 6858,
+      "sha256": "39e77cc025757ede7ce717502f123929cae874eb57ca5f9a717860250097f589"
+    },
+    "A:4892002": {
+      "file": "A%3A4892002.json",
+      "scope": "dong",
+      "villa": 1449,
+      "detached": 1508,
+      "missing": 0,
+      "bytes": 165543,
+      "sha256": "780d6827cd0c460da2b8e017f6e7ba5b9d848dc0f8d8252ff634f13f75382a88"
+    },
+    "A:4891929": {
+      "file": "A%3A4891929.json",
+      "scope": "dong",
+      "villa": 75,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 13859,
+      "sha256": "da77857857aef8fd267b4f8570f7ac52adeb471645b94c84db7c65582d43fdca"
+    },
+    "A:4891737": {
+      "file": "A%3A4891737.json",
+      "scope": "dong",
+      "villa": 573,
+      "detached": 46,
+      "missing": 0,
+      "bytes": 39970,
+      "sha256": "1426c895b08195011e015171d3c68b3038cb7c68ea461ac72e718f77647f1340"
+    },
+    "A:4891631": {
+      "file": "A%3A4891631.json",
+      "scope": "dong",
+      "villa": 2853,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 283659,
+      "sha256": "848da3eff524f20c4f051b749cecbfd3de51857f99ddce55877ae5afaf7dba51"
+    },
+    "A:4891498": {
+      "file": "A%3A4891498.json",
+      "scope": "dong",
+      "villa": 5935,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 367505,
+      "sha256": "53e66866b1ddaa46d5bf551a4198c4a479d058b388af4bbffd6cdffcad3826b5"
+    },
+    "A:4891407": {
+      "file": "A%3A4891407.json",
+      "scope": "dong",
+      "villa": 2853,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 283659,
+      "sha256": "06702d3a10d361ff3aa6a631bece3ffb957c82d747a37d7284ac410f25cec5ba"
+    },
+    "A:4891294": {
+      "file": "A%3A4891294.json",
+      "scope": "dong",
+      "villa": 7520,
+      "detached": 2810,
+      "missing": 0,
+      "bytes": 559142,
+      "sha256": "5330665377b572ca3806ce304355c1e2f9ac9ca6e6c302a63de79dae348a1ddd"
+    },
+    "A:4891045": {
+      "file": "A%3A4891045.json",
+      "scope": "dong",
+      "villa": 3436,
+      "detached": 1001,
+      "missing": 0,
+      "bytes": 245567,
+      "sha256": "f870401a9c3b60fef12189687abf9521357dfd7d2d0ecae276a693eb82c7b110"
+    },
+    "A:4890718": {
+      "file": "A%3A4890718.json",
+      "scope": "dong",
+      "villa": 11893,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 825650,
+      "sha256": "254dbf6d11d41be57c097772deb92a057c1dffe08bb22a787bedc39e691e7041"
+    },
+    "A:4890686": {
+      "file": "A%3A4890686.json",
+      "scope": "dong",
+      "villa": 2687,
+      "detached": 334,
+      "missing": 0,
+      "bytes": 167058,
+      "sha256": "f4e59ec9993fa911f84884b1b65f00b8d6ca1f60e90f2672eefa2a59ec70037e"
+    },
+    "A:4890457": {
+      "file": "A%3A4890457.json",
+      "scope": "dong",
+      "villa": 7015,
+      "detached": 737,
+      "missing": 0,
+      "bytes": 420082,
+      "sha256": "a3f36b88a5addc1e0376ec4307da3609cd4659dcff0aa435b36ef42eb77c9514"
+    },
+    "A:4890324": {
+      "file": "A%3A4890324.json",
+      "scope": "dong",
+      "villa": 6272,
+      "detached": 1095,
+      "missing": 0,
+      "bytes": 405013,
+      "sha256": "4bc5ebab25d2bebecaabe2172698d6578d627bc0aeda5eb91643b8b1330bc4b9"
+    },
+    "A:4883574": {
+      "file": "A%3A4883574.json",
+      "scope": "dong",
+      "villa": 72,
+      "detached": 71,
+      "missing": 0,
+      "bytes": 14964,
+      "sha256": "944c2f2649244ed1afbc3dec476deca108a0f31b09dffb5b3581dd438debc8f7"
+    },
+    "A:4870736": {
+      "file": "A%3A4870736.json",
+      "scope": "dong",
+      "villa": 6272,
+      "detached": 1095,
+      "missing": 0,
+      "bytes": 405013,
+      "sha256": "55d899c416cedc0ec39c42dcd00f22738477786fc5e02a3c517fb9778f6ec916"
+    },
+    "A:4870654": {
+      "file": "A%3A4870654.json",
+      "scope": "dong",
+      "villa": 738,
+      "detached": 95,
+      "missing": 0,
+      "bytes": 51970,
+      "sha256": "7c77aa0d29172b3c6557e67ff921ce0f31065b1b17e75683ea6350745593581d"
+    },
+    "A:4870525": {
+      "file": "A%3A4870525.json",
+      "scope": "dong",
+      "villa": 738,
+      "detached": 95,
+      "missing": 0,
+      "bytes": 51970,
+      "sha256": "bdd5a28513c2b6eac03fa9f1f376f7be744b4b242e0b09eb2dc81e2c70c30b6f"
+    },
+    "A:4870185": {
+      "file": "A%3A4870185.json",
+      "scope": "dong",
+      "villa": 1866,
+      "detached": 165,
+      "missing": 0,
+      "bytes": 116674,
+      "sha256": "be24ff1c48b0473d5fd41ac848c151e89b4c0f47701868c8b5446a2e25541f53"
+    },
+    "A:4870051": {
+      "file": "A%3A4870051.json",
+      "scope": "dong",
+      "villa": 84,
+      "detached": 61,
+      "missing": 0,
+      "bytes": 14777,
+      "sha256": "e9b914b487b1b5410ddd8e0b3d1fc35cc29e4661b3d807e81dfb07c1b4e92db7"
+    },
+    "A:4868287": {
+      "file": "A%3A4868287.json",
+      "scope": "dong",
+      "villa": 5899,
+      "detached": 639,
+      "missing": 0,
+      "bytes": 355431,
+      "sha256": "9091613c08bc9bded1fb40a669e87429dcbd1c641afe1a05b557eca69d35202f"
+    },
+    "A:4868025": {
+      "file": "A%3A4868025.json",
+      "scope": "dong",
+      "villa": 1139,
+      "detached": 171,
+      "missing": 0,
+      "bytes": 76014,
+      "sha256": "917eb1c07a3aeb3057639780f5bd51bab03c5b3c6f5b06d3ecc6e7ecd0d1910b"
+    },
+    "A:4867666": {
+      "file": "A%3A4867666.json",
+      "scope": "dong",
+      "villa": 598,
+      "detached": 127,
+      "missing": 0,
+      "bytes": 46393,
+      "sha256": "27a70006a90c8575f5eb4da9a41bc7585e215cdcb2a186545d15ee8f7c5ddb19"
+    },
+    "A:4864626": {
+      "file": "A%3A4864626.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5579,
+      "sha256": "d074b80b550003cd4deefd7b2d727dfb17620e0bc38bce0da5ed09cfda72ba44"
+    },
+    "A:4861439": {
+      "file": "A%3A4861439.json",
+      "scope": "dong",
+      "villa": 7191,
+      "detached": 708,
+      "missing": 0,
+      "bytes": 429409,
+      "sha256": "f5908c0cdbb0b93b0c9a015052673af2cdbc02e546e462580910940481969c69"
+    },
+    "A:4854398": {
+      "file": "A%3A4854398.json",
+      "scope": "dong",
+      "villa": 5456,
+      "detached": 665,
+      "missing": 0,
+      "bytes": 332763,
+      "sha256": "653c5e074e265239c2ec59e65a310551114cb0ee5de8520753b850b88d38f24e"
+    },
+    "A:4848941": {
+      "file": "A%3A4848941.json",
+      "scope": "parcel",
+      "villa": 410,
+      "detached": 1381,
+      "missing": 0,
+      "bytes": 104662,
+      "sha256": "f27256cd9df60324da80266d077dca675a3999e09ad0e852dfc5bb44b332192f"
+    },
+    "A:4830886": {
+      "file": "A%3A4830886.json",
+      "scope": "parcel",
+      "villa": 835,
+      "detached": 665,
+      "missing": 0,
+      "bytes": 87680,
+      "sha256": "98f6e498171d1864b08b1bac953897e80d75077149cab37c82986788ea241e3d"
+    },
+    "A:4825599": {
+      "file": "A%3A4825599.json",
+      "scope": "parcel",
+      "villa": 368,
+      "detached": 914,
+      "missing": 0,
+      "bytes": 76433,
+      "sha256": "896a8929b204c83ed9c7ade65a986f2a3fcce3ce8bd696648c22df69452af38c"
+    },
+    "A:4789814": {
+      "file": "A%3A4789814.json",
+      "scope": "dong",
+      "villa": 7183,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 439201,
+      "sha256": "ba5e2688de2a42ca8bfc034e36ed5d122daea47b0b534dcfb8edc428025060f0"
+    },
+    "A:4774086": {
+      "file": "A%3A4774086.json",
+      "scope": "dong",
+      "villa": 7183,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 439201,
+      "sha256": "65df4a8db420ab3ccd8861e9121f643c57327bcd28d026a606d06f4eccaadaea"
+    },
+    "A:4749879": {
+      "file": "A%3A4749879.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 112,
+      "missing": 0,
+      "bytes": 12761,
+      "sha256": "2ef9b83fe3c29318e497586b27dde3ff439dc7d8a967654f9ea840694645ac1a"
+    },
+    "A:4749556": {
+      "file": "A%3A4749556.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 149,
+      "missing": 0,
+      "bytes": 14648,
+      "sha256": "9006dedbfb02b070b08fa405b5ab5661d8e8c0a2a6a6115d7bf1d585f564e662"
+    },
+    "A:4730550": {
+      "file": "A%3A4730550.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 149,
+      "missing": 0,
+      "bytes": 14648,
+      "sha256": "d546442019e5c64f7f63b3b2605d0585560462a9da1f8f1060bfb50f2408c4ca"
+    },
+    "A:4585934": {
+      "file": "A%3A4585934.json",
+      "scope": "parcel",
+      "villa": 225,
+      "detached": 2810,
+      "missing": 0,
+      "bytes": 171496,
+      "sha256": "3be9c2ee0bbdd345a6329b2943770be4ecd8df3fc0af9e625596b3f105b2b2c2"
+    },
+    "A:4585862": {
+      "file": "A%3A4585862.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 16,
+      "missing": 0,
+      "bytes": 6854,
+      "sha256": "2743fe43985e985710e68df3e59490687c6883958e12356853c1288f21cb264c"
+    },
+    "A:4585723": {
+      "file": "A%3A4585723.json",
+      "scope": "parcel",
+      "villa": 368,
+      "detached": 434,
+      "missing": 0,
+      "bytes": 50297,
+      "sha256": "b4dfec3b9031a6cc1d1216fc18527bc6a2dcd8fde5918e27c02a5a483e9c42bd"
+    },
+    "A:4584709": {
+      "file": "A%3A4584709.json",
+      "scope": "parcel",
+      "villa": 206,
+      "detached": 434,
+      "missing": 0,
+      "bytes": 41531,
+      "sha256": "dbd3827e515764a33eb43120450ffa8e53bdfeb5f45b9584ead0f51571d80b28"
+    },
+    "A:4584607": {
+      "file": "A%3A4584607.json",
+      "scope": "parcel",
+      "villa": 159,
+      "detached": 507,
+      "missing": 0,
+      "bytes": 43152,
+      "sha256": "668601c68fb4f40d01a64ff9d54e1b7b2467b3abac9437e52b9b012baba617c0"
+    },
+    "A:4584574": {
+      "file": "A%3A4584574.json",
+      "scope": "parcel",
+      "villa": 411,
+      "detached": 507,
+      "missing": 0,
+      "bytes": 56808,
+      "sha256": "be3fddefecd3edc214854673a5b7f578fd6fd0b950e58e06432fbcd9f33e86bb"
+    },
+    "A:4584471": {
+      "file": "A%3A4584471.json",
+      "scope": "parcel",
+      "villa": 269,
+      "detached": 708,
+      "missing": 0,
+      "bytes": 60064,
+      "sha256": "9af0bd0678076da67a931db490e05149a395b15961e53479ff7e18b43b0d5954"
+    },
+    "A:4584393": {
+      "file": "A%3A4584393.json",
+      "scope": "parcel",
+      "villa": 33,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 133237,
+      "sha256": "d9ba8e5bd5377d734a3a16eda1ba52b3d892452160c7c8089635499755abb764"
+    },
+    "A:4584363": {
+      "file": "A%3A4584363.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 34134,
+      "sha256": "a0bb0cdb2a38977b4887d2ec9af181aa782c3c172122798441ae131b9c272340"
+    },
+    "A:4584345": {
+      "file": "A%3A4584345.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 34134,
+      "sha256": "fd99927d985690c1867027f5c40498809c47e744aa58a6fadf018e15807a6632"
+    },
+    "A:4584315": {
+      "file": "A%3A4584315.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 34134,
+      "sha256": "33fe796533f506006fba4c1c14449ae06a29d980b44ce2b78e411f3ac09b8acc"
+    },
+    "A:4584290": {
+      "file": "A%3A4584290.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 53314,
+      "sha256": "a6472186838a20771988ffe94f92170f487ad7499e627a31f4d7a130057c6843"
+    },
+    "A:4584228": {
+      "file": "A%3A4584228.json",
+      "scope": "parcel",
+      "villa": 58,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 37916,
+      "sha256": "72bbeeac353b642724af08e31a35d2364df61249917cf04540f531ad2068c95d"
+    },
+    "A:4584193": {
+      "file": "A%3A4584193.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 177,
+      "missing": 0,
+      "bytes": 16193,
+      "sha256": "a25d6460a673c1f78da83cce9e1d76d5865ee170fe3a64bde32138526ca8ee04"
+    },
+    "A:4584183": {
+      "file": "A%3A4584183.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 135,
+      "missing": 0,
+      "bytes": 13897,
+      "sha256": "d13f4d02a657553f370080ced17e4a1762758be76cc766165a577d7110662140"
+    },
+    "A:4584164": {
+      "file": "A%3A4584164.json",
+      "scope": "parcel",
+      "villa": 64,
+      "detached": 522,
+      "missing": 0,
+      "bytes": 38493,
+      "sha256": "84235312cd57918a5c35cda2738dbbe3f251fcdf2a0217ea8701c70900136f6a"
+    },
+    "A:4584141": {
+      "file": "A%3A4584141.json",
+      "scope": "parcel",
+      "villa": 140,
+      "detached": 522,
+      "missing": 0,
+      "bytes": 42925,
+      "sha256": "731b5f9911261d1a395f113031693617f0b9debcd67718819cc3a28e79d1fdce"
+    },
+    "A:4584032": {
+      "file": "A%3A4584032.json",
+      "scope": "dong",
+      "villa": 433,
+      "detached": 342,
+      "missing": 0,
+      "bytes": 48689,
+      "sha256": "962643c122e9861331069307ba0d6ab72fc602d4d627d809802eb339037235eb"
+    },
+    "A:4583963": {
+      "file": "A%3A4583963.json",
+      "scope": "parcel",
+      "villa": 101,
+      "detached": 1265,
+      "missing": 0,
+      "bytes": 82257,
+      "sha256": "be39b1e8de3e9698e233e0c9b3967f0f73a4143eba0c91badef1140f85015bb7"
+    },
+    "A:4583731": {
+      "file": "A%3A4583731.json",
+      "scope": "parcel",
+      "villa": 85,
+      "detached": 1265,
+      "missing": 0,
+      "bytes": 81415,
+      "sha256": "3de1395c62a6a0f8eb11854c62c58fbeac8d16f5c9605a96f53b2a417931b847"
+    },
+    "A:4582472": {
+      "file": "A%3A4582472.json",
+      "scope": "parcel",
+      "villa": 46,
+      "detached": 613,
+      "missing": 0,
+      "bytes": 42469,
+      "sha256": "d6ebd93c2c68bf47d40f8b55eade95d67eae6080ba6f9021e0349da404c1ab56"
+    },
+    "A:4582434": {
+      "file": "A%3A4582434.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 640,
+      "missing": 0,
+      "bytes": 41353,
+      "sha256": "21f17ca939fceb70ad3f977f18c91cc7c7577363b00aa245e78ea74911a36252"
+    },
+    "A:4581906": {
+      "file": "A%3A4581906.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 62,
+      "missing": 0,
+      "bytes": 9766,
+      "sha256": "f58b2a02da362617f6020c0486361171883589a88d7186859493d321086f89fb"
+    },
+    "A:4581667": {
+      "file": "A%3A4581667.json",
+      "scope": "dong",
+      "villa": 11893,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 825650,
+      "sha256": "0e2fbbedcc639135ae46a8bcb60aa52a1c945e7177f117b1c04ec6a91cf05b27"
+    },
+    "A:4581658": {
+      "file": "A%3A4581658.json",
+      "scope": "dong",
+      "villa": 11893,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 825650,
+      "sha256": "1d10b9805e9ba9cf0c673080fc368b2718fc0c251b7e6bb6b6f826d35bcaf846"
+    },
+    "A:4581644": {
+      "file": "A%3A4581644.json",
+      "scope": "parcel",
+      "villa": 1504,
+      "detached": 559,
+      "missing": 0,
+      "bytes": 119143,
+      "sha256": "20dbffe994e30c1aa83c1ed9f0bf2cea28fe002d01feb473ed623818dd330a92"
+    },
+    "A:4581582": {
+      "file": "A%3A4581582.json",
+      "scope": "parcel",
+      "villa": 26,
+      "detached": 64,
+      "missing": 0,
+      "bytes": 11665,
+      "sha256": "afd9974379f833f0591ce7f9f99f6ec54c5cf8482f184cb1c5bc01086bc248ad"
+    },
+    "A:4581573": {
+      "file": "A%3A4581573.json",
+      "scope": "parcel",
+      "villa": 31,
+      "detached": 64,
+      "missing": 0,
+      "bytes": 11983,
+      "sha256": "9603d00f552384450e8377130603568ea6442cc32dbfa320dd58626586b98ef1"
+    },
+    "A:4581556": {
+      "file": "A%3A4581556.json",
+      "scope": "parcel",
+      "villa": 27,
+      "detached": 64,
+      "missing": 0,
+      "bytes": 11753,
+      "sha256": "19adfcd0a2a954f70063c754c96469982978ce9853fba132d354f3f669b2b275"
+    },
+    "A:4581540": {
+      "file": "A%3A4581540.json",
+      "scope": "parcel",
+      "villa": 38,
+      "detached": 64,
+      "missing": 0,
+      "bytes": 12446,
+      "sha256": "6509cd3bfbc5f0bfa133d3a1f545acac95d1fa22cf89a706b2c7204a2ffdc040"
+    },
+    "A:4581405": {
+      "file": "A%3A4581405.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 95,
+      "missing": 0,
+      "bytes": 11693,
+      "sha256": "298d840fe825722c55ab20aa83d9409cf0a46a9fb9bb451127b6005e0881f430"
+    },
+    "A:4581352": {
+      "file": "A%3A4581352.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 95,
+      "missing": 0,
+      "bytes": 11693,
+      "sha256": "b9fa397dc10bf2471378011dfccaa6f0833d080af8a002444f6d6545df737778"
+    },
+    "A:4581335": {
+      "file": "A%3A4581335.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 149,
+      "missing": 0,
+      "bytes": 14648,
+      "sha256": "b06d82e1056985ccdd7b8d28c6059875aa016db849611932a0eb9b00714bea0a"
+    },
+    "A:4581311": {
+      "file": "A%3A4581311.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1,
+      "missing": 0,
+      "bytes": 5694,
+      "sha256": "ffd9a7c406a844422e75f688de7393caa9249e689800f64023764d7ac63aa961"
+    },
+    "A:4581298": {
+      "file": "A%3A4581298.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 97,
+      "missing": 0,
+      "bytes": 11943,
+      "sha256": "c9dfc4bb83a11c7cfe0f71e889c30be04505325a9f9192ddb7cb9cf4e2044d7c"
+    },
+    "A:4482249": {
+      "file": "A%3A4482249.json",
+      "scope": "dong",
+      "villa": 155,
+      "detached": 106,
+      "missing": 0,
+      "bytes": 21328,
+      "sha256": "2eb9888fd1b77c24f8428b87a7e8ca7c929a0e1ce0ac90e76c3150f0f0896246"
+    },
+    "A:4390402": {
+      "file": "A%3A4390402.json",
+      "scope": "parcel",
+      "villa": 358,
+      "detached": 1095,
+      "missing": 0,
+      "bytes": 87039,
+      "sha256": "11c3512d5aea7bf3dc9b37d9cc90f8e8282f1b147beb1ee64fe1838a0b822332"
+    },
+    "A:4390301": {
+      "file": "A%3A4390301.json",
+      "scope": "parcel",
+      "villa": 376,
+      "detached": 1095,
+      "missing": 0,
+      "bytes": 87951,
+      "sha256": "1ac42c828b49051a2eef5bb1aff2b6b170502a4a95302fa2d31f1c3755dc7e02"
+    },
+    "A:4389250": {
+      "file": "A%3A4389250.json",
+      "scope": "parcel",
+      "villa": 194,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 16502,
+      "sha256": "464097744d2ad8d9127d97f433ce0411d21a031590cf9da9e57ea55085f294f5"
+    },
+    "A:10095": {
+      "file": "A%3A10095.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5574,
+      "sha256": "04a3d72449cafe8568aba3f332d7736a692c70ed70718e98a06752cf22e7d220"
+    },
+    "A:10094": {
+      "file": "A%3A10094.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5574,
+      "sha256": "57e0dfdfbc4f9b97298b0b0e5ca181121a5170e33a0e89cf0d5c220b4400bb5f"
+    },
+    "A:10093": {
+      "file": "A%3A10093.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 914,
+      "missing": 0,
+      "bytes": 55771,
+      "sha256": "f8e6603c9ce507ac068ea5318bb4e0ed726403947309dfc685cfb201e9dc5fd8"
+    },
+    "A:10092": {
+      "file": "A%3A10092.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 53312,
+      "sha256": "aab8eedcec61c3cf7a4d5e1af9e76e8f39bba918fc2851387cf0256c6e70ddbd"
+    },
+    "A:10091": {
+      "file": "A%3A10091.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 34132,
+      "sha256": "eeaedad7cfa5a117d9f6a0e6a8b2bea280acd7eaae075615bab6cbc9bf0804fb"
+    },
+    "A:10090": {
+      "file": "A%3A10090.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 34132,
+      "sha256": "d517f50c14a644e169d2f62013a763cd408f318a2d97f00b2b180d9f3c6ded98"
+    },
+    "A:10089": {
+      "file": "A%3A10089.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 34132,
+      "sha256": "9ba91b92c2077bccfdd85c18e3dba68e1aa143287d12955a9320a4d64e9f4aa6"
+    },
+    "A:10088": {
+      "file": "A%3A10088.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 53312,
+      "sha256": "381404bd43a8b8273ff9acccae55224ba273e7e2bc0358f39132d74fcffc6df4"
+    },
+    "A:10087": {
+      "file": "A%3A10087.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 47678,
+      "sha256": "97280946082071cdb1493c4321eec89df9128d7ec06a4bdf308512aab8b060b2"
+    },
+    "A:10086": {
+      "file": "A%3A10086.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 668,
+      "missing": 0,
+      "bytes": 42711,
+      "sha256": "0006d6d32959daea8656675a2938a6bf4a45690470781aac57fe5d748f8cfcd5"
+    },
+    "A:10085": {
+      "file": "A%3A10085.json",
+      "scope": "parcel",
+      "villa": 9,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 51172,
+      "sha256": "b150aba1f6960b3453f52148f1b022c2a1d6e259d5271b474f137135672aa777"
+    },
+    "A:10084": {
+      "file": "A%3A10084.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 478,
+      "missing": 0,
+      "bytes": 32379,
+      "sha256": "dc42b5e040baf291409b3c450304f70b24cd4135fbeb6f16ea6381e4006648a5"
+    },
+    "A:10083": {
+      "file": "A%3A10083.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 112,
+      "missing": 0,
+      "bytes": 12759,
+      "sha256": "81308a9f3e7145cc0f68ad67989b5b7f6f7bce5f50ef139088a6a9f79f21641e"
+    },
+    "A:10082": {
+      "file": "A%3A10082.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 97,
+      "missing": 0,
+      "bytes": 11941,
+      "sha256": "17113bb4382d2863743eb955f53a72abff99015b0879f1f1de1ec312994ad125"
+    },
+    "A:10081": {
+      "file": "A%3A10081.json",
+      "scope": "parcel",
+      "villa": 579,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 85627,
+      "sha256": "70e73374a0ee178022e8d30b52b48ba552713adc2bac4fd730b724d66f2bfd7a"
+    },
+    "A:10080": {
+      "file": "A%3A10080.json",
+      "scope": "dong",
+      "villa": 5899,
+      "detached": 639,
+      "missing": 0,
+      "bytes": 355429,
+      "sha256": "6ab42a70190cf27d6dd8fb6051838035d16d7a712da462636236386ced0049ff"
+    },
+    "A:10079": {
+      "file": "A%3A10079.json",
+      "scope": "parcel",
+      "villa": 307,
+      "detached": 639,
+      "missing": 0,
+      "bytes": 58470,
+      "sha256": "69091039b83f67df7882318f1497484d3585d5951378c87a995330240c94298a"
+    },
+    "A:10078": {
+      "file": "A%3A10078.json",
+      "scope": "parcel",
+      "villa": 426,
+      "detached": 135,
+      "missing": 0,
+      "bytes": 36896,
+      "sha256": "325801a27aa33f0f2e8264f9658e72c8a5660ed5b8a9834593688dec8db0f396"
+    },
+    "A:10077": {
+      "file": "A%3A10077.json",
+      "scope": "dong",
+      "villa": 491,
+      "detached": 213,
+      "missing": 0,
+      "bytes": 44968,
+      "sha256": "a211e23cfebbc018ec10aacfb53fe2bd0b3d6b5fbdd72114dfd639161188762c"
+    },
+    "A:10076": {
+      "file": "A%3A10076.json",
+      "scope": "parcel",
+      "villa": 77,
+      "detached": 902,
+      "missing": 0,
+      "bytes": 61021,
+      "sha256": "f780b2fbf846b1e9c0d095e53ab732c8ffa12b625ebcf866371f6e001122f85e"
+    },
+    "A:10075": {
+      "file": "A%3A10075.json",
+      "scope": "parcel",
+      "villa": 97,
+      "detached": 44,
+      "missing": 0,
+      "bytes": 14457,
+      "sha256": "20f66f931eede2a94a28cd4fd01c723d83a8d391d9679f213aea5d74f4faa3c0"
+    },
+    "A:10074": {
+      "file": "A%3A10074.json",
+      "scope": "parcel",
+      "villa": 162,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 15125,
+      "sha256": "89fe11f8720159f1a50ad46292b8b1de27897fa4ac3beba646b30406ddf91494"
+    },
+    "A:10073": {
+      "file": "A%3A10073.json",
+      "scope": "parcel",
+      "villa": 19,
+      "detached": 542,
+      "missing": 0,
+      "bytes": 36604,
+      "sha256": "987550ada5105235d56b977711b48d78cbd65e97e81baa596bc297536f1a3380"
+    },
+    "A:10072": {
+      "file": "A%3A10072.json",
+      "scope": "parcel",
+      "villa": 146,
+      "detached": 397,
+      "missing": 0,
+      "bytes": 36072,
+      "sha256": "646af8c56218ae62eb3702b0454f6db701ddab2e3c9416a397758fb7ae3a0700"
+    },
+    "A:10071": {
+      "file": "A%3A10071.json",
+      "scope": "parcel",
+      "villa": 93,
+      "detached": 397,
+      "missing": 0,
+      "bytes": 33018,
+      "sha256": "37c99d322db67a185fc3f7d6ce18b0af901bd11fba952a40018defea780b15c2"
+    },
+    "A:10070": {
+      "file": "A%3A10070.json",
+      "scope": "parcel",
+      "villa": 28,
+      "detached": 873,
+      "missing": 0,
+      "bytes": 55268,
+      "sha256": "5fd5a981c69e5a7256da86aa5ef0721ddb3a16271f7fc4d1bb4b5ebfca9b723b"
+    },
+    "A:10069": {
+      "file": "A%3A10069.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 192,
+      "missing": 0,
+      "bytes": 17006,
+      "sha256": "457bdc72c8cebcc5b4c9471efe0ac80da592b26c29cf23a9a9e13cbd0ef2272c"
+    },
+    "A:10068": {
+      "file": "A%3A10068.json",
+      "scope": "parcel",
+      "villa": 125,
+      "detached": 731,
+      "missing": 0,
+      "bytes": 52824,
+      "sha256": "ff56d18fba3229a985655f9f1b455f5a1d2087d9cd356ba78c039349759c3032"
+    },
+    "A:10067": {
+      "file": "A%3A10067.json",
+      "scope": "parcel",
+      "villa": 1172,
+      "detached": 1423,
+      "missing": 0,
+      "bytes": 148319,
+      "sha256": "b3c4d4c40059c5680a3857c4c5f152ee857d7078acb089e6492f00d5688eda3d"
+    },
+    "A:10066": {
+      "file": "A%3A10066.json",
+      "scope": "dong",
+      "villa": 8840,
+      "detached": 1423,
+      "missing": 0,
+      "bytes": 561338,
+      "sha256": "b6bd7614cf0e0c747d561e95e143fb87c19d25a5079d21ca3048c3a2bb6ab564"
+    },
+    "A:10065": {
+      "file": "A%3A10065.json",
+      "scope": "parcel",
+      "villa": 88,
+      "detached": 571,
+      "missing": 0,
+      "bytes": 42539,
+      "sha256": "5f69552ec480213eeab109505ef8e568448164b475e958555f6431f9269803f1"
+    },
+    "A:10064": {
+      "file": "A%3A10064.json",
+      "scope": "parcel",
+      "villa": 274,
+      "detached": 640,
+      "missing": 0,
+      "bytes": 56979,
+      "sha256": "dcaca3adb6d30310a01df5f5e5e77f92878dd59bd53c05fe866cd59d1324e164"
+    },
+    "A:10063": {
+      "file": "A%3A10063.json",
+      "scope": "parcel",
+      "villa": 156,
+      "detached": 377,
+      "missing": 0,
+      "bytes": 36161,
+      "sha256": "6db0ce83a4d9463283f03485ca2a850c1c93d415400c60b238df116969779ae1"
+    },
+    "A:10062": {
+      "file": "A%3A10062.json",
+      "scope": "parcel",
+      "villa": 141,
+      "detached": 287,
+      "missing": 0,
+      "bytes": 30462,
+      "sha256": "e218ebae98d405a1332dd852cd15cdf1a659f97107e2e6307afca230729146e9"
+    },
+    "A:10061": {
+      "file": "A%3A10061.json",
+      "scope": "parcel",
+      "villa": 317,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 23468,
+      "sha256": "0ce385888bac778de6d349ff851c3789ef6454fc067bfc25741bb695ccf9e017"
+    },
+    "A:10060": {
+      "file": "A%3A10060.json",
+      "scope": "dong",
+      "villa": 11893,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 825648,
+      "sha256": "e6423614349f5db1887b64230a5c5f0ce4774253d33b7d8d2bd3dc3f4e52f9a5"
+    },
+    "A:10059": {
+      "file": "A%3A10059.json",
+      "scope": "parcel",
+      "villa": 173,
+      "detached": 559,
+      "missing": 0,
+      "bytes": 46790,
+      "sha256": "46a513edcaac7e6bd5753d8ab31fe11540da511976f7c7d109acb792c9ce2432"
+    },
+    "A:10058": {
+      "file": "A%3A10058.json",
+      "scope": "parcel",
+      "villa": 145,
+      "detached": 1262,
+      "missing": 0,
+      "bytes": 84033,
+      "sha256": "de17a49d169042505c078180f17ca6ec2b11debf78e410d61ee2bf7cdb2067ec"
+    },
+    "A:10057": {
+      "file": "A%3A10057.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 9,
+      "missing": 0,
+      "bytes": 6344,
+      "sha256": "cce29c73d1d220799e3473a0b5c1b3dc70afd8ee0a6f9cf7f7f5d2126a0b4020"
+    },
+    "A:10056": {
+      "file": "A%3A10056.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5571,
+      "sha256": "017f97efafd883642b5b38c074e10fee74a3de6a39d42f9020c1e7ddfcb27804"
+    },
+    "A:10055": {
+      "file": "A%3A10055.json",
+      "scope": "parcel",
+      "villa": 148,
+      "detached": 393,
+      "missing": 0,
+      "bytes": 36411,
+      "sha256": "cb07a66fc2b28cfc5867883dd4ba2f2ffdc96a147ab91170dae47904d37dfd0b"
+    },
+    "A:10054": {
+      "file": "A%3A10054.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 8,
+      "missing": 0,
+      "bytes": 6258,
+      "sha256": "eecc97a0dd3aa98eb839c034baf65b13155dbb76cd386d4a7929abbc7aae8c67"
+    },
+    "A:10053": {
+      "file": "A%3A10053.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 23,
+      "missing": 0,
+      "bytes": 7292,
+      "sha256": "e7023eb6d73c208898e66d2d258826754db2f262eb1e044bb84bc0b5c852dd09"
+    },
+    "A:10052": {
+      "file": "A%3A10052.json",
+      "scope": "dong",
+      "villa": 1172,
+      "detached": 706,
+      "missing": 0,
+      "bytes": 107190,
+      "sha256": "c95e53539e7baa6b9e937a7a34ada975ce76265f74fed605c142b26aedcdf731"
+    },
+    "A:10051": {
+      "file": "A%3A10051.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 9,
+      "missing": 0,
+      "bytes": 6344,
+      "sha256": "db08439d81dbeee08caab9e59cfe6f947529fe82bf13513aab7019251a58db9b"
+    },
+    "A:10050": {
+      "file": "A%3A10050.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 129,
+      "missing": 0,
+      "bytes": 13140,
+      "sha256": "5103ba97cbbceda2e540b9056a4da7293cc1a7c1b0daf5a8975ea3fb6b230afc"
+    },
+    "A:10049": {
+      "file": "A%3A10049.json",
+      "scope": "parcel",
+      "villa": 52,
+      "detached": 113,
+      "missing": 0,
+      "bytes": 15940,
+      "sha256": "b9d68da5d3dac8adb50bd2e69f3bea5d00eac44e0a2f228b51ce6ae01bd2e26e"
+    },
+    "A:10048": {
+      "file": "A%3A10048.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5572,
+      "sha256": "c40a5109a6fcc4f313dd6846fe76da86c8d35480559a036b9e14c73a39883c5d"
+    },
+    "A:10047": {
+      "file": "A%3A10047.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 130960,
+      "sha256": "1cda57c599f86dee8b01e99967feb409d123c496dbcfac2643ab43d5ace3b318"
+    },
+    "A:10045": {
+      "file": "A%3A10045.json",
+      "scope": "dong",
+      "villa": 684,
+      "detached": 321,
+      "missing": 0,
+      "bytes": 60530,
+      "sha256": "5b5a004c5c774efe28809ecef31baeb6007fd718d0b64634b9b78d1d751696ee"
+    },
+    "A:10044": {
+      "file": "A%3A10044.json",
+      "scope": "parcel",
+      "villa": 121,
+      "detached": 340,
+      "missing": 0,
+      "bytes": 31963,
+      "sha256": "7cf2928495fe7843f1862926cabe6556575dec8ad26d66f9ab157ab52902142c"
+    },
+    "A:10043": {
+      "file": "A%3A10043.json",
+      "scope": "parcel",
+      "villa": 81,
+      "detached": 60,
+      "missing": 0,
+      "bytes": 14420,
+      "sha256": "07e04f4edfa98b1e774caf16202ec52b4ea20afebb0ccb434146131969dc9d9a"
+    },
+    "A:10042": {
+      "file": "A%3A10042.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 3,
+      "missing": 0,
+      "bytes": 5844,
+      "sha256": "ee2b2b4fd5b2aeae9f84d577a149d56db398737b7de7f471276922d98249d27f"
+    },
+    "A:10041": {
+      "file": "A%3A10041.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 21,
+      "missing": 0,
+      "bytes": 7253,
+      "sha256": "3120f03b3b2bcda4cda00c9ef43dd46d0e1ee185419532404c860e410362924a"
+    },
+    "A:10040": {
+      "file": "A%3A10040.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 902,
+      "missing": 0,
+      "bytes": 56120,
+      "sha256": "18b9531368cd85e7c80e7f57c7b1598af7f24c33a0eb4d083ad40b79723bcdc4"
+    },
+    "A:10039": {
+      "file": "A%3A10039.json",
+      "scope": "parcel",
+      "villa": 88,
+      "detached": 287,
+      "missing": 0,
+      "bytes": 27448,
+      "sha256": "308472069ddd0ce26d4afd95d20297bba28ab7d7bf95489f97f5783489860052"
+    },
+    "A:10038": {
+      "file": "A%3A10038.json",
+      "scope": "parcel",
+      "villa": 101,
+      "detached": 197,
+      "missing": 0,
+      "bytes": 23214,
+      "sha256": "18cadb6941750d09aa86d755e3ae16c6870977e611589143a9a29ea523930bb5"
+    },
+    "A:7853": {
+      "file": "A%3A7853.json",
+      "scope": "parcel",
+      "villa": 14,
+      "detached": 192,
+      "missing": 0,
+      "bytes": 18222,
+      "sha256": "eeebd22618a3f007f09dea391318fa10d3357f1aaa1c12e9dfe0f23abe8be47f"
+    },
+    "A:10036": {
+      "file": "A%3A10036.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9494,
+      "sha256": "c1c1d7e083432d6300285d7d7f04bd8f2a19021eff1a9b0a3228f9b487da5bc8"
+    },
+    "A:10035": {
+      "file": "A%3A10035.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 124,
+      "missing": 0,
+      "bytes": 13135,
+      "sha256": "fd2dc3a8351ae8630dc7ed560f44270c9c0c74883bcb85b5b2954f5eab65f849"
+    },
+    "A:10034": {
+      "file": "A%3A10034.json",
+      "scope": "parcel",
+      "villa": 12,
+      "detached": 171,
+      "missing": 0,
+      "bytes": 16551,
+      "sha256": "482aae89853011a820155d425a91a3dc935a231d407e2ff963673593dbb2036a"
+    },
+    "A:10033": {
+      "file": "A%3A10033.json",
+      "scope": "parcel",
+      "villa": 712,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 44898,
+      "sha256": "e3ce872a58ab2536fd1af44a67f0bc902f9ee36c3a6877fddf417f580e326f7d"
+    },
+    "A:10032": {
+      "file": "A%3A10032.json",
+      "scope": "parcel",
+      "villa": 604,
+      "detached": 1423,
+      "missing": 0,
+      "bytes": 117758,
+      "sha256": "fcf4172fcc44e164e461ab49d1de592d17e18542615271a2e19cff68172d4d69"
+    },
+    "A:10031": {
+      "file": "A%3A10031.json",
+      "scope": "parcel",
+      "villa": 378,
+      "detached": 1423,
+      "missing": 0,
+      "bytes": 105356,
+      "sha256": "29d38efdb6ae4ee68e49b37b7b76e9052aded3d8b46d82851c9effc59e105051"
+    },
+    "A:10030": {
+      "file": "A%3A10030.json",
+      "scope": "parcel",
+      "villa": 78,
+      "detached": 557,
+      "missing": 0,
+      "bytes": 41562,
+      "sha256": "b1cde14f083cae62c3cd24a54e0f97de3275610642172ff5c7ebe7d7885f4c75"
+    },
+    "A:10029": {
+      "file": "A%3A10029.json",
+      "scope": "parcel",
+      "villa": 63,
+      "detached": 401,
+      "missing": 0,
+      "bytes": 32554,
+      "sha256": "2f6bb96161b75ffbf9bc709927fdc7b2ce13172e1d1a2e3210c636181de80274"
+    },
+    "A:10028": {
+      "file": "A%3A10028.json",
+      "scope": "parcel",
+      "villa": 256,
+      "detached": 640,
+      "missing": 0,
+      "bytes": 55956,
+      "sha256": "db8d0ccbb90b7c078fe1b56a80c428938f4b4155f1c1837f4f456fa375c5a9c3"
+    },
+    "A:10027": {
+      "file": "A%3A10027.json",
+      "scope": "parcel",
+      "villa": 362,
+      "detached": 640,
+      "missing": 0,
+      "bytes": 61521,
+      "sha256": "3708f351777779f026b5fff6ec92550cf9e7e5186f5238cff6a336323b3aa604"
+    },
+    "A:7795": {
+      "file": "A%3A7795.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 377,
+      "missing": 0,
+      "bytes": 26909,
+      "sha256": "3a8dec257497b6a784a314d44cf2503b96d2da28c583064d66096b2b5292feae"
+    },
+    "A:10025": {
+      "file": "A%3A10025.json",
+      "scope": "parcel",
+      "villa": 118,
+      "detached": 737,
+      "missing": 0,
+      "bytes": 53766,
+      "sha256": "def3a9dde910062d0851c3cd73aa7f3d074eecdf95523cbe395b9dc76362a9c2"
+    },
+    "A:10024": {
+      "file": "A%3A10024.json",
+      "scope": "dong",
+      "villa": 3187,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 226144,
+      "sha256": "851cb399907c6a933c729e3fcf51a872c780defe6ff3e3e8704fad2ab30933a4"
+    },
+    "A:10023": {
+      "file": "A%3A10023.json",
+      "scope": "dong",
+      "villa": 7399,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 547161,
+      "sha256": "0badec690fd8a7751ea5f9ef41842f01e6067c0f2a42575c352c8f78dd7b1692"
+    },
+    "A:10022": {
+      "file": "A%3A10022.json",
+      "scope": "dong",
+      "villa": 7399,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 547161,
+      "sha256": "02a036188d06fd6437d537b03102ebd98546792b804cbc65bc1e7d6e1efeb7db"
+    },
+    "A:10020": {
+      "file": "A%3A10020.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 570,
+      "missing": 0,
+      "bytes": 37856,
+      "sha256": "1837fdc85e8fbf61c79c5aefdd0be1ea118777179a61dc586c9df1acc2af95b7"
+    },
+    "A:10018": {
+      "file": "A%3A10018.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 112,
+      "missing": 0,
+      "bytes": 12759,
+      "sha256": "bb03210df00608fc6ee4c0c20706f5ff31f6d805a258e2f25582e927423b7905"
+    },
+    "A:10017": {
+      "file": "A%3A10017.json",
+      "scope": "parcel",
+      "villa": 107,
+      "detached": 149,
+      "missing": 0,
+      "bytes": 21006,
+      "sha256": "f97aad040440c3c31ce73dcfcb25efffacec201cd2235b1e34348b4755da3c4c"
+    },
+    "A:10003": {
+      "file": "A%3A10003.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 235,
+      "missing": 0,
+      "bytes": 19133,
+      "sha256": "21c58cfd1ab9bbd58fd9422ebd48a3b30737c14123aa60b5c8dfe2b1ecf4d62f"
+    },
+    "A:10002": {
+      "file": "A%3A10002.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 235,
+      "missing": 0,
+      "bytes": 19133,
+      "sha256": "51671b6c86296f1302b395eeab08771d87cace440770c4300098c2cca650c1f2"
+    },
+    "A:10000": {
+      "file": "A%3A10000.json",
+      "scope": "dong",
+      "villa": 4766,
+      "detached": 1014,
+      "missing": 0,
+      "bytes": 317165,
+      "sha256": "8b6dd59fd6f1f197eb4c7c46cfef6207da1e2a16b68ae3d71b3b2cf6bc405c6a"
+    },
+    "A:9976": {
+      "file": "A%3A9976.json",
+      "scope": "parcel",
+      "villa": 86,
+      "detached": 287,
+      "missing": 0,
+      "bytes": 27382,
+      "sha256": "90c7efd8da5a4981b5d51c96d3a14f494d8aae9dbd468cd847db5fe3b1da133c"
+    },
+    "A:8010": {
+      "file": "A%3A8010.json",
+      "scope": "dong",
+      "villa": 152,
+      "detached": 81,
+      "missing": 0,
+      "bytes": 19544,
+      "sha256": "88c9327f419525a180e11c7018902981b1c551ebbaa573392191188464fea6dd"
+    },
+    "A:8009": {
+      "file": "A%3A8009.json",
+      "scope": "dong",
+      "villa": 152,
+      "detached": 81,
+      "missing": 0,
+      "bytes": 19544,
+      "sha256": "db226ac91001efdbb57c85e337fcf329204b0003740decb772b9777d2610b5e6"
+    },
+    "A:8008": {
+      "file": "A%3A8008.json",
+      "scope": "dong",
+      "villa": 292,
+      "detached": 393,
+      "missing": 0,
+      "bytes": 43852,
+      "sha256": "ce1414ad93dcd60b1b5e98ffaba9d717416cdc5b39dc481d343b8b213f441af7"
+    },
+    "A:8007": {
+      "file": "A%3A8007.json",
+      "scope": "parcel",
+      "villa": 17,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 56665,
+      "sha256": "a744d6c81feba23a8542180dbd2ff19f223dcf746e19a88004e2e219c8a1f25e"
+    },
+    "A:8006": {
+      "file": "A%3A8006.json",
+      "scope": "dong",
+      "villa": 3187,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 226143,
+      "sha256": "476e2eb665cb78b3083945cfe0d4345869466c8fe764b5b2fe6988be2ebcfbcd"
+    },
+    "A:8005": {
+      "file": "A%3A8005.json",
+      "scope": "dong",
+      "villa": 3187,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 226143,
+      "sha256": "57ecbb22c4bc497a9909e27a51f9182a6920735f6565e9c8478fbf28bdc7f3ff"
+    },
+    "A:8004": {
+      "file": "A%3A8004.json",
+      "scope": "parcel",
+      "villa": 51,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 58802,
+      "sha256": "d2dec846581f38b8d7c050adccd736be353b36c20f49b9e2e2152e45010392d9"
+    },
+    "A:8003": {
+      "file": "A%3A8003.json",
+      "scope": "dong",
+      "villa": 3187,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 226143,
+      "sha256": "a66f1cb636c04bd1c9f445130165552c46ade6f0d693132a57a2819d2bf3e689"
+    },
+    "A:8002": {
+      "file": "A%3A8002.json",
+      "scope": "dong",
+      "villa": 3187,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 226143,
+      "sha256": "515f32ea2496183e0918113b98e3517c1da691c2875f2b65f7ed20e6496f988e"
+    },
+    "A:8001": {
+      "file": "A%3A8001.json",
+      "scope": "dong",
+      "villa": 747,
+      "detached": 287,
+      "missing": 0,
+      "bytes": 62756,
+      "sha256": "65b4b23f21285e033d316d02330d370cb9901c91649ba7eaedaeeee1a558b5e8"
+    },
+    "A:8000": {
+      "file": "A%3A8000.json",
+      "scope": "parcel",
+      "villa": 4,
+      "detached": 731,
+      "missing": 0,
+      "bytes": 45744,
+      "sha256": "9cb5f9fc7bfd86f51698c45df96a60a33571f59eadb546b998004185f9bc1c8c"
+    },
+    "A:7999": {
+      "file": "A%3A7999.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5563,
+      "sha256": "734666972431e1fcd7f0f6c8eba0e19b6c434b038439f072b710b8e187908f54"
+    },
+    "A:7998": {
+      "file": "A%3A7998.json",
+      "scope": "dong",
+      "villa": 2229,
+      "detached": 685,
+      "missing": 0,
+      "bytes": 163635,
+      "sha256": "85df9d1e34ad9ee3735acd98864831676b47d3e79228d57756507e7e24d222a7"
+    },
+    "A:7997": {
+      "file": "A%3A7997.json",
+      "scope": "dong",
+      "villa": 2773,
+      "detached": 478,
+      "missing": 0,
+      "bytes": 181009,
+      "sha256": "6a7a5f1a948ce7b7fe721633c1395eca2dd6afa9766fd2e87debe8e436781b03"
+    },
+    "A:7996": {
+      "file": "A%3A7996.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 3,
+      "missing": 0,
+      "bytes": 5850,
+      "sha256": "c05d2eaca07821fb5d6e016495c0fbe6c919d9e0042bae5636d82c14eb8f0696"
+    },
+    "A:7995": {
+      "file": "A%3A7995.json",
+      "scope": "parcel",
+      "villa": 43,
+      "detached": 168,
+      "missing": 0,
+      "bytes": 18662,
+      "sha256": "4f1d3392d5734e4b3f8a72f46ea640cf38a4b24c1018825661ab06363c681b11"
+    },
+    "A:7994": {
+      "file": "A%3A7994.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5563,
+      "sha256": "df6059b195da2a8ca2a1dca0df2ce49b8ae2244d64315fd9446b0f1c93bf08d6"
+    },
+    "A:7993": {
+      "file": "A%3A7993.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1381,
+      "missing": 0,
+      "bytes": 81714,
+      "sha256": "434a9bcbd00a11d75fb76d226e451fc7ba01a2cb8b8508a50f657ff17374dd7c"
+    },
+    "A:7992": {
+      "file": "A%3A7992.json",
+      "scope": "parcel",
+      "villa": 532,
+      "detached": 929,
+      "missing": 0,
+      "bytes": 86798,
+      "sha256": "88aae4ae689eef8acea45c6803f13a36fa4e674c41bdcc573b8cedacab23b1d2"
+    },
+    "A:7991": {
+      "file": "A%3A7991.json",
+      "scope": "parcel",
+      "villa": 162,
+      "detached": 66,
+      "missing": 0,
+      "bytes": 19432,
+      "sha256": "52cdf8dcd6f2c2658786f3e6d34e423f85b77dd9cb17e213ebc7b9bee24d2ea4"
+    },
+    "A:7990": {
+      "file": "A%3A7990.json",
+      "scope": "parcel",
+      "villa": 469,
+      "detached": 54,
+      "missing": 0,
+      "bytes": 35193,
+      "sha256": "db94fe799d9401716bd58308f0f6df9a345bab90681912396b608bae2a59c3a5"
+    },
+    "A:7989": {
+      "file": "A%3A7989.json",
+      "scope": "parcel",
+      "villa": 4,
+      "detached": 129,
+      "missing": 0,
+      "bytes": 13530,
+      "sha256": "da84879445d5b8f02d84c0fae5ec69fefa31011dc7e959ab1d886900e0d01530"
+    },
+    "A:7988": {
+      "file": "A%3A7988.json",
+      "scope": "parcel",
+      "villa": 6,
+      "detached": 129,
+      "missing": 0,
+      "bytes": 13688,
+      "sha256": "0201d298330de6e47a0e945e30442621adb08b5a64f4c22b2b1ff94d719c1fce"
+    },
+    "A:7987": {
+      "file": "A%3A7987.json",
+      "scope": "parcel",
+      "villa": 25,
+      "detached": 134,
+      "missing": 0,
+      "bytes": 15525,
+      "sha256": "dfb4609784efd9ab8ce4852d911248eed5b5e5d8e32859f7f529c3970284707d"
+    },
+    "A:7986": {
+      "file": "A%3A7986.json",
+      "scope": "dong",
+      "villa": 50,
+      "detached": 51,
+      "missing": 0,
+      "bytes": 12367,
+      "sha256": "1a63f9f24b5dc2a2dcf7d74a989383f5e7845143ab683da03d62da1a1ecb32e7"
+    },
+    "A:7985": {
+      "file": "A%3A7985.json",
+      "scope": "parcel",
+      "villa": 3,
+      "detached": 98,
+      "missing": 0,
+      "bytes": 11853,
+      "sha256": "871650b875f33f3cc356cdf2e663cabd006d74ea1cba587617bbf05389ec58cf"
+    },
+    "A:7984": {
+      "file": "A%3A7984.json",
+      "scope": "parcel",
+      "villa": 290,
+      "detached": 162,
+      "missing": 0,
+      "bytes": 31282,
+      "sha256": "76ce9a5833be678b73b23fc112b60902105e60c860f7d784aef24f5b0f6c0aae"
+    },
+    "A:7983": {
+      "file": "A%3A7983.json",
+      "scope": "dong",
+      "villa": 360,
+      "detached": 105,
+      "missing": 0,
+      "bytes": 32138,
+      "sha256": "592ad07b8dbae93a3a78bd89b38dc50ba2e91d0f41438823b34634820360c0d0"
+    },
+    "A:7982": {
+      "file": "A%3A7982.json",
+      "scope": "parcel",
+      "villa": 352,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 74854,
+      "sha256": "7ba53bc557b6817d8623b030b32546cc270c2c97f5cde3b5509d7dc2e7fd86a3"
+    },
+    "A:7981": {
+      "file": "A%3A7981.json",
+      "scope": "dong",
+      "villa": 11153,
+      "detached": 914,
+      "missing": 0,
+      "bytes": 648884,
+      "sha256": "2e305f5359df6a12ff85ef0b0a78576139f6a4fec7a6fd5446cb5022284efebb"
+    },
+    "A:7980": {
+      "file": "A%3A7980.json",
+      "scope": "dong",
+      "villa": 9653,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 551070,
+      "sha256": "fb2a66f7eb00f516c30e859d9e9b0929b4d287b52288f65f17f0da6987495c44"
+    },
+    "A:7979": {
+      "file": "A%3A7979.json",
+      "scope": "parcel",
+      "villa": 179,
+      "detached": 914,
+      "missing": 0,
+      "bytes": 66230,
+      "sha256": "155a66676ae0416cee673b8138ad15b0caa4065d0d6b311ddd0207cc77bfd74a"
+    },
+    "A:7978": {
+      "file": "A%3A7978.json",
+      "scope": "parcel",
+      "villa": 193,
+      "detached": 873,
+      "missing": 0,
+      "bytes": 64560,
+      "sha256": "404762c8c20efd384aa9b9432482fb1abca833586d579dd8d7f0def5632bc6f7"
+    },
+    "A:7977": {
+      "file": "A%3A7977.json",
+      "scope": "parcel",
+      "villa": 106,
+      "detached": 1123,
+      "missing": 0,
+      "bytes": 73231,
+      "sha256": "72d447dd32eecd0aaf806a6712d52d76d6aebb6ca47afd4735fa61af713899b6"
+    },
+    "A:7976": {
+      "file": "A%3A7976.json",
+      "scope": "parcel",
+      "villa": 2,
+      "detached": 197,
+      "missing": 0,
+      "bytes": 17249,
+      "sha256": "edbb5c00a767fd8a69b8daff12f1a2a3a5d4302fabb50346f9dbe6ef43a39f44"
+    },
+    "A:7975": {
+      "file": "A%3A7975.json",
+      "scope": "parcel",
+      "villa": 120,
+      "detached": 284,
+      "missing": 0,
+      "bytes": 28956,
+      "sha256": "b7e7acf53d017931055d48305f0c8d8ada7da765e293537ea49923a858e55fe2"
+    },
+    "A:7974": {
+      "file": "A%3A7974.json",
+      "scope": "parcel",
+      "villa": 9,
+      "detached": 635,
+      "missing": 0,
+      "bytes": 41479,
+      "sha256": "8b01cc45f714dd0c0ca9635087ce1206ce75949a59657905ee8665e7b06fe332"
+    },
+    "A:7973": {
+      "file": "A%3A7973.json",
+      "scope": "parcel",
+      "villa": 30,
+      "detached": 175,
+      "missing": 0,
+      "bytes": 17894,
+      "sha256": "ff992a88b6410f00605325cb936220cf8527e07e7bdb66d4a24e225a5e7fd696"
+    },
+    "A:7972": {
+      "file": "A%3A7972.json",
+      "scope": "parcel",
+      "villa": 101,
+      "detached": 197,
+      "missing": 0,
+      "bytes": 23213,
+      "sha256": "2f77be31f409d813bb474816e21ad6ba75553103fa696b235f322df5fde18895"
+    },
+    "A:7971": {
+      "file": "A%3A7971.json",
+      "scope": "parcel",
+      "villa": 17,
+      "detached": 1123,
+      "missing": 0,
+      "bytes": 67927,
+      "sha256": "f58550c9961055e493349aa0b0bb9a1b3e0c7739a6b87c09e97c956107178e14"
+    },
+    "A:7970": {
+      "file": "A%3A7970.json",
+      "scope": "parcel",
+      "villa": 75,
+      "detached": 197,
+      "missing": 0,
+      "bytes": 21795,
+      "sha256": "4868e58d26443b840a470d33fd76cc0c2c80cdd3545587c7df73a27d1d026117"
+    },
+    "A:7969": {
+      "file": "A%3A7969.json",
+      "scope": "dong",
+      "villa": 4458,
+      "detached": 435,
+      "missing": 0,
+      "bytes": 267287,
+      "sha256": "7e3d07876c6d70667988b6ce27ad56117f89836065957f3a8c60e70161870fa7"
+    },
+    "A:7968": {
+      "file": "A%3A7968.json",
+      "scope": "parcel",
+      "villa": 261,
+      "detached": 421,
+      "missing": 0,
+      "bytes": 44601,
+      "sha256": "53675221d63aeeddfceb133711e779a34abfb8977932c3333e883d73d46ea383"
+    },
+    "A:7967": {
+      "file": "A%3A7967.json",
+      "scope": "parcel",
+      "villa": 77,
+      "detached": 557,
+      "missing": 0,
+      "bytes": 41500,
+      "sha256": "0511fbff46e466dc6d7138a39404c16693ce91d22ceed21f637c752733791ad3"
+    },
+    "A:7966": {
+      "file": "A%3A7966.json",
+      "scope": "parcel",
+      "villa": 348,
+      "detached": 1423,
+      "missing": 0,
+      "bytes": 103738,
+      "sha256": "c49da254da0cdd7fdec36941611b5745053db42d9f21b23816afff47bb186dba"
+    },
+    "A:7965": {
+      "file": "A%3A7965.json",
+      "scope": "dong",
+      "villa": 894,
+      "detached": 582,
+      "missing": 0,
+      "bytes": 86821,
+      "sha256": "ba50d912b122211c852e3292f9b5e9178014da8502b352633ea80e647fb3081a"
+    },
+    "A:7964": {
+      "file": "A%3A7964.json",
+      "scope": "parcel",
+      "villa": 13,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 51468,
+      "sha256": "f4adcffe6b00318d894919bdfd3c4c22d9abf01e98812a2b13075cde3b3fe20c"
+    },
+    "A:7963": {
+      "file": "A%3A7963.json",
+      "scope": "dong",
+      "villa": 2773,
+      "detached": 478,
+      "missing": 0,
+      "bytes": 181009,
+      "sha256": "b30d95d11addcee6206b55aa1ba307eaac2fb4dfab38b8815f57e284458746a9"
+    },
+    "A:7962": {
+      "file": "A%3A7962.json",
+      "scope": "parcel",
+      "villa": 885,
+      "detached": 640,
+      "missing": 0,
+      "bytes": 88765,
+      "sha256": "99f1a9075584b85aeda52bdf588f64e487d5daf8cbb98fedaf6c6ae255c086e1"
+    },
+    "A:7961": {
+      "file": "A%3A7961.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 478,
+      "missing": 0,
+      "bytes": 32378,
+      "sha256": "38483c85c78343055408ea214bf9c86bbd95e294829cba1bb4df430d5a25b6c0"
+    },
+    "A:7960": {
+      "file": "A%3A7960.json",
+      "scope": "parcel",
+      "villa": 113,
+      "detached": 640,
+      "missing": 0,
+      "bytes": 48168,
+      "sha256": "8bd1e3d2732a023340bba2489e06c2f716df69672ac3843bcbc22ada08abbf49"
+    },
+    "A:7959": {
+      "file": "A%3A7959.json",
+      "scope": "parcel",
+      "villa": 202,
+      "detached": 354,
+      "missing": 0,
+      "bytes": 37513,
+      "sha256": "73c01ac94010253e9e523426dbe2bda8fcf3709ee3cbd6ec44bba4329e88a45c"
+    },
+    "A:7958": {
+      "file": "A%3A7958.json",
+      "scope": "parcel",
+      "villa": 96,
+      "detached": 1095,
+      "missing": 0,
+      "bytes": 73051,
+      "sha256": "86d6b7a12cd6a07b9b4530c623e4d37f1072a8708f52e7daa8bb9c72bcbc8dcd"
+    },
+    "A:7957": {
+      "file": "A%3A7957.json",
+      "scope": "parcel",
+      "villa": 478,
+      "detached": 1367,
+      "missing": 0,
+      "bytes": 107266,
+      "sha256": "e61e3b8ada05545212a52a6bcc29cb4b0f88654f95204cec36c3450eb9418c43"
+    },
+    "A:7956": {
+      "file": "A%3A7956.json",
+      "scope": "parcel",
+      "villa": 283,
+      "detached": 1367,
+      "missing": 0,
+      "bytes": 96927,
+      "sha256": "cc16fec54d266a858e378075e3e0f490dc2596697be8b8dea2a09b8ffdab262c"
+    },
+    "A:7955": {
+      "file": "A%3A7955.json",
+      "scope": "parcel",
+      "villa": 37,
+      "detached": 1095,
+      "missing": 0,
+      "bytes": 69586,
+      "sha256": "5f0bfb2afb7e16f2f64f5db69d69c9acb6adffe30c339c2d1beef295b4b23786"
+    },
+    "A:7954": {
+      "file": "A%3A7954.json",
+      "scope": "parcel",
+      "villa": 110,
+      "detached": 287,
+      "missing": 0,
+      "bytes": 28557,
+      "sha256": "4ea501982d8aa30c709ba3b2cf9e0d3eec6d6207592384829190756c613298e9"
+    },
+    "A:7953": {
+      "file": "A%3A7953.json",
+      "scope": "parcel",
+      "villa": 178,
+      "detached": 737,
+      "missing": 0,
+      "bytes": 56970,
+      "sha256": "3e1cc077a12f864e84b54ed99fa6953629be964b278f08b1376e36d445e682e6"
+    },
+    "A:7952": {
+      "file": "A%3A7952.json",
+      "scope": "dong",
+      "villa": 1058,
+      "detached": 10,
+      "missing": 0,
+      "bytes": 61860,
+      "sha256": "05fd93e4604aa63491bc744992e0a768462fc5d9adeac1064ac35cf3c2be462f"
+    },
+    "A:7951": {
+      "file": "A%3A7951.json",
+      "scope": "parcel",
+      "villa": 260,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 70303,
+      "sha256": "306ad8e15347f9659edcffea56975c1f4c82497841724793c0c05671a0602f9e"
+    },
+    "A:7950": {
+      "file": "A%3A7950.json",
+      "scope": "parcel",
+      "villa": 317,
+      "detached": 334,
+      "missing": 0,
+      "bytes": 42139,
+      "sha256": "e0304528b2cd748eb5d040ec1f1d7afc905ab9ff03decd51952ad6d62b7d5b55"
+    },
+    "A:7949": {
+      "file": "A%3A7949.json",
+      "scope": "parcel",
+      "villa": 216,
+      "detached": 737,
+      "missing": 0,
+      "bytes": 58905,
+      "sha256": "5d4987b7357315f5078cf63ae208affdbcd5ae56a12e7d701551c12576b97283"
+    },
+    "A:7948": {
+      "file": "A%3A7948.json",
+      "scope": "parcel",
+      "villa": 146,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 64128,
+      "sha256": "4457b196bff1b3a201a53f1edf586cc7c3755cfb478c03e9eca6bc267489aab6"
+    },
+    "A:7947": {
+      "file": "A%3A7947.json",
+      "scope": "dong",
+      "villa": 11893,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 825647,
+      "sha256": "990ac0f5d2058e1d800be15232048652c43af715b4103d3144cbd24399da7efb"
+    },
+    "A:7946": {
+      "file": "A%3A7946.json",
+      "scope": "parcel",
+      "villa": 76,
+      "detached": 2026,
+      "missing": 0,
+      "bytes": 122130,
+      "sha256": "aa4f416162d88cfd27581ad6f0ff88d102097f924646c927d54b8c105e5c8f2b"
+    },
+    "A:7945": {
+      "file": "A%3A7945.json",
+      "scope": "parcel",
+      "villa": 151,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 193464,
+      "sha256": "b9586d2cf45ee2cf053099246f748dc0b13398da550cf3b19d71fe2a429acbf7"
+    },
+    "A:7944": {
+      "file": "A%3A7944.json",
+      "scope": "parcel",
+      "villa": 19,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 148441,
+      "sha256": "14230225fc615560f3bbb08061dad2d19bc419e6a8b1d4d7760da2448ecdf843"
+    },
+    "A:7943": {
+      "file": "A%3A7943.json",
+      "scope": "parcel",
+      "villa": 93,
+      "detached": 2096,
+      "missing": 0,
+      "bytes": 125037,
+      "sha256": "5cea8cce79421bb64995b72f144414813ca4a1c0586104e20dc8cb32a1d16d43"
+    },
+    "A:7942": {
+      "file": "A%3A7942.json",
+      "scope": "parcel",
+      "villa": 126,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 154537,
+      "sha256": "f0659082db5dc3b4993242b7101a85b7ec0f0a2512d5c9215a450b42588eb626"
+    },
+    "A:7941": {
+      "file": "A%3A7941.json",
+      "scope": "parcel",
+      "villa": 289,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 163685,
+      "sha256": "0128d70fcee7814ea1b7d97a9a837aa6a215de439019b021871bc33fa296b62e"
+    },
+    "A:7940": {
+      "file": "A%3A7940.json",
+      "scope": "parcel",
+      "villa": 38,
+      "detached": 1001,
+      "missing": 0,
+      "bytes": 63571,
+      "sha256": "c63983658637634a4c989d819fe0615ec37b50f2f6312d39a01497bc0aad007f"
+    },
+    "A:7939": {
+      "file": "A%3A7939.json",
+      "scope": "parcel",
+      "villa": 48,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 8716,
+      "sha256": "50845331277ef469d85fd83d6bece8b87ecf066d744c96441ea9b5d37307634b"
+    },
+    "A:7935": {
+      "file": "A%3A7935.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 7,
+      "missing": 0,
+      "bytes": 6239,
+      "sha256": "b6bfe07c8ac7e1867d78ccbd3b5cbbf1152f6a140462d132c3046a78cb71bd4a"
+    },
+    "A:7934": {
+      "file": "A%3A7934.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 7,
+      "missing": 0,
+      "bytes": 6239,
+      "sha256": "1528d458ac6ecd7101464c973b535848ed5aba9f7f457af64da3af38ec858402"
+    },
+    "A:7932": {
+      "file": "A%3A7932.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 553,
+      "missing": 0,
+      "bytes": 36525,
+      "sha256": "cba5ff96484136b38548a4f75f1208515da15f0e67d3b4238494d1108c141f1c"
+    },
+    "A:7931": {
+      "file": "A%3A7931.json",
+      "scope": "dong",
+      "villa": 258,
+      "detached": 7,
+      "missing": 0,
+      "bytes": 21438,
+      "sha256": "746acd996d69929b3af0429db800645cf893a05c07d382d5dd43f8e24a1bfe88"
+    },
+    "A:7929": {
+      "file": "A%3A7929.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 7,
+      "missing": 0,
+      "bytes": 6239,
+      "sha256": "2784711fb60276994532d8545c2d8ef118ea0d69a80d1c6aebe54a91a4f441a7"
+    },
+    "A:7928": {
+      "file": "A%3A7928.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 76,
+      "missing": 0,
+      "bytes": 10566,
+      "sha256": "66fb90af55a07240d14884529a669ff731aa342e29944f4cc3f6501534a5c9ae"
+    },
+    "A:7927": {
+      "file": "A%3A7927.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 40,
+      "missing": 0,
+      "bytes": 8357,
+      "sha256": "fdc58f9488c5807073a5064cce6227579522c2da7e5f0cd5301fde7a417b4896"
+    },
+    "A:7923": {
+      "file": "A%3A7923.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 7,
+      "missing": 0,
+      "bytes": 6239,
+      "sha256": "b746e20fc206ff9a90748cea8851fd38e998e2e2369a49e0a53f7b4dcf360c33"
+    },
+    "A:7922": {
+      "file": "A%3A7922.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 7,
+      "missing": 0,
+      "bytes": 6109,
+      "sha256": "c8e679cd5aeba4c953605cfe8592b83eca2c14d4685d5109f4d2548c9858da6f"
+    },
+    "A:7921": {
+      "file": "A%3A7921.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 21,
+      "missing": 0,
+      "bytes": 7252,
+      "sha256": "c7f5e2945ab837e157229aea6d9a68c56f2f9eb31c06f2c119626ae966e9aa81"
+    },
+    "A:7920": {
+      "file": "A%3A7920.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "e9ba880d4358d970f2e39b3a1b36203412255b90ebcae77be2b2f8c7cf8a6d48"
+    },
+    "A:7917": {
+      "file": "A%3A7917.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "e99939f710095373dd74d01736a7b45b14eda1d44b2e7bc079515ef1ec78d202"
+    },
+    "A:7916": {
+      "file": "A%3A7916.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "e09b920c259e26e1533259367d2911bfea68986cab97ca6621a902bcb29fe343"
+    },
+    "A:7914": {
+      "file": "A%3A7914.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "0412c1358ac125d2cdef6de3d3fe57cc6c32f4b26d041117f57a64880a89a215"
+    },
+    "A:7913": {
+      "file": "A%3A7913.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "c8442ae9ae05a2531842b60c02ab07b70259b09d89e9da58023b783dcf29458a"
+    },
+    "A:7912": {
+      "file": "A%3A7912.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "ceebb03265eba409cc31ee2f035b652c4a753d636b36653e4dbbb8c874a531f9"
+    },
+    "A:7911": {
+      "file": "A%3A7911.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "2d0883124f5a118f6d18299e48644e84d074656c21eb4f5c30dc87a6bbc786b2"
+    },
+    "A:7910": {
+      "file": "A%3A7910.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "f3114169508850adb6f3437f8d5b405cdb28550470de4dd0797719558b836ce9"
+    },
+    "A:7909": {
+      "file": "A%3A7909.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "a0134c96526123ab56c1d2b21908935c6137a46366877e0bb05a5f4e5f1e5acc"
+    },
+    "A:7908": {
+      "file": "A%3A7908.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "15cfd0681e6e871aa953718fad65a40e32b3ff9f71420ebcab77a2b8864a3d9b"
+    },
+    "A:7907": {
+      "file": "A%3A7907.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "fc49b579561d673e4e7cbd7f2ac5df91a15c870baba4c56e167ab3f649cebcd2"
+    },
+    "A:7906": {
+      "file": "A%3A7906.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 199,
+      "missing": 0,
+      "bytes": 16898,
+      "sha256": "a481d70bee912503575b1b627d298321d9936ededeb64162151b4413b31f6530"
+    },
+    "A:7905": {
+      "file": "A%3A7905.json",
+      "scope": "dong",
+      "villa": 2853,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 283656,
+      "sha256": "39926f1481be6a1f1decce6d82915dcb1320e26bc83a09a21d0698ffe2122460"
+    },
+    "A:7904": {
+      "file": "A%3A7904.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 130959,
+      "sha256": "3309c6e879ff24f84a94caf08566ff3a7b19641dec4c7498e65ba861045f8114"
+    },
+    "A:7903": {
+      "file": "A%3A7903.json",
+      "scope": "parcel",
+      "villa": 5,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 131458,
+      "sha256": "529b00f3842cbe0c16e9e6d03128e8c11902227e10408bf599ce8ea25c97c223"
+    },
+    "A:7902": {
+      "file": "A%3A7902.json",
+      "scope": "parcel",
+      "villa": 5,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 131391,
+      "sha256": "f02fc373e8645a3d160d14ddcb5f63fc050559231b905ff0ec92d683e5819a51"
+    },
+    "A:7901": {
+      "file": "A%3A7901.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 3,
+      "missing": 0,
+      "bytes": 5843,
+      "sha256": "6b9a6f812cae304d49afc10eb7a54c51e3d2c7f8b19caeb02c16d496ac01efeb"
+    },
+    "A:7900": {
+      "file": "A%3A7900.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 9,
+      "missing": 0,
+      "bytes": 6422,
+      "sha256": "d84b5ff41adc2fd73325491fb4f83935837a98f4a1126af59edb1e9fbeb8b107"
+    },
+    "A:7899": {
+      "file": "A%3A7899.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 23,
+      "missing": 0,
+      "bytes": 7291,
+      "sha256": "4f439c1fd92a28a282871fab2a432a7286b01c1e1859f977d7d3ae40eadf1582"
+    },
+    "A:7897": {
+      "file": "A%3A7897.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 53311,
+      "sha256": "a8d6d644ba7acee8cc47458fbef6b0e23498ffae46a4e6c90c047bab05c0dc04"
+    },
+    "A:7894": {
+      "file": "A%3A7894.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 53311,
+      "sha256": "37f33bcbef44dc37ceee3836d209405f3b4a15ee304cad2206f868303c5589a6"
+    },
+    "A:7892": {
+      "file": "A%3A7892.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 34131,
+      "sha256": "20552333f735d6cf65c7a63175cdd584fb554c41d099c04f04b39136a9b04c29"
+    },
+    "A:7886": {
+      "file": "A%3A7886.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 53311,
+      "sha256": "8866354fc43149898053cdcd9bba705d36783071b9ea79ce359ead4470a57d77"
+    },
+    "A:7885": {
+      "file": "A%3A7885.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 53311,
+      "sha256": "de50656bc96f906b9fe83c1c0394f83a880ae74a039779690c0c3d396ba30621"
+    },
+    "A:7884": {
+      "file": "A%3A7884.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 53311,
+      "sha256": "69e4d9275e4528e68662f54333ff6717deb67ae3007e621049fbf0cf502ef216"
+    },
+    "A:7881": {
+      "file": "A%3A7881.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 158,
+      "missing": 0,
+      "bytes": 15358,
+      "sha256": "0894a34e0fac1437395c2e4f919be42c6825924d266290020b4129657ab42882"
+    },
+    "A:7880": {
+      "file": "A%3A7880.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 178,
+      "missing": 0,
+      "bytes": 16344,
+      "sha256": "3e867c58d55920a119d92c98ad445f4112d11af117ea71e27ab7abad51308192"
+    },
+    "A:7878": {
+      "file": "A%3A7878.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5570,
+      "sha256": "5ef826a3ba1fd76b934090a7cfc0f60f02999ace60a72ecdd9f99d8cf8d49222"
+    },
+    "A:7877": {
+      "file": "A%3A7877.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5570,
+      "sha256": "39c02ea02ad8664ea51fa00c5e3aad37d717f96b4c36fb1ecfa540bb964fbe74"
+    },
+    "A:7872": {
+      "file": "A%3A7872.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 152,
+      "missing": 0,
+      "bytes": 14927,
+      "sha256": "9ac0e636b19ec3ebae9ee7996fc89bcacba9b453b9eaeac28b0b62d7ecc0a833"
+    },
+    "A:7871": {
+      "file": "A%3A7871.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 152,
+      "missing": 0,
+      "bytes": 14927,
+      "sha256": "3a023b72b99811f7a6d616c5e4e22583e4611b9af3ccdea42563e2eb09e63883"
+    },
+    "A:7868": {
+      "file": "A%3A7868.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 152,
+      "missing": 0,
+      "bytes": 14927,
+      "sha256": "54378ecd5b99ed5fb020e499ff76dd62d542326e5ff9a2c9b74aa0e1456857f8"
+    },
+    "A:7867": {
+      "file": "A%3A7867.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 135,
+      "missing": 0,
+      "bytes": 13894,
+      "sha256": "3b310d8edfe1c4cfc7eb5bac4aad4239b1aa5aa853088465bb6297f8c6e83bf5"
+    },
+    "A:7866": {
+      "file": "A%3A7866.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 178,
+      "missing": 0,
+      "bytes": 16344,
+      "sha256": "7872c64400754c61cf91b552224731671f0676b75f268194fbd650f09978b3ed"
+    },
+    "A:7865": {
+      "file": "A%3A7865.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 151,
+      "missing": 0,
+      "bytes": 14805,
+      "sha256": "a08d693f0ee8da7eab05cc5cad44661d2ad8a3dc876d061a9d0d98e6029e00bb"
+    },
+    "A:7864": {
+      "file": "A%3A7864.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5570,
+      "sha256": "2c8e964551630d036d0d39a8f041e2ebaa07f10ada9a2861506e3538167e721a"
+    },
+    "A:7863": {
+      "file": "A%3A7863.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 158,
+      "missing": 0,
+      "bytes": 15358,
+      "sha256": "5540a431bdbde6c345ef49cdf7cb2161f0f9e07f3c4478ceb96e940a4f967cb6"
+    },
+    "A:7862": {
+      "file": "A%3A7862.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 151,
+      "missing": 0,
+      "bytes": 14805,
+      "sha256": "63dbb3966f5d31dee011884841de94f213f7de8c2597a0a756b8dc20af331834"
+    },
+    "A:7861": {
+      "file": "A%3A7861.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 151,
+      "missing": 0,
+      "bytes": 14805,
+      "sha256": "39c9c8639826a3912ccd1b88ed876757c5f9628bbe525b7babfd430e0b0ce616"
+    },
+    "A:7860": {
+      "file": "A%3A7860.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 135,
+      "missing": 0,
+      "bytes": 13894,
+      "sha256": "bf58ab65ee62007e668efd6c5ba057de55b7d54fbe8777cc7653ebf4ff1cae23"
+    },
+    "A:7859": {
+      "file": "A%3A7859.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 178,
+      "missing": 0,
+      "bytes": 16344,
+      "sha256": "6c11d3519c7c16a20663101116b4d1eb61b5dcf03f142ca8163b3f83d2f45100"
+    },
+    "A:7858": {
+      "file": "A%3A7858.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 151,
+      "missing": 0,
+      "bytes": 14805,
+      "sha256": "f0c93a1b914479e6b23668b205314dfbbc8fc3c969f474d5c0c2fbe08d9fd821"
+    },
+    "A:7857": {
+      "file": "A%3A7857.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 151,
+      "missing": 0,
+      "bytes": 14805,
+      "sha256": "3d35a4049082f2db7be3a0be4b2746dafd951e903cbd5f06f5ae1a1545320259"
+    },
+    "A:7856": {
+      "file": "A%3A7856.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 144,
+      "missing": 0,
+      "bytes": 14381,
+      "sha256": "07382e7603f33ddbee6ab4d6ceef8147a03bdae1df90dd149bc776b4696d8382"
+    },
+    "A:7855": {
+      "file": "A%3A7855.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 28,
+      "missing": 0,
+      "bytes": 7606,
+      "sha256": "24cee326dbe55d33f3dd15eeef817e22f1ee8c0fb05eb293e6e51f126056b263"
+    },
+    "A:7854": {
+      "file": "A%3A7854.json",
+      "scope": "parcel",
+      "villa": 4,
+      "detached": 677,
+      "missing": 0,
+      "bytes": 43980,
+      "sha256": "2ae132c63994c3200983c321084fc3d9c0a6ac3083097be16cd8d225cb43e447"
+    },
+    "A:7846": {
+      "file": "A%3A7846.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 165,
+      "missing": 0,
+      "bytes": 15598,
+      "sha256": "7c8f979368b6b4bb505cbe39ee16ff9f572ea66a8b0343e9c5928d6495cb1c86"
+    },
+    "A:7845": {
+      "file": "A%3A7845.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "a67edb1f2ba7a5a58a2397cb4a725d83a264e269ab9f96e7ccd5ef55c20ddaff"
+    },
+    "A:7844": {
+      "file": "A%3A7844.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "60f14db4d09db1246b1145d68bef7a14ebf8f16b0530051a9feecf8f64845084"
+    },
+    "A:7843": {
+      "file": "A%3A7843.json",
+      "scope": "dong",
+      "villa": 162,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 18864,
+      "sha256": "99e55005d136a6880c6f14c508e8096fad783d00a0f28edeb1d21f161d294bbc"
+    },
+    "A:7842": {
+      "file": "A%3A7842.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "110b4d43dd81169dedcb6660441fc61714a0a9b96762d56785db45fbd42dd1e3"
+    },
+    "A:7841": {
+      "file": "A%3A7841.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "44bf9e53cba30bafa640ac467b8840db413702a6bacf26792c22d8f0132eeea6"
+    },
+    "A:7840": {
+      "file": "A%3A7840.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "1164edd03958f14eec6fe4df69405a5d5a8647ae3074140e2543c03e1ca70f99"
+    },
+    "A:7839": {
+      "file": "A%3A7839.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "f414b97ac5274c6f008064d82ad4dcd69b3a651886427384366f565d5900dc93"
+    },
+    "A:7838": {
+      "file": "A%3A7838.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "cffd19a60054ee3ec37fc30316eadfb20923fa4a9bc9f8b69d930c1cd44c3213"
+    },
+    "A:7837": {
+      "file": "A%3A7837.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "d5914f833a5054ecc29c955947120bebf39355b791300d1ee8997b7df26d72da"
+    },
+    "A:7836": {
+      "file": "A%3A7836.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "5456f14a6b9a84ade9a6be600330acaab31568f4de8853675591af79844b0dd7"
+    },
+    "A:7835": {
+      "file": "A%3A7835.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "1995ed2a36a34b4ba4c130a66ce3a97992a3b076d7635166329aaf036dd7e505"
+    },
+    "A:7834": {
+      "file": "A%3A7834.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9493,
+      "sha256": "6f40492e44948f604b9d4b606e17749b0a8f9c25538a64f3a5daa5d8eae161c3"
+    },
+    "A:7833": {
+      "file": "A%3A7833.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 249,
+      "missing": 0,
+      "bytes": 20662,
+      "sha256": "06ba451a18811c05b96fc55f15bd9f0354bd97da8e9a8ca580c2594eef4696bc"
+    },
+    "A:7832": {
+      "file": "A%3A7832.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 249,
+      "missing": 0,
+      "bytes": 20662,
+      "sha256": "ce996e6493310e143b14f7243963b662c2241d77c97028a7ddb612341b540df1"
+    },
+    "A:7831": {
+      "file": "A%3A7831.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 165,
+      "missing": 0,
+      "bytes": 15598,
+      "sha256": "8abe2a61572713e9f4e9ed13d07f11cd91d0d0235c42ae06edd0ba358c4faf3d"
+    },
+    "A:7830": {
+      "file": "A%3A7830.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 47677,
+      "sha256": "fd3f6d0c87e339ee815cee5b409e8a33b8fbfe37835124630721d3e127213633"
+    },
+    "A:7829": {
+      "file": "A%3A7829.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 47677,
+      "sha256": "31d6109078d2cd4898918fcb6963af3303275bae5e79a92f24526c07d670c36f"
+    },
+    "A:7828": {
+      "file": "A%3A7828.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 47677,
+      "sha256": "2fd802c628da6d0ad1aa8729b08edc67ef9151499259e37a8a1c5a788aab98e0"
+    },
+    "A:7827": {
+      "file": "A%3A7827.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 47677,
+      "sha256": "731674be1f71a88915789dc91760048f977669177999df26f4e560e25b20d7bb"
+    },
+    "A:7825": {
+      "file": "A%3A7825.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 165,
+      "missing": 0,
+      "bytes": 15598,
+      "sha256": "0914d636306602aeb2ad8176840ddf789e7699e89ef1bb896cc9c19185131376"
+    },
+    "A:7824": {
+      "file": "A%3A7824.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 165,
+      "missing": 0,
+      "bytes": 15598,
+      "sha256": "be9a2706a42490c740ca6f468ee067d4b55f5aa18c645f7d9b731683fc55a012"
+    },
+    "A:7821": {
+      "file": "A%3A7821.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 165,
+      "missing": 0,
+      "bytes": 15598,
+      "sha256": "175f24d32a1b66d0f453259801beeba5a96b07da56276ac710f1b5e05e54bd17"
+    },
+    "A:7814": {
+      "file": "A%3A7814.json",
+      "scope": "parcel",
+      "villa": 37,
+      "detached": 165,
+      "missing": 0,
+      "bytes": 18346,
+      "sha256": "2f4168f15ab77e82c99c7425b8ce6aa1e97a01e8fad2131202f87d0a102842c6"
+    },
+    "A:7813": {
+      "file": "A%3A7813.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 297,
+      "missing": 0,
+      "bytes": 22728,
+      "sha256": "7764ab209d2a6aef51de7c4d1e3e7de98fc471a360da0a43fc0191a9ff7be4d1"
+    },
+    "A:7812": {
+      "file": "A%3A7812.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 571,
+      "missing": 0,
+      "bytes": 37062,
+      "sha256": "c3cb664fdaa47c5193aa1c3ed1c8d0aacada4767ef4c52f3fae7730395169edd"
+    },
+    "A:7811": {
+      "file": "A%3A7811.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 724,
+      "missing": 0,
+      "bytes": 45459,
+      "sha256": "02b5db270f9b09f3c6be9e01d06c3f142b0cfe0c9817e205c2e0d777562495fb"
+    },
+    "A:7810": {
+      "file": "A%3A7810.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 448,
+      "missing": 0,
+      "bytes": 31027,
+      "sha256": "334439f3270a578eb0b92aff6381af99fd89841dc4bbf6106d3545f6c608597a"
+    },
+    "A:7809": {
+      "file": "A%3A7809.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 235,
+      "missing": 0,
+      "bytes": 19132,
+      "sha256": "8cfdf7acfa7dc4bc634f4fc864becdcafa1821c65f9a1c0979912810d7bae87a"
+    },
+    "A:7807": {
+      "file": "A%3A7807.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1014,
+      "missing": 0,
+      "bytes": 61084,
+      "sha256": "eeda41525d9a18bd2a1c38d599b50c73c2c2aad55a95480230363d6ab35e511f"
+    },
+    "A:7805": {
+      "file": "A%3A7805.json",
+      "scope": "parcel",
+      "villa": 5,
+      "detached": 1367,
+      "missing": 0,
+      "bytes": 81309,
+      "sha256": "e0d6372622af87fce4862b750ec721058b3197d8106db993f6ba197683306963"
+    },
+    "A:7804": {
+      "file": "A%3A7804.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1367,
+      "missing": 0,
+      "bytes": 80869,
+      "sha256": "92eebf459b02b72903b2fa4571ba3e7257fa7be8670a002fd05a93abae45ceb9"
+    },
+    "A:7803": {
+      "file": "A%3A7803.json",
+      "scope": "parcel",
+      "villa": 10,
+      "detached": 377,
+      "missing": 0,
+      "bytes": 27800,
+      "sha256": "3a379c45f9832322f3e7aca1338b790e18b8e9dc0ffef37164dbb6f326238f43"
+    },
+    "A:7802": {
+      "file": "A%3A7802.json",
+      "scope": "parcel",
+      "villa": 296,
+      "detached": 121,
+      "missing": 0,
+      "bytes": 29583,
+      "sha256": "690491f4b2f42cc69305e5a621bd1520cb1512cf23924ad145aa727a113af028"
+    },
+    "A:7801": {
+      "file": "A%3A7801.json",
+      "scope": "parcel",
+      "villa": 42,
+      "detached": 334,
+      "missing": 0,
+      "bytes": 27327,
+      "sha256": "88528df538fbfc561d2ba3d57748e065ac530218ca1aa49f0a15f3646e1991bd"
+    },
+    "A:7800": {
+      "file": "A%3A7800.json",
+      "scope": "parcel",
+      "villa": 112,
+      "detached": 334,
+      "missing": 0,
+      "bytes": 30834,
+      "sha256": "c046370361d0723d87ce8553a2660c7378cec30e7d19b52fd9d170ed9003b98e"
+    },
+    "A:7799": {
+      "file": "A%3A7799.json",
+      "scope": "parcel",
+      "villa": 8,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 56088,
+      "sha256": "f232d4a3a990c501c1e5df3f6cd65f8f2575ddf7b33efea8a1c40d1e6f0f33cb"
+    },
+    "A:7798": {
+      "file": "A%3A7798.json",
+      "scope": "parcel",
+      "villa": 263,
+      "detached": 10,
+      "missing": 0,
+      "bytes": 20962,
+      "sha256": "2b0f4088559d39c07b1052f9ecac5ecb03b70a522f6c08a10e712a9e6302c0ef"
+    },
+    "A:7797": {
+      "file": "A%3A7797.json",
+      "scope": "dong",
+      "villa": 7015,
+      "detached": 737,
+      "missing": 0,
+      "bytes": 420079,
+      "sha256": "471ae34ca25b4a95725fa9b725ab1d34444255b89e71e714f40ca87b93cc2773"
+    },
+    "A:7796": {
+      "file": "A%3A7796.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 55435,
+      "sha256": "931e7a800a26b1cbea14ddf2089dcf08cfb0cbe062d2a6bc926a9c63c4c225cc"
+    },
+    "A:7794": {
+      "file": "A%3A7794.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1381,
+      "missing": 0,
+      "bytes": 81714,
+      "sha256": "f7a806958ad81a1584dc9380d785c0912e33e0c5fd4aa477c6ec392403233bfe"
+    },
+    "A:7793": {
+      "file": "A%3A7793.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1373,
+      "missing": 0,
+      "bytes": 81583,
+      "sha256": "9902e06f4824c0ccb15ee44ae5aa88c1052ee4d151ace742612da32b82230532"
+    },
+    "A:7792": {
+      "file": "A%3A7792.json",
+      "scope": "parcel",
+      "villa": 42,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 8307,
+      "sha256": "4e0aa218c35e0e425e71cf9f902dbfa7cdf6b72673f66faaf04d4ac17f0dcfa3"
+    },
+    "A:7791": {
+      "file": "A%3A7791.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5563,
+      "sha256": "196e3796bef31dc395294e138e696a7d59937d05d11464802948c2292eaf20e7"
+    },
+    "A:7790": {
+      "file": "A%3A7790.json",
+      "scope": "parcel",
+      "villa": 4,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5925,
+      "sha256": "0148c29174a64509746ff5d35d20ca947f864cdb3f3548346cbeffb6708789a3"
+    },
+    "A:7789": {
+      "file": "A%3A7789.json",
+      "scope": "parcel",
+      "villa": 29,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 186393,
+      "sha256": "f71fb892f8c46edaa151dae7fbe58cd520b534550f55495ab63aa0598343dc83"
+    },
+    "A:7788": {
+      "file": "A%3A7788.json",
+      "scope": "parcel",
+      "villa": 73,
+      "detached": 31,
+      "missing": 0,
+      "bytes": 12608,
+      "sha256": "187ecde378e9f63313a1135fe6a3bc5bf0d0ac3bd5b9059d8dae579d60894a9a"
+    },
+    "A:7787": {
+      "file": "A%3A7787.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1262,
+      "missing": 0,
+      "bytes": 75466,
+      "sha256": "43d587bd862119f0e7278bf8fea51885f37c0ef095c6331b9cb7057cd8eddab6"
+    },
+    "A:7786": {
+      "file": "A%3A7786.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 233,
+      "missing": 0,
+      "bytes": 19465,
+      "sha256": "5cb26700edb1fc7de378872b6d41c81c3daaba01f6b01ddf4d312bc1effd9bf1"
+    },
+    "A:7785": {
+      "file": "A%3A7785.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 95,
+      "missing": 0,
+      "bytes": 11690,
+      "sha256": "49a56c321ebad8ce10d557cea732b732030f9b035416eae04bd63fe4ec3c09cf"
+    },
+    "A:7784": {
+      "file": "A%3A7784.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 95,
+      "missing": 0,
+      "bytes": 11690,
+      "sha256": "1603bd7bdcc3ae4433443ed524b254b0f05faf56331fbab6c812745bf41a0801"
+    },
+    "A:7770": {
+      "file": "A%3A7770.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 127,
+      "missing": 0,
+      "bytes": 13546,
+      "sha256": "bd98305df676e4263ee8bdbfa25947fb9a1feb98f0be5a2d5f031c5d40730371"
+    },
+    "A:7769": {
+      "file": "A%3A7769.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 149,
+      "missing": 0,
+      "bytes": 14645,
+      "sha256": "f980494b1ae32b973b8be815c893b235d28abdf1a80a484dc8cfeee66a8b4c31"
+    },
+    "A:7768": {
+      "file": "A%3A7768.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 112,
+      "missing": 0,
+      "bytes": 12758,
+      "sha256": "2a5e106c5fda97d07853bdd7ef3c87e0c2c19d9cb90bb677813b6891bcd3970b"
+    },
+    "A:7765": {
+      "file": "A%3A7765.json",
+      "scope": "parcel",
+      "villa": 7,
+      "detached": 358,
+      "missing": 0,
+      "bytes": 27155,
+      "sha256": "2e6081f1f6277ac4ce08239ac2657a5faab2a43c756040c4d4f83f40bf3d7f2a"
+    },
+    "A:7764": {
+      "file": "A%3A7764.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1,
+      "missing": 0,
+      "bytes": 5691,
+      "sha256": "e1acacb064b10e643d359a476eeca60c5d42af190a21c6dbe7e5e89827966580"
+    },
+    "A:7763": {
+      "file": "A%3A7763.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1,
+      "missing": 0,
+      "bytes": 5691,
+      "sha256": "429a5fe7ccba72e6f38b175a67258d570eba37c5cd8ca47a50f4a98066494708"
+    },
+    "A:7762": {
+      "file": "A%3A7762.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1,
+      "missing": 0,
+      "bytes": 5691,
+      "sha256": "1134ae8f7457c3f703acd9e60500e43d7ab00ab2a98981797fe351262c95688d"
+    },
+    "A:7761": {
+      "file": "A%3A7761.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1,
+      "missing": 0,
+      "bytes": 5691,
+      "sha256": "151b948e6d9a1ad7376b999bdb0cbbba430e24bf558f91c0fe68a1d9ce0f885e"
+    },
+    "A:7760": {
+      "file": "A%3A7760.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1,
+      "missing": 0,
+      "bytes": 5691,
+      "sha256": "fe33844c26bc846364385a2a6b2808816d9a1cad60137a2399889633be6508c6"
+    },
+    "A:7753": {
+      "file": "A%3A7753.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 37,
+      "missing": 0,
+      "bytes": 8218,
+      "sha256": "2aaaef361e93997d6bfb9552cfb6adf95f04de8febf140fbb37408b288454146"
+    },
+    "A:7752": {
+      "file": "A%3A7752.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 37,
+      "missing": 0,
+      "bytes": 8218,
+      "sha256": "e621559fe7e0b9ee1dc99d5f220707f534658b870c8a3c99b2f475a8cb478466"
+    },
+    "A:7751": {
+      "file": "A%3A7751.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 37,
+      "missing": 0,
+      "bytes": 8218,
+      "sha256": "623d129719751ea04c22b4ae781cf4c8fb15d94eb89d28830e3dcc472a2b6775"
+    },
+    "A:7750": {
+      "file": "A%3A7750.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 37,
+      "missing": 0,
+      "bytes": 8218,
+      "sha256": "fc7956f7b392b8e8c16876b4a6c1345f5b3f8419e325f478b9c16c6c27ea37df"
+    },
+    "A:7749": {
+      "file": "A%3A7749.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 112,
+      "missing": 0,
+      "bytes": 12758,
+      "sha256": "5d6bdfb3cd569d99f2f2a7b24a74d9133f58a2d3c5c21cfd9ad6139392bfc807"
+    },
+    "A:7748": {
+      "file": "A%3A7748.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 112,
+      "missing": 0,
+      "bytes": 12758,
+      "sha256": "1ddbb5752752cdcac075f6e9d958eeff74997c5df7a634fdbad948d14d23533d"
+    },
+    "A:7747": {
+      "file": "A%3A7747.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 112,
+      "missing": 0,
+      "bytes": 12758,
+      "sha256": "1daeeebbb0c0c8c45401730cec3c487daa4eb4d3ecee6a5b6ae5d8e88bcf8da0"
+    },
+    "A:7746": {
+      "file": "A%3A7746.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 377,
+      "missing": 0,
+      "bytes": 27548,
+      "sha256": "269a39482eeb189b3365d5c78a71abcb3e1bd7ae493db0a0fcf87a7b1c1e2c79"
+    },
+    "A:7741": {
+      "file": "A%3A7741.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 97,
+      "missing": 0,
+      "bytes": 11940,
+      "sha256": "650e6c4e9370a749e9d91bc2c663cda6001093c8f6c25021a34da052f26c02b5"
+    },
+    "A:7740": {
+      "file": "A%3A7740.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 97,
+      "missing": 0,
+      "bytes": 11940,
+      "sha256": "9b1482519b400108fd6fa5f5663fae51f5c3d181ba6f9c17c9a9c9464bd5adf8"
+    },
+    "A:7738": {
+      "file": "A%3A7738.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 149,
+      "missing": 0,
+      "bytes": 14645,
+      "sha256": "926dacae1493db22d1d9ddaf5e438a95b58aea37b9a997b817ced8a5b11a131b"
+    },
+    "A:7737": {
+      "file": "A%3A7737.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 97,
+      "missing": 0,
+      "bytes": 11940,
+      "sha256": "8064da110b82db9d2217355f47d6bd098564292650ddf17cd9d627680a412ea5"
+    },
+    "A:7736": {
+      "file": "A%3A7736.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 37,
+      "missing": 0,
+      "bytes": 8218,
+      "sha256": "11212de184e0bfd00e527a7c7c737010fb8e1ebb0fe0842105a21b986e536deb"
+    },
+    "A:7730": {
+      "file": "A%3A7730.json",
+      "scope": "parcel",
+      "villa": 27,
+      "detached": 507,
+      "missing": 0,
+      "bytes": 35537,
+      "sha256": "f8a32755cc1aaa6114eee9bb1695e5d6c7f73e739d249d26f2bf5469853fe8af"
+    },
+    "A:7729": {
+      "file": "A%3A7729.json",
+      "scope": "parcel",
+      "villa": 142,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 63506,
+      "sha256": "c0a4ed07e1bb111411c83ad4f081630f4d2f2f91bce56249e661866b5871f9fa"
+    },
+    "A:7728": {
+      "file": "A%3A7728.json",
+      "scope": "parcel",
+      "villa": 222,
+      "detached": 450,
+      "missing": 0,
+      "bytes": 43445,
+      "sha256": "6a0373e569459121f33db2608e7901df7cb13f5e75b6bfb89764ddd86ac21cb2"
+    },
+    "A:7727": {
+      "file": "A%3A7727.json",
+      "scope": "parcel",
+      "villa": 211,
+      "detached": 7,
+      "missing": 0,
+      "bytes": 18886,
+      "sha256": "8ae6c0323549e7277a529513f74a2a32f66ce5e46c8d2f829d7334da3cb6c70a"
+    },
+    "A:7726": {
+      "file": "A%3A7726.json",
+      "scope": "parcel",
+      "villa": 12,
+      "detached": 57,
+      "missing": 0,
+      "bytes": 10276,
+      "sha256": "e248471096444b1c70eb489b6bbb151192825be505dfe23ab1e15c129e05538e"
+    },
+    "A:7725": {
+      "file": "A%3A7725.json",
+      "scope": "parcel",
+      "villa": 115,
+      "detached": 52,
+      "missing": 0,
+      "bytes": 16141,
+      "sha256": "e9d8f0631b7aa6a82202d17b6c064e98eef5a58fe48d50e9700d36d5ce27771c"
+    },
+    "A:7724": {
+      "file": "A%3A7724.json",
+      "scope": "parcel",
+      "villa": 32,
+      "detached": 677,
+      "missing": 0,
+      "bytes": 45848,
+      "sha256": "ada1b9a7084c1c8751df3a43eb546660aff7b91d6673b183720c12b62059ca29"
+    },
+    "A:7723": {
+      "file": "A%3A7723.json",
+      "scope": "parcel",
+      "villa": 25,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 49464,
+      "sha256": "08644bf1fd64af87c25eb73151ecddc7609c354a6c813ca77f089f1af6a91537"
+    },
+    "A:7722": {
+      "file": "A%3A7722.json",
+      "scope": "parcel",
+      "villa": 72,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 52075,
+      "sha256": "b5443577d814b18c28b5430308c7a18237f7a94f2885bd14fd21c29fa9470417"
+    },
+    "A:7721": {
+      "file": "A%3A7721.json",
+      "scope": "parcel",
+      "villa": 134,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 55497,
+      "sha256": "2b03936514af3737af1656872334bfd106cea65c7b6ddc635f2fe114aae48082"
+    },
+    "A:7720": {
+      "file": "A%3A7720.json",
+      "scope": "parcel",
+      "villa": 246,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 62003,
+      "sha256": "bb04f1652b0682c711624f9aff716c4df5030958483a68defd52f32d45120032"
+    },
+    "A:7719": {
+      "file": "A%3A7719.json",
+      "scope": "parcel",
+      "villa": 84,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 52952,
+      "sha256": "8d5559543303a25e2394930107e5e25cfaf75e807720351f69c60d7c6054dc91"
+    },
+    "A:7718": {
+      "file": "A%3A7718.json",
+      "scope": "parcel",
+      "villa": 630,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 83056,
+      "sha256": "ec94e9abaa299e883b83cd52a694a72dc37594f88400aead2a325dcb6e70e10c"
+    },
+    "A:7717": {
+      "file": "A%3A7717.json",
+      "scope": "parcel",
+      "villa": 40,
+      "detached": 522,
+      "missing": 0,
+      "bytes": 37251,
+      "sha256": "d5e3d8bae3ab9da8d9256f26ba0b7c93912f3478aab1a9b014f34bfc8afb8e42"
+    },
+    "A:7716": {
+      "file": "A%3A7716.json",
+      "scope": "parcel",
+      "villa": 51,
+      "detached": 731,
+      "missing": 0,
+      "bytes": 48771,
+      "sha256": "1cf1cdafcf5210f65aa4f3c988b6d3b5704109e0da57495d7da280d7e497ef4c"
+    },
+    "A:7715": {
+      "file": "A%3A7715.json",
+      "scope": "parcel",
+      "villa": 600,
+      "detached": 435,
+      "missing": 0,
+      "bytes": 63105,
+      "sha256": "6ef38fe7617c23ac90d83557b2d070c9a7d588cc2bce9ed2efc2d1fadb1490d3"
+    },
+    "A:7714": {
+      "file": "A%3A7714.json",
+      "scope": "parcel",
+      "villa": 68,
+      "detached": 393,
+      "missing": 0,
+      "bytes": 31472,
+      "sha256": "9c745766cefda612ace2cc500a9253032073565b26de9a281e93c38199bf8552"
+    },
+    "A:7713": {
+      "file": "A%3A7713.json",
+      "scope": "parcel",
+      "villa": 183,
+      "detached": 1265,
+      "missing": 0,
+      "bytes": 86802,
+      "sha256": "5bddb98a0c8bf34d5dd907e99f6e9be1a1c7aefedfe3a58351c67b40114729da"
+    },
+    "A:7712": {
+      "file": "A%3A7712.json",
+      "scope": "parcel",
+      "villa": 34,
+      "detached": 235,
+      "missing": 0,
+      "bytes": 21444,
+      "sha256": "8136bead8d54c7ace7e101c5ab669abcd666fb50765c4721c7d3d24626902e7b"
+    },
+    "A:7711": {
+      "file": "A%3A7711.json",
+      "scope": "parcel",
+      "villa": 177,
+      "detached": 377,
+      "missing": 0,
+      "bytes": 37069,
+      "sha256": "ed5b4ecc88e043ff572e24ea6fa5a55ecf861c7164f49ec99f168e29e944bcec"
+    },
+    "A:7710": {
+      "file": "A%3A7710.json",
+      "scope": "parcel",
+      "villa": 135,
+      "detached": 1373,
+      "missing": 0,
+      "bytes": 89467,
+      "sha256": "751471f48ee61619232a83b2d5052ddc22dbbc901bf7fb91681ed0c947c62b6e"
+    },
+    "A:7709": {
+      "file": "A%3A7709.json",
+      "scope": "parcel",
+      "villa": 86,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 10878,
+      "sha256": "b5282e4c76973967b048ac4c0a887959527e21f7f1bdaa7046b466bea897fd41"
+    },
+    "A:7708": {
+      "file": "A%3A7708.json",
+      "scope": "parcel",
+      "villa": 7,
+      "detached": 514,
+      "missing": 0,
+      "bytes": 35125,
+      "sha256": "c7f69b8281a4dd46400c577dac852ed021882e07f12748fe6782b7e0b0232d89"
+    },
+    "A:7707": {
+      "file": "A%3A7707.json",
+      "scope": "parcel",
+      "villa": 199,
+      "detached": 375,
+      "missing": 0,
+      "bytes": 38548,
+      "sha256": "665b90fb36f8f47703705d72fad3250e280546809d8fb0a438d891851bd2e2aa"
+    },
+    "A:7706": {
+      "file": "A%3A7706.json",
+      "scope": "parcel",
+      "villa": 140,
+      "detached": 514,
+      "missing": 0,
+      "bytes": 42950,
+      "sha256": "74464fe99724ebea7d009bb7b24aaacbc9f7e6b34bf119cc5e2221bb2018024c"
+    },
+    "A:7705": {
+      "file": "A%3A7705.json",
+      "scope": "parcel",
+      "villa": 75,
+      "detached": 247,
+      "missing": 0,
+      "bytes": 24735,
+      "sha256": "33bb17b57d7db8504eed75bc9a98f85cd62b3e4c596d8af467e5465c6b34516f"
+    },
+    "A:7704": {
+      "file": "A%3A7704.json",
+      "scope": "parcel",
+      "villa": 191,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 157952,
+      "sha256": "50a3619294819fb527aac4ecbbb45580da0aad9892c46145a225c629f01ac3ba"
+    },
+    "A:7703": {
+      "file": "A%3A7703.json",
+      "scope": "parcel",
+      "villa": 135,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 154798,
+      "sha256": "4d2c58a9ea41d8788bf236b55e9fb945b73110ad74f056e5a63d033007aa7bb5"
+    },
+    "A:7702": {
+      "file": "A%3A7702.json",
+      "scope": "dong",
+      "villa": 7399,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 547160,
+      "sha256": "a064661c27d8ca049f2cd2d1a00b776c3de9a9f19ebc0c60eca5402b51142d90"
+    },
+    "A:7701": {
+      "file": "A%3A7701.json",
+      "scope": "parcel",
+      "villa": 11,
+      "detached": 1262,
+      "missing": 0,
+      "bytes": 76371,
+      "sha256": "42c88b30f83b5c3840eefe766578396665dedffb3a09ecf24a67ffda20173f5e"
+    },
+    "A:7700": {
+      "file": "A%3A7700.json",
+      "scope": "dong",
+      "villa": 939,
+      "detached": 112,
+      "missing": 0,
+      "bytes": 64002,
+      "sha256": "d26c2243878e1a737670aebaf795b4acc8f4e512a368d743b8619e1f03a1a157"
+    },
+    "A:7699": {
+      "file": "A%3A7699.json",
+      "scope": "parcel",
+      "villa": 254,
+      "detached": 1001,
+      "missing": 0,
+      "bytes": 75467,
+      "sha256": "87070e5a13d823751b7484e7ef39ba8b426140cdd50a9f48b1b7420d7bfc78b7"
+    },
+    "A:7698": {
+      "file": "A%3A7698.json",
+      "scope": "dong",
+      "villa": 3436,
+      "detached": 1001,
+      "missing": 0,
+      "bytes": 245564,
+      "sha256": "81ab6bf930ac1a64688bf65cff8bae92ecacb2d838f1f1233624c5b9cd58fff4"
+    },
+    "A:7697": {
+      "file": "A%3A7697.json",
+      "scope": "parcel",
+      "villa": 110,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 12244,
+      "sha256": "16422a015f6a11d1a0e4416fb7d12066fcb709c54e51a74447c7b7774bc393e8"
+    },
+    "A:7696": {
+      "file": "A%3A7696.json",
+      "scope": "parcel",
+      "villa": 234,
+      "detached": 2810,
+      "missing": 0,
+      "bytes": 171747,
+      "sha256": "7fb82f7233b4d5f4ea20cfe6a02e718d308e0e4870fb990e819aea5fe64e71b5"
+    },
+    "A:7695": {
+      "file": "A%3A7695.json",
+      "scope": "parcel",
+      "villa": 110,
+      "detached": 2810,
+      "missing": 0,
+      "bytes": 165291,
+      "sha256": "84b67d9bf6b46b621e193626b863385e01e5560a7357748c9738ebcab8cb7144"
+    },
+    "A:7694": {
+      "file": "A%3A7694.json",
+      "scope": "dong",
+      "villa": 120,
+      "detached": 51,
+      "missing": 0,
+      "bytes": 16287,
+      "sha256": "4d79f8fe13400fdd8906091d8efefa438d7e92cc998d3edeccba734e14734055"
+    },
+    "A:7693": {
+      "file": "A%3A7693.json",
+      "scope": "parcel",
+      "villa": 51,
+      "detached": 929,
+      "missing": 0,
+      "bytes": 60047,
+      "sha256": "265a028318586beba8933dc18221e2461f5eeaf4aa211eb35fbfbec88308395c"
+    },
+    "A:7692": {
+      "file": "A%3A7692.json",
+      "scope": "parcel",
+      "villa": 51,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 9131,
+      "sha256": "5b94b802fb3751191a3887c955051e7d04c8ff2e53b4cfd45cdab82b1a9fc171"
+    },
+    "A:7690": {
+      "file": "A%3A7690.json",
+      "scope": "parcel",
+      "villa": 31,
+      "detached": 929,
+      "missing": 0,
+      "bytes": 58804,
+      "sha256": "5004bb60536347750b85f330491e657d1ae0cab7d710aee8beaa1b3bf7e18af1"
+    },
+    "A:7688": {
+      "file": "A%3A7688.json",
+      "scope": "parcel",
+      "villa": 38,
+      "detached": 434,
+      "missing": 0,
+      "bytes": 32261,
+      "sha256": "f89d02265ce727928f21d6a1413a4b907e77a644a4ac9a3c40394a465482b873"
+    },
+    "A:7686": {
+      "file": "A%3A7686.json",
+      "scope": "parcel",
+      "villa": 2,
+      "detached": 105,
+      "missing": 0,
+      "bytes": 12255,
+      "sha256": "1403f660f401929626601430d77a0e01ae924e903378bd365b4f5e895f4f2abb"
+    },
+    "A:7685": {
+      "file": "A%3A7685.json",
+      "scope": "parcel",
+      "villa": 36,
+      "detached": 321,
+      "missing": 0,
+      "bytes": 26158,
+      "sha256": "ff493692ca1077f57a5b0d27d556d1777b89b1c37abe8537cf6d5030e5e6fc9d"
+    },
+    "A:7682": {
+      "file": "A%3A7682.json",
+      "scope": "dong",
+      "villa": 1594,
+      "detached": 251,
+      "missing": 0,
+      "bytes": 106241,
+      "sha256": "bb70d7a2d31cec90de642e28efdad3b9834de65d9d759703ef3c0ad76480ed0f"
+    },
+    "A:7680": {
+      "file": "A%3A7680.json",
+      "scope": "dong",
+      "villa": 849,
+      "detached": 210,
+      "missing": 0,
+      "bytes": 63209,
+      "sha256": "db80da7eee60d232d117cddb439debafded2a3b880085841e388a65bdd39cf5d"
+    },
+    "A:7679": {
+      "file": "A%3A7679.json",
+      "scope": "parcel",
+      "villa": 58,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 59029,
+      "sha256": "354a6659bcc2d346f71d82d0ba4ab191e10cb30bc43ff92ab56858e44881d5aa"
+    },
+    "A:7678": {
+      "file": "A%3A7678.json",
+      "scope": "parcel",
+      "villa": 734,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 95633,
+      "sha256": "f8b5aed51d736b65e3481aa70d7cc2a674c36a0bda46ac925012481b3212bcfe"
+    },
+    "A:7677": {
+      "file": "A%3A7677.json",
+      "scope": "parcel",
+      "villa": 705,
+      "detached": 393,
+      "missing": 0,
+      "bytes": 65610,
+      "sha256": "74c0e41c0144385ec649ae391a065898ff836cf07503c5caad1a94b50b0418e1"
+    },
+    "A:7676": {
+      "file": "A%3A7676.json",
+      "scope": "parcel",
+      "villa": 1248,
+      "detached": 708,
+      "missing": 0,
+      "bytes": 112622,
+      "sha256": "2c43a5c402eecf4f38a93526ef0335835830aa4a7e885ec62aa34fa88f49f7e0"
+    },
+    "A:7674": {
+      "file": "A%3A7674.json",
+      "scope": "dong",
+      "villa": 362,
+      "detached": 193,
+      "missing": 0,
+      "bytes": 37284,
+      "sha256": "272faa04589064e882529b353f40ac2b89e33de9679702e0e4e7efd9bfdf5d63"
+    },
+    "A:7673": {
+      "file": "A%3A7673.json",
+      "scope": "dong",
+      "villa": 524,
+      "detached": 968,
+      "missing": 0,
+      "bytes": 88164,
+      "sha256": "22d9f21fa6978700929e2562343b8a6b9b5fcee7c5aef15f34530985c4fdbca7"
+    },
+    "A:7672": {
+      "file": "A%3A7672.json",
+      "scope": "dong",
+      "villa": 1096,
+      "detached": 577,
+      "missing": 0,
+      "bytes": 98893,
+      "sha256": "068d3551e233e0dbcdc58f9f31b0f63ab81a483f3278852ba98ad706dc64fc61"
+    },
+    "A:7671": {
+      "file": "A%3A7671.json",
+      "scope": "dong",
+      "villa": 524,
+      "detached": 968,
+      "missing": 0,
+      "bytes": 88164,
+      "sha256": "4e18d375598077cda1903a873a988658b90353367d8f172100376cfbeaaab358"
+    },
+    "A:7670": {
+      "file": "A%3A7670.json",
+      "scope": "parcel",
+      "villa": 138,
+      "detached": 80,
+      "missing": 0,
+      "bytes": 18935,
+      "sha256": "b2a67dac24a61530a245112d3341a1cc32ed9ae649eea48ed483f1e88644629c"
+    },
+    "A:7669": {
+      "file": "A%3A7669.json",
+      "scope": "parcel",
+      "villa": 49,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 134337,
+      "sha256": "5e4c22b26f5124a2b24f24a45b2d00f8df83517566a8cc1f2e2395e51d0d71b0"
+    },
+    "A:7668": {
+      "file": "A%3A7668.json",
+      "scope": "dong",
+      "villa": 2853,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 283656,
+      "sha256": "508b64c0fa6b36ede248941f6290d67d99a3dd43232d75d883724189f672cfb0"
+    },
+    "A:7667": {
+      "file": "A%3A7667.json",
+      "scope": "parcel",
+      "villa": 216,
+      "detached": 287,
+      "missing": 0,
+      "bytes": 34301,
+      "sha256": "f41537514f3bef694e908f8ac4d15a284dd89ede296b73d62306f7178ee130c3"
+    },
+    "A:7666": {
+      "file": "A%3A7666.json",
+      "scope": "parcel",
+      "villa": 115,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 60339,
+      "sha256": "da5d09c91ce6ba82e77f3ae3fe94c208cac5d2edf4133b920f5e880ca6f5460e"
+    },
+    "A:7665": {
+      "file": "A%3A7665.json",
+      "scope": "dong",
+      "villa": 5371,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 341875,
+      "sha256": "7294c05f880b12145246e298b08c63f10e01361be1bed343f2a8ae2793477df5"
+    },
+    "A:7664": {
+      "file": "A%3A7664.json",
+      "scope": "parcel",
+      "villa": 845,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 51830,
+      "sha256": "a05050b201b574ee28dc5643de2bff0eb1d3793db0f0649f1a8e4e049fba4524"
+    },
+    "A:7663": {
+      "file": "A%3A7663.json",
+      "scope": "parcel",
+      "villa": 1220,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 71730,
+      "sha256": "67d4ef9a4b19cf92d21124813bce6f34543e0d27fbac2efed79c14235a1860a4"
+    },
+    "A:7662": {
+      "file": "A%3A7662.json",
+      "scope": "parcel",
+      "villa": 506,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 32993,
+      "sha256": "da71b60da4e1aeba76031556f256123d1f29d05405b6179f0f56134cd8e6535b"
+    },
+    "A:7661": {
+      "file": "A%3A7661.json",
+      "scope": "dong",
+      "villa": 2838,
+      "detached": 537,
+      "missing": 0,
+      "bytes": 186246,
+      "sha256": "b6b8c3188b18561f2b67a2ac330d18c3b6ffe0bb716148f5f4fea90d5c363ef0"
+    },
+    "A:7660": {
+      "file": "A%3A7660.json",
+      "scope": "dong",
+      "villa": 2838,
+      "detached": 537,
+      "missing": 0,
+      "bytes": 186246,
+      "sha256": "33c91d34aa0325d3e6215c31363bb729dca8230c1d8fe14d0bb7db770219b8dc"
+    },
+    "A:7659": {
+      "file": "A%3A7659.json",
+      "scope": "dong",
+      "villa": 2838,
+      "detached": 537,
+      "missing": 0,
+      "bytes": 186246,
+      "sha256": "bf96ae2f3fcc7d0584d2219d47faa37b37c4fe2cb1f20d121b16be4f456355ff"
+    },
+    "A:7658": {
+      "file": "A%3A7658.json",
+      "scope": "dong",
+      "villa": 2838,
+      "detached": 537,
+      "missing": 0,
+      "bytes": 186246,
+      "sha256": "980b3979adf3c6024f6f55fc8d53eac34cc9ac80acafe3745e1a8337a47be20a"
+    },
+    "A:7657": {
+      "file": "A%3A7657.json",
+      "scope": "dong",
+      "villa": 2838,
+      "detached": 537,
+      "missing": 0,
+      "bytes": 186246,
+      "sha256": "4e525209abea277cb6e004efff876f70412b230a97bf7d0f3668da7768bdc708"
+    },
+    "A:7656": {
+      "file": "A%3A7656.json",
+      "scope": "dong",
+      "villa": 1163,
+      "detached": 352,
+      "missing": 0,
+      "bytes": 87752,
+      "sha256": "a44db9610f70e487b6f58af2229dd0144248107838ebaddc9f2b9d2a5cd31100"
+    },
+    "A:7655": {
+      "file": "A%3A7655.json",
+      "scope": "parcel",
+      "villa": 2,
+      "detached": 1123,
+      "missing": 0,
+      "bytes": 66806,
+      "sha256": "33a3c7da0cee7a00b07965cefa45d6903093cd12d1dcf74784289710fab8a390"
+    },
+    "A:7654": {
+      "file": "A%3A7654.json",
+      "scope": "dong",
+      "villa": 5678,
+      "detached": 1654,
+      "missing": 0,
+      "bytes": 402240,
+      "sha256": "baac7e9dd52f63469ab6a85606e1d61ed6cd364e2789eed8ae706ced104bad58"
+    },
+    "A:7653": {
+      "file": "A%3A7653.json",
+      "scope": "dong",
+      "villa": 5678,
+      "detached": 1654,
+      "missing": 0,
+      "bytes": 402240,
+      "sha256": "30a501893672639707fcd484406b06401420736f6f161ac2ba8f9d8ac156c023"
+    },
+    "A:7652": {
+      "file": "A%3A7652.json",
+      "scope": "dong",
+      "villa": 5678,
+      "detached": 1654,
+      "missing": 0,
+      "bytes": 402240,
+      "sha256": "6c294fb651651ef7499ce98dbd274fc956110b909094aab3298a75154bb5ab30"
+    },
+    "A:7651": {
+      "file": "A%3A7651.json",
+      "scope": "dong",
+      "villa": 5678,
+      "detached": 1654,
+      "missing": 0,
+      "bytes": 402240,
+      "sha256": "b73ead4e7cefd2a0f197a68df7c51d83d8bd383dffa7c1bdb8acf11a64174540"
+    },
+    "A:7650": {
+      "file": "A%3A7650.json",
+      "scope": "dong",
+      "villa": 5678,
+      "detached": 1654,
+      "missing": 0,
+      "bytes": 402240,
+      "sha256": "80d3c15505b56fd882734d8024678d8bf27c2ea028cd8503ac098784d55f648f"
+    },
+    "A:7649": {
+      "file": "A%3A7649.json",
+      "scope": "dong",
+      "villa": 5678,
+      "detached": 1654,
+      "missing": 0,
+      "bytes": 402240,
+      "sha256": "70981fc3342257948060dc2c0d9cd5c18905cc6db64397607d7ea5202a67c9e6"
+    },
+    "A:7648": {
+      "file": "A%3A7648.json",
+      "scope": "dong",
+      "villa": 5678,
+      "detached": 1654,
+      "missing": 0,
+      "bytes": 402240,
+      "sha256": "e3060ad415d7c6c92910e5a0930967be9a9503d4d0064916c28764362bcf4701"
+    },
+    "A:7647": {
+      "file": "A%3A7647.json",
+      "scope": "dong",
+      "villa": 1048,
+      "detached": 635,
+      "missing": 0,
+      "bytes": 98019,
+      "sha256": "0051fff836345b07d2331544832921cd02d97ea50e4fe804d883cc3d4c1c38f5"
+    },
+    "A:7646": {
+      "file": "A%3A7646.json",
+      "scope": "parcel",
+      "villa": 560,
+      "detached": 635,
+      "missing": 0,
+      "bytes": 71799,
+      "sha256": "8d7f706c76a1f631545a709a0f9fc55d5d22f36573695c10514b7e4677d896bf"
+    },
+    "A:7645": {
+      "file": "A%3A7645.json",
+      "scope": "parcel",
+      "villa": 20,
+      "detached": 98,
+      "missing": 0,
+      "bytes": 13071,
+      "sha256": "231edf1a7b44f4e262b8f4fa3f644d688f70af5956d56596aab274637d1ee003"
+    },
+    "A:7644": {
+      "file": "A%3A7644.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 103,
+      "missing": 0,
+      "bytes": 11534,
+      "sha256": "77244552bf10804974d479337e6f72b50bfbf7affa5233e5d26269c898fc1571"
+    },
+    "A:7643": {
+      "file": "A%3A7643.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 28,
+      "missing": 0,
+      "bytes": 7633,
+      "sha256": "944320a2c83d36090b28595c08a9c26b52a8ba4b5e609804dc012d713b95dcd0"
+    },
+    "A:7642": {
+      "file": "A%3A7642.json",
+      "scope": "parcel",
+      "villa": 56,
+      "detached": 51,
+      "missing": 0,
+      "bytes": 12615,
+      "sha256": "a669666ee6be92986712aa4ad59c4438c35e8dc3d105016b07498808eeac578a"
+    },
+    "A:7641": {
+      "file": "A%3A7641.json",
+      "scope": "parcel",
+      "villa": 107,
+      "detached": 82,
+      "missing": 0,
+      "bytes": 17277,
+      "sha256": "a6773925a2030cc3852d2648a6aca3f2deff8b1976e2ef3b5f1c0d5171ee3bb1"
+    },
+    "A:7640": {
+      "file": "A%3A7640.json",
+      "scope": "dong",
+      "villa": 4732,
+      "detached": 1123,
+      "missing": 0,
+      "bytes": 320309,
+      "sha256": "c247434502a14cafeb0d115a863043a6254f3b20aef17dc0f310c378ef7d4e28"
+    },
+    "A:7639": {
+      "file": "A%3A7639.json",
+      "scope": "dong",
+      "villa": 555,
+      "detached": 213,
+      "missing": 0,
+      "bytes": 48747,
+      "sha256": "d6742d03b6cbeba5e149057cc141ba57663df98615a6b206b190e71fb5531790"
+    },
+    "A:7638": {
+      "file": "A%3A7638.json",
+      "scope": "parcel",
+      "villa": 60,
+      "detached": 506,
+      "missing": 0,
+      "bytes": 37307,
+      "sha256": "3288f964ac43290f945ce1dce83a5fbc17226c9d4f27a9fbb86bca5f67240005"
+    },
+    "A:7637": {
+      "file": "A%3A7637.json",
+      "scope": "parcel",
+      "villa": 95,
+      "detached": 571,
+      "missing": 0,
+      "bytes": 43935,
+      "sha256": "dda4d30b6a764d517f7f150c8644f71941c9d84da466774a726aec6be0b33e7f"
+    },
+    "A:7636": {
+      "file": "A%3A7636.json",
+      "scope": "parcel",
+      "villa": 119,
+      "detached": 571,
+      "missing": 0,
+      "bytes": 45162,
+      "sha256": "a22a580e8a53a4405f395da1372a1ce0181ad7e8e4acd6946b8cc26a7c6880ea"
+    },
+    "A:7635": {
+      "file": "A%3A7635.json",
+      "scope": "parcel",
+      "villa": 94,
+      "detached": 571,
+      "missing": 0,
+      "bytes": 43850,
+      "sha256": "0695f7ac6ba4707a52569496b3efaa4cfe1ad9c700335fa2fec96f1a9709a1f3"
+    },
+    "A:7634": {
+      "file": "A%3A7634.json",
+      "scope": "parcel",
+      "villa": 224,
+      "detached": 677,
+      "missing": 0,
+      "bytes": 56382,
+      "sha256": "f31f73a3ec13754514f0dc74ab9f4c1b172ea20dc99cbbc6c105b2885bbb6075"
+    },
+    "A:7632": {
+      "file": "A%3A7632.json",
+      "scope": "parcel",
+      "villa": 319,
+      "detached": 197,
+      "missing": 0,
+      "bytes": 34590,
+      "sha256": "73ed29ad05afb92ce770f56671f7c068d340d6a07ed441d104a561900074f4f8"
+    },
+    "A:7631": {
+      "file": "A%3A7631.json",
+      "scope": "parcel",
+      "villa": 161,
+      "detached": 56,
+      "missing": 0,
+      "bytes": 18888,
+      "sha256": "946ab3dcd8aa4c50e42e7a859c767b977fb6996dfa83175efb59d556333d0e70"
+    },
+    "A:7630": {
+      "file": "A%3A7630.json",
+      "scope": "dong",
+      "villa": 2961,
+      "detached": 731,
+      "missing": 0,
+      "bytes": 203959,
+      "sha256": "01d0875f600e1b693b4392cf1777d915fc071f4037a70b81df03fa69d750661d"
+    },
+    "A:7629": {
+      "file": "A%3A7629.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 126,
+      "missing": 0,
+      "bytes": 13148,
+      "sha256": "50c861b2dcf8b17826f6798ae5d6e71fc37a07f665c55713b511d640f8592997"
+    },
+    "A:7628": {
+      "file": "A%3A7628.json",
+      "scope": "parcel",
+      "villa": 2,
+      "detached": 16,
+      "missing": 0,
+      "bytes": 6836,
+      "sha256": "ea97af938af5bceb032e8ed896861985a01871dc2e4fe2b480a78801a729a213"
+    },
+    "A:7627": {
+      "file": "A%3A7627.json",
+      "scope": "parcel",
+      "villa": 114,
+      "detached": 685,
+      "missing": 0,
+      "bytes": 50818,
+      "sha256": "c3bc937ebd7273ac7da469492505a9ebd78287be2b48e3919decb1932a274d01"
+    },
+    "A:7626": {
+      "file": "A%3A7626.json",
+      "scope": "parcel",
+      "villa": 70,
+      "detached": 685,
+      "missing": 0,
+      "bytes": 48146,
+      "sha256": "9f66c37db5e7bee73eb8f88f97c68833c531fa60b71ed454f2d7be819efd832f"
+    },
+    "A:7625": {
+      "file": "A%3A7625.json",
+      "scope": "dong",
+      "villa": 1172,
+      "detached": 706,
+      "missing": 0,
+      "bytes": 107189,
+      "sha256": "3539d4bf64ea586528692299f12792d15455344b4fc3b4ddffcfb471deae6cf8"
+    },
+    "A:7624": {
+      "file": "A%3A7624.json",
+      "scope": "dong",
+      "villa": 1172,
+      "detached": 706,
+      "missing": 0,
+      "bytes": 107189,
+      "sha256": "da4e20670780f8db3fc9f702df5e9769f0c6d6354d15415e44afcbd7ed5d0d08"
+    },
+    "A:7623": {
+      "file": "A%3A7623.json",
+      "scope": "dong",
+      "villa": 4458,
+      "detached": 435,
+      "missing": 0,
+      "bytes": 267287,
+      "sha256": "d3aa576f76134042eebf4a91cc23a09ab4c1e3488fa030b78599c6499cd21fe4"
+    },
+    "A:7621": {
+      "file": "A%3A7621.json",
+      "scope": "parcel",
+      "villa": 15,
+      "detached": 393,
+      "missing": 0,
+      "bytes": 28316,
+      "sha256": "ee59221d70953c63885c852d9a6d0f441aa2ee84ee76362c1031cc390ca92337"
+    },
+    "A:7620": {
+      "file": "A%3A7620.json",
+      "scope": "parcel",
+      "villa": 80,
+      "detached": 393,
+      "missing": 0,
+      "bytes": 32191,
+      "sha256": "374ebf7eb8f69b8fe9cf9ca2d1aef9e5444bc506195d0d14793a882365ce5cd6"
+    },
+    "A:7619": {
+      "file": "A%3A7619.json",
+      "scope": "dong",
+      "villa": 292,
+      "detached": 393,
+      "missing": 0,
+      "bytes": 43852,
+      "sha256": "e5d172ca1295207fda812ae30cb07ecd68b5a53cc05eebd5fc396681c22f524d"
+    },
+    "A:7618": {
+      "file": "A%3A7618.json",
+      "scope": "dong",
+      "villa": 744,
+      "detached": 557,
+      "missing": 0,
+      "bytes": 77260,
+      "sha256": "81c2a458223a432567a6f7a786f16c2be6cb8d7defb02c2e8a1d1dfb128fa760"
+    },
+    "A:7617": {
+      "file": "A%3A7617.json",
+      "scope": "dong",
+      "villa": 744,
+      "detached": 557,
+      "missing": 0,
+      "bytes": 77260,
+      "sha256": "8c0516717ef74c09f98abfe9256aad3b4edf5c2c4cec9b2f832ee5c54f845a35"
+    },
+    "A:7616": {
+      "file": "A%3A7616.json",
+      "scope": "dong",
+      "villa": 744,
+      "detached": 557,
+      "missing": 0,
+      "bytes": 77260,
+      "sha256": "1c2165c3af40c924c4fe83acf5fd7810260121a2fd2aca77a35caede26ce636b"
+    },
+    "A:7615": {
+      "file": "A%3A7615.json",
+      "scope": "parcel",
+      "villa": 130,
+      "detached": 96,
+      "missing": 0,
+      "bytes": 19196,
+      "sha256": "105eff6fe98c089433c24fe2e9c4252a280dc55b6dad8bc400100c5b301da77f"
+    },
+    "A:7614": {
+      "file": "A%3A7614.json",
+      "scope": "dong",
+      "villa": 1707,
+      "detached": 320,
+      "missing": 0,
+      "bytes": 116422,
+      "sha256": "78bd8fc2ff3bcd7feb151fd14faacb337da0eae5c3b42b43ef455aeac143d4da"
+    },
+    "A:7613": {
+      "file": "A%3A7613.json",
+      "scope": "dong",
+      "villa": 1707,
+      "detached": 320,
+      "missing": 0,
+      "bytes": 116422,
+      "sha256": "9b8a0ddd3422fbfaa729e7d508d8fbb0cf09724a8c28e683710f611204d92c81"
+    },
+    "A:7612": {
+      "file": "A%3A7612.json",
+      "scope": "dong",
+      "villa": 1014,
+      "detached": 813,
+      "missing": 0,
+      "bytes": 107162,
+      "sha256": "c9bc819413ba2dcc5220a397f3958151461b7f52e30fcba53c41a4482e552b2a"
+    },
+    "A:7611": {
+      "file": "A%3A7611.json",
+      "scope": "dong",
+      "villa": 1014,
+      "detached": 813,
+      "missing": 0,
+      "bytes": 107162,
+      "sha256": "2a70fff85a178bd35a1ce58275294c6da7256d7c8ba98066ed640e185f32c2bb"
+    },
+    "A:7610": {
+      "file": "A%3A7610.json",
+      "scope": "dong",
+      "villa": 1014,
+      "detached": 813,
+      "missing": 0,
+      "bytes": 107162,
+      "sha256": "bd20fe409418b810414034cfdb2b2d6afba834c2609286324d7c686c5bff7751"
+    },
+    "A:7609": {
+      "file": "A%3A7609.json",
+      "scope": "dong",
+      "villa": 1014,
+      "detached": 813,
+      "missing": 0,
+      "bytes": 107162,
+      "sha256": "b5225eeaedade719221dd8f0f71db3bdcea9c382250d39df97fec6004af3ec9e"
+    },
+    "A:7608": {
+      "file": "A%3A7608.json",
+      "scope": "dong",
+      "villa": 1014,
+      "detached": 813,
+      "missing": 0,
+      "bytes": 107162,
+      "sha256": "e1ce12f827c1c36c32727bf1035227aabda3038175068198bdd9320509c27d91"
+    },
+    "A:7607": {
+      "file": "A%3A7607.json",
+      "scope": "dong",
+      "villa": 1014,
+      "detached": 813,
+      "missing": 0,
+      "bytes": 107162,
+      "sha256": "de944810109bfeb531c319ddaf0c90952bff6c142f2294f94a64d2da073cf3be"
+    },
+    "A:7606": {
+      "file": "A%3A7606.json",
+      "scope": "parcel",
+      "villa": 137,
+      "detached": 582,
+      "missing": 0,
+      "bytes": 46382,
+      "sha256": "c2638564efe40eb3f7aea0717aa8f00c3640571f94a3f3a4b0afde5fe93f2058"
+    },
+    "A:7605": {
+      "file": "A%3A7605.json",
+      "scope": "dong",
+      "villa": 894,
+      "detached": 582,
+      "missing": 0,
+      "bytes": 86821,
+      "sha256": "f6ec39b6a5f1a8f2da303e7f6dd33d0222477deacc4652287b6d071f40eded1a"
+    },
+    "A:7604": {
+      "file": "A%3A7604.json",
+      "scope": "parcel",
+      "villa": 15,
+      "detached": 571,
+      "missing": 0,
+      "bytes": 38258,
+      "sha256": "5309f2423dabf61e0dc3940b7669de2353577b3f530c92002ac11a067ee6a660"
+    },
+    "A:7603": {
+      "file": "A%3A7603.json",
+      "scope": "parcel",
+      "villa": 110,
+      "detached": 571,
+      "missing": 0,
+      "bytes": 43044,
+      "sha256": "062ea81a35553e4d60816bf29f21e69be4158374080b494cef57b381b48bcec3"
+    },
+    "A:7602": {
+      "file": "A%3A7602.json",
+      "scope": "dong",
+      "villa": 544,
+      "detached": 571,
+      "missing": 0,
+      "bytes": 66439,
+      "sha256": "9dbd23ba07e2cd9a1b3c5114a6ccaff3c5e53f82bf51d81e32a88b2f1c187726"
+    },
+    "A:7601": {
+      "file": "A%3A7601.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 724,
+      "missing": 0,
+      "bytes": 45459,
+      "sha256": "60fe09209901d79cf1965ac4b94b410d21cf8279d0277ebd33db5905101b5a23"
+    },
+    "A:7600": {
+      "file": "A%3A7600.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 724,
+      "missing": 0,
+      "bytes": 45459,
+      "sha256": "21bf6b00c7559bf80c3037a507bbfe23984d69a15c1d0549cf9b85383b99eba7"
+    },
+    "A:7599": {
+      "file": "A%3A7599.json",
+      "scope": "parcel",
+      "villa": 227,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 63731,
+      "sha256": "df48b16598f3538f0ee2212a05abae03b9dc44986346bbf069647aa4e46a4f2f"
+    },
+    "A:7598": {
+      "file": "A%3A7598.json",
+      "scope": "dong",
+      "villa": 1236,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 117700,
+      "sha256": "641d1013d30ca1429c9f55880d6c5cfd37e37219b3c88559d916051118ef4d4f"
+    },
+    "A:7597": {
+      "file": "A%3A7597.json",
+      "scope": "dong",
+      "villa": 1236,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 117700,
+      "sha256": "23a1c35e724e87306d7c1662f038d0fa055e7a7d5d26302ae524e2fa65e60a36"
+    },
+    "A:7596": {
+      "file": "A%3A7596.json",
+      "scope": "dong",
+      "villa": 1449,
+      "detached": 1508,
+      "missing": 0,
+      "bytes": 165540,
+      "sha256": "e1a6a60989a0903bf4ae827286cdfbf5e0d977820ec64fd24253b4433e6e6b35"
+    },
+    "A:7595": {
+      "file": "A%3A7595.json",
+      "scope": "parcel",
+      "villa": 229,
+      "detached": 1508,
+      "missing": 0,
+      "bytes": 99687,
+      "sha256": "49064b70eaa86d9658f047d7bbadc1b41ff368f19238f0e7bec3f50157056237"
+    },
+    "A:7594": {
+      "file": "A%3A7594.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 58,
+      "missing": 0,
+      "bytes": 9289,
+      "sha256": "8ca4941805e25191a32ac45ada157a104022a2666cd52fb867ae60d00f65c079"
+    },
+    "A:7593": {
+      "file": "A%3A7593.json",
+      "scope": "parcel",
+      "villa": 16,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 51880,
+      "sha256": "a4380f0fa82525457e7cf2723d965c09097f91ac2f4607d0c13ec5fb17e697bb"
+    },
+    "A:7592": {
+      "file": "A%3A7592.json",
+      "scope": "parcel",
+      "villa": 8,
+      "detached": 478,
+      "missing": 0,
+      "bytes": 33044,
+      "sha256": "0924d7076c7808344fd0a814853ef26e876b9495ab3b53db845a74bca86ced3b"
+    },
+    "A:7591": {
+      "file": "A%3A7591.json",
+      "scope": "parcel",
+      "villa": 2,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5767,
+      "sha256": "b9a11f5139d6454dda837aafd1f848a5be5f90c221807feea5183c48fd36fa4d"
+    },
+    "A:7590": {
+      "file": "A%3A7590.json",
+      "scope": "parcel",
+      "villa": 750,
+      "detached": 1014,
+      "missing": 0,
+      "bytes": 102250,
+      "sha256": "d7286505fc3b4151245d2bb49a3382793f8318edb3c22ecffa859f72bb068e90"
+    },
+    "A:7589": {
+      "file": "A%3A7589.json",
+      "scope": "dong",
+      "villa": 4766,
+      "detached": 1014,
+      "missing": 0,
+      "bytes": 317164,
+      "sha256": "32c1987e89a5f6089266f26778fca41f92e9b1ad84338657e005129ba5ffbb9a"
+    },
+    "A:7588": {
+      "file": "A%3A7588.json",
+      "scope": "dong",
+      "villa": 4766,
+      "detached": 1014,
+      "missing": 0,
+      "bytes": 317164,
+      "sha256": "7f44aab75002ddcef035ef22aed5253390fde4256ef376a5669feb0660626e0a"
+    },
+    "A:7587": {
+      "file": "A%3A7587.json",
+      "scope": "dong",
+      "villa": 4766,
+      "detached": 1014,
+      "missing": 0,
+      "bytes": 317164,
+      "sha256": "fc9ad4b95860dc6e397ac79c3331717ab19d9ded721ef0854d17501f72b303b6"
+    },
+    "A:7586": {
+      "file": "A%3A7586.json",
+      "scope": "dong",
+      "villa": 4766,
+      "detached": 1014,
+      "missing": 0,
+      "bytes": 317164,
+      "sha256": "34c50cfa90e76cf6ad53bd7424eb3dc1fac6bb99c7cdda12d220d657e4d735a3"
+    },
+    "A:7584": {
+      "file": "A%3A7584.json",
+      "scope": "parcel",
+      "villa": 176,
+      "detached": 1367,
+      "missing": 0,
+      "bytes": 91030,
+      "sha256": "b94a76212d102d7185b60e35215b4fce291129052f7341a40d6054edcd8d4c64"
+    },
+    "A:7583": {
+      "file": "A%3A7583.json",
+      "scope": "parcel",
+      "villa": 406,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 28626,
+      "sha256": "eac0ba77cb30c58c228ab0b20bc201713d1c0779706a5ae7332fa37686bfb0e4"
+    },
+    "A:7581": {
+      "file": "A%3A7581.json",
+      "scope": "dong",
+      "villa": 2195,
+      "detached": 377,
+      "missing": 0,
+      "bytes": 144569,
+      "sha256": "41fd219f369e42d1aedc12dc9c22edea8d6bbf2862fbb1ea0b6f0cc421ae1e0f"
+    },
+    "A:7580": {
+      "file": "A%3A7580.json",
+      "scope": "dong",
+      "villa": 11893,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 825647,
+      "sha256": "bf78e2b3d872c8a39ac99adf6c83030469378c896497891a63f537083c1222da"
+    },
+    "A:7579": {
+      "file": "A%3A7579.json",
+      "scope": "dong",
+      "villa": 11893,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 825647,
+      "sha256": "a76f93646864e4c9faa18cf58fc1da8ea37c11b72b930436b2347013aba31044"
+    },
+    "A:7578": {
+      "file": "A%3A7578.json",
+      "scope": "dong",
+      "villa": 11893,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 825647,
+      "sha256": "38a175aa93543b9f4212f1d2630897e1d96a0198e3876b951183a94e0ac4f8a8"
+    },
+    "A:7577": {
+      "file": "A%3A7577.json",
+      "scope": "parcel",
+      "villa": 177,
+      "detached": 2026,
+      "missing": 0,
+      "bytes": 127611,
+      "sha256": "6e62821ea4985033db56a6fb94baa4b8b7a36da8fb27c05e4ad963d717e38115"
+    },
+    "A:7576": {
+      "file": "A%3A7576.json",
+      "scope": "parcel",
+      "villa": 150,
+      "detached": 2026,
+      "missing": 0,
+      "bytes": 125816,
+      "sha256": "b6c448fc7b342093791b129ba84cd9cb853c5b29dc1fcf3016749421a9655eb9"
+    },
+    "A:7575": {
+      "file": "A%3A7575.json",
+      "scope": "parcel",
+      "villa": 2,
+      "detached": 2026,
+      "missing": 0,
+      "bytes": 117406,
+      "sha256": "43741062edbb6c4a04b3678880877b998fed44141ddbaee688dceab1de3d3a8c"
+    },
+    "A:7574": {
+      "file": "A%3A7574.json",
+      "scope": "dong",
+      "villa": 2677,
+      "detached": 514,
+      "missing": 0,
+      "bytes": 178662,
+      "sha256": "acd5e512df3d535cb288a5bf6c166e4f9d2b86a9f7b1d1410dcd60a252eb0e6a"
+    },
+    "A:7573": {
+      "file": "A%3A7573.json",
+      "scope": "parcel",
+      "villa": 37,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 149573,
+      "sha256": "74bc5e00e7d2d6ddc18451df21ab2928440e6fabbfcb93ecb0003e037021855f"
+    },
+    "A:7572": {
+      "file": "A%3A7572.json",
+      "scope": "parcel",
+      "villa": 348,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 166662,
+      "sha256": "811286a1cb17ca8026edb34f83ad0d09eb64573fe354c9febbae950ac48f6463"
+    },
+    "A:7571": {
+      "file": "A%3A7571.json",
+      "scope": "parcel",
+      "villa": 56,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 150579,
+      "sha256": "4326bacf4f42600176169163562e1faa436761fd2549a94bc1dba7ad612b8aaf"
+    },
+    "A:7570": {
+      "file": "A%3A7570.json",
+      "scope": "parcel",
+      "villa": 21,
+      "detached": 1262,
+      "missing": 0,
+      "bytes": 77143,
+      "sha256": "c0f2fe0638ba3e24449faf458de46973955a46f5ac1df0ce21e3da0276ca321c"
+    },
+    "A:7569": {
+      "file": "A%3A7569.json",
+      "scope": "parcel",
+      "villa": 12,
+      "detached": 1262,
+      "missing": 0,
+      "bytes": 76414,
+      "sha256": "1f88383aba46456cf9350d218037a0e75d9036ccc5dfbb50274afe9aaf56c6d2"
+    },
+    "A:7568": {
+      "file": "A%3A7568.json",
+      "scope": "parcel",
+      "villa": 20,
+      "detached": 1262,
+      "missing": 0,
+      "bytes": 76988,
+      "sha256": "d8f3176e8c9dc8c2d5edf11c5ea0d4f8a3f3d3218c9725a17afb32ca28dc845b"
+    },
+    "A:7567": {
+      "file": "A%3A7567.json",
+      "scope": "parcel",
+      "villa": 52,
+      "detached": 1262,
+      "missing": 0,
+      "bytes": 79045,
+      "sha256": "3a6d37dc231bf6ea28fabbe0c5e3081ea5a474fb877b0d36dabc994c6707713d"
+    },
+    "A:7566": {
+      "file": "A%3A7566.json",
+      "scope": "dong",
+      "villa": 3436,
+      "detached": 1001,
+      "missing": 0,
+      "bytes": 245564,
+      "sha256": "d5ff8cc1ee2d0ccdb9416ee5434f2ec461339b5778d0a05b408f59bc7d335179"
+    },
+    "A:7565": {
+      "file": "A%3A7565.json",
+      "scope": "dong",
+      "villa": 2313,
+      "detached": 704,
+      "missing": 0,
+      "bytes": 169365,
+      "sha256": "ee9453fb2e0579172c3a718cdf40109da144bc6f015cb16baa93003c4c195720"
+    },
+    "A:7564": {
+      "file": "A%3A7564.json",
+      "scope": "dong",
+      "villa": 2313,
+      "detached": 704,
+      "missing": 0,
+      "bytes": 169365,
+      "sha256": "b6039ea740a4402e21d4e549596d3aeb5f1d70d0083498dca7c75553a6ea4d2f"
+    },
+    "A:7563": {
+      "file": "A%3A7563.json",
+      "scope": "dong",
+      "villa": 2313,
+      "detached": 704,
+      "missing": 0,
+      "bytes": 169365,
+      "sha256": "eeaca6b537816a65157c447a054aa9e64f2a120a54a1c0cd937b559b4f88720f"
+    },
+    "A:7544": {
+      "file": "A%3A7544.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 16,
+      "missing": 0,
+      "bytes": 6851,
+      "sha256": "8b1231677be96a18f2e4c726e525e4805e6f28dc40debe7b0d8eb00a7f37e185"
+    },
+    "A:7543": {
+      "file": "A%3A7543.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 2,
+      "missing": 0,
+      "bytes": 5743,
+      "sha256": "679a8fff1f9d0cdf4f808837f9e9001fc8df36f7c581d961abb630e0a40b5319"
+    },
+    "A:7542": {
+      "file": "A%3A7542.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 16,
+      "missing": 0,
+      "bytes": 6851,
+      "sha256": "ec3652a7735fd116aeefbb950dfd76f563adb2874efb82d28c3b3b850ae0f5cf"
+    },
+    "A:7541": {
+      "file": "A%3A7541.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 16,
+      "missing": 0,
+      "bytes": 6851,
+      "sha256": "13361091967775f2291c7624567fc34603db4caa9e6deb35a2ddb32631e8e0f6"
+    },
+    "A:7540": {
+      "file": "A%3A7540.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 2,
+      "missing": 0,
+      "bytes": 5743,
+      "sha256": "3dd9168e5ee13f493321da3cabf545c2c2d3095519f78aa5dafa92da43fea7cf"
+    },
+    "A:7539": {
+      "file": "A%3A7539.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5570,
+      "sha256": "619b8505ebbe2e0615fe894f972dddfc055ba7cd22abe1af17fa413a62bb77d2"
+    },
+    "A:7531": {
+      "file": "A%3A7531.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 9,
+      "missing": 0,
+      "bytes": 6343,
+      "sha256": "88bf7c78c58e37493746c97fc079ae4be406c16ce0af9e82aec589f5ca57b68e"
+    },
+    "A:7528": {
+      "file": "A%3A7528.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 9,
+      "missing": 0,
+      "bytes": 6343,
+      "sha256": "e03487c508869ab412281397dcbbf1ec4b96fcaf937d12eb8461efb20c0c9bc8"
+    },
+    "A:7523": {
+      "file": "A%3A7523.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 9,
+      "missing": 0,
+      "bytes": 6343,
+      "sha256": "5d0868c1c99ab4e699499b4441f6e55d05be1b3688f7ff15167bc5c365ddd024"
+    },
+    "A:7521": {
+      "file": "A%3A7521.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 2,
+      "missing": 0,
+      "bytes": 5790,
+      "sha256": "22d5b9d270dd0287dce45790de5952e05f2fdeb8123c83c63fc454313387731a"
+    },
+    "A:7519": {
+      "file": "A%3A7519.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 31,
+      "missing": 0,
+      "bytes": 7562,
+      "sha256": "70c43eaca2e28c01699f63bf1cff5bb08509eb3fbd957313ac3ded8211eba17c"
+    },
+    "A:7514": {
+      "file": "A%3A7514.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 21,
+      "missing": 0,
+      "bytes": 7180,
+      "sha256": "65c93659defdd41db207ef80e74cf89180d0c335779c4474c79bc3ae5795660c"
+    },
+    "A:7510": {
+      "file": "A%3A7510.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 5,
+      "missing": 0,
+      "bytes": 6103,
+      "sha256": "3f1426bcac9546781d8d9b782d9827107a08028036d505b206701872f833d7c4"
+    },
+    "A:7505": {
+      "file": "A%3A7505.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 17,
+      "missing": 0,
+      "bytes": 6854,
+      "sha256": "be6e02a7d32a881977cd8b6b21b1df159e71e4374e3a3c2cd99aa1d06e19706e"
+    },
+    "A:7504": {
+      "file": "A%3A7504.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 54,
+      "missing": 0,
+      "bytes": 9137,
+      "sha256": "b04183c10d53f4703242dcf0bb816cfb99e5ee4627c49a4c77af55c81b965d6d"
+    },
+    "A:7503": {
+      "file": "A%3A7503.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 16,
+      "missing": 0,
+      "bytes": 6851,
+      "sha256": "c4bea6d14b368bd9712b0f3e3dc35489025f030578caf30dca0ab06e0d02926c"
+    },
+    "A:7499": {
+      "file": "A%3A7499.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 31,
+      "missing": 0,
+      "bytes": 7562,
+      "sha256": "0d5c61b192e47e61849593d580ea534a42f674385aa430555d1a1c83a464f944"
+    },
+    "A:7486": {
+      "file": "A%3A7486.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1,
+      "missing": 0,
+      "bytes": 5675,
+      "sha256": "05e22d6841316a7798efad2ee70cbdc10bf9e0d843e460eae7b7bb453bb71fc4"
+    },
+    "A:7485": {
+      "file": "A%3A7485.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5563,
+      "sha256": "6267025b120218cecc9607df89466ceab0887e37222967d4aedd8a62ca84c097"
+    },
+    "A:7475": {
+      "file": "A%3A7475.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 2,
+      "missing": 0,
+      "bytes": 5790,
+      "sha256": "d0fbd182054e426dc6df76639dbeee91ba1206cbe0c4a488cbf567375c0de317"
+    },
+    "A:7471": {
+      "file": "A%3A7471.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 9,
+      "missing": 0,
+      "bytes": 6346,
+      "sha256": "90c2bec91dc6e40f44f2b848fff72c012c0324440bf7fcd717e54f0498356cd3"
+    },
+    "A:7470": {
+      "file": "A%3A7470.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5577,
+      "sha256": "66010b4190f22198b1283e34950be2ab5cc9fadd9e0979cc276db47464eade46"
+    },
+    "A:7458": {
+      "file": "A%3A7458.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5574,
+      "sha256": "f347a80fec3a8aedc7aea1c78e444cb6ae760ac760099f99a509a8e639f6f74d"
+    },
+    "A:7456": {
+      "file": "A%3A7456.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5574,
+      "sha256": "921d32b027a827843b9edc1581877cba69a6463939bf42dffb442d93fb77d894"
+    },
+    "A:7445": {
+      "file": "A%3A7445.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 2,
+      "missing": 0,
+      "bytes": 5784,
+      "sha256": "95ff327a59a7babfdf9e90ee124da2fc403b96e2a87c1d84062f8fae39b05282"
+    },
+    "A:7438": {
+      "file": "A%3A7438.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1,
+      "missing": 0,
+      "bytes": 5690,
+      "sha256": "e56966f1654038c6834ca8fc4da129b4af74affc643c538fec31004f1356f6ad"
+    },
+    "A:7437": {
+      "file": "A%3A7437.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1,
+      "missing": 0,
+      "bytes": 5690,
+      "sha256": "4024bd9bdb2181e8885037c71f792b338b9bdbd180e059eca4b1c56c73513932"
+    },
+    "A:7436": {
+      "file": "A%3A7436.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 2,
+      "missing": 0,
+      "bytes": 5790,
+      "sha256": "922f7440b606380ee96dd549e727ad829b17ab0a408ecec1bd80240ca5c3e732"
+    },
+    "A:7435": {
+      "file": "A%3A7435.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 51,
+      "missing": 0,
+      "bytes": 9006,
+      "sha256": "3bc9683c00c2c06904c84df2b03377671021c1f2a04334f86bb91abd47c13cb1"
+    },
+    "A:7430": {
+      "file": "A%3A7430.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 27,
+      "missing": 0,
+      "bytes": 7555,
+      "sha256": "baa7c349ab6e975d35bc4a8a8f362bc80c8ec9061848938db4f0054338a84666"
+    },
+    "A:7422": {
+      "file": "A%3A7422.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 10,
+      "missing": 0,
+      "bytes": 6403,
+      "sha256": "e5c6f5a00f0264fbe2ecd3e89dade22d553a36b5736f1d00cc275e538e6d0728"
+    },
+    "A:7405": {
+      "file": "A%3A7405.json",
+      "scope": "dong",
+      "villa": 745,
+      "detached": 434,
+      "missing": 0,
+      "bytes": 70417,
+      "sha256": "439fce14a3568c6297632a8fff8057b2f1d1984f047b56035d57bfa5cbc50eb4"
+    },
+    "A:7398": {
+      "file": "A%3A7398.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 434,
+      "missing": 0,
+      "bytes": 29586,
+      "sha256": "084985b86572e92db36bd51e82671623a344a1ec1f16f63325bf08ec9c5113a1"
+    },
+    "A:7397": {
+      "file": "A%3A7397.json",
+      "scope": "dong",
+      "villa": 745,
+      "detached": 434,
+      "missing": 0,
+      "bytes": 70417,
+      "sha256": "2a4386b0d6e38c6d570c7adb1d7a89e93b52ca644935ed7f5fbca5d7b5dd63e8"
+    },
+    "A:7394": {
+      "file": "A%3A7394.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 24,
+      "missing": 0,
+      "bytes": 7445,
+      "sha256": "6e92cb545470fc728d9ad5babaf043d51adf80c228ce95f602f3c645591ea85e"
+    },
+    "A:7380": {
+      "file": "A%3A7380.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5574,
+      "sha256": "27c640455626fdcf046211c296ae89ad78f2fea8354fdf79f1b91f1c8fbd80bd"
+    },
+    "A:7377": {
+      "file": "A%3A7377.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 3,
+      "missing": 0,
+      "bytes": 5893,
+      "sha256": "25106a666f1ddb48d60d9a549244754369f4762ffa68c2b57c013ac309ab1eb6"
+    },
+    "A:7375": {
+      "file": "A%3A7375.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 3,
+      "missing": 0,
+      "bytes": 5893,
+      "sha256": "90399e94ff57d63cd95d7beb47cced920c4cac35f7b97ac591f7b81b64a6531f"
+    },
+    "A:7374": {
+      "file": "A%3A7374.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 3,
+      "missing": 0,
+      "bytes": 5893,
+      "sha256": "49f32d9b45f865f882ebb8349580402ae500e47fc64da940db160f2a05b88c65"
+    },
+    "A:7371": {
+      "file": "A%3A7371.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "10133e09afe57f3c71bcd94442ccf226bf3823e2cf62ee92d3ace8e10ee43b1e"
+    },
+    "A:7369": {
+      "file": "A%3A7369.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5570,
+      "sha256": "d2fc3cb5495e0831c1aa45040d06c2c558f4d98e82d762fe0deefe95b5a754b7"
+    },
+    "A:7360": {
+      "file": "A%3A7360.json",
+      "scope": "parcel",
+      "villa": 51,
+      "detached": 61,
+      "missing": 0,
+      "bytes": 12968,
+      "sha256": "e2838d00ea72255987b4aca58f6658a43747478fce8d0d67b67b735dd6425a62"
+    },
+    "A:7357": {
+      "file": "A%3A7357.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 5,
+      "missing": 0,
+      "bytes": 6034,
+      "sha256": "99eb840411efc087e9e1b31eea7745f57bc5a3fbb6228abad125903888546f09"
+    },
+    "A:7342": {
+      "file": "A%3A7342.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 13,
+      "missing": 0,
+      "bytes": 6619,
+      "sha256": "14240aede4fa358d6ee65f3d2926aaebdcf9a78d8ee7d96ab097618d0752aa50"
+    },
+    "A:7335": {
+      "file": "A%3A7335.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 4,
+      "missing": 0,
+      "bytes": 5925,
+      "sha256": "5aea626cfcee891a126ef2f76fe9c2cda31aed241834d3e154225a6dd843e5c4"
+    },
+    "A:7330": {
+      "file": "A%3A7330.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 4,
+      "missing": 0,
+      "bytes": 5925,
+      "sha256": "d26426767aa8a936ba0dec71a959eda51ec9c81db494f5f3eec5c89fb4282f87"
+    },
+    "A:7323": {
+      "file": "A%3A7323.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 10,
+      "missing": 0,
+      "bytes": 6265,
+      "sha256": "30d3c83d71140cedbb220ca6e20fd26b7ca38dce345773dfa5856a2d0085b1cc"
+    },
+    "A:7315": {
+      "file": "A%3A7315.json",
+      "scope": "parcel",
+      "villa": 20,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 56491,
+      "sha256": "baebc73738f48a845c6aa498df45b6354a26f1a8f6696ffa8912162693ce7482"
+    },
+    "A:7314": {
+      "file": "A%3A7314.json",
+      "scope": "dong",
+      "villa": 849,
+      "detached": 210,
+      "missing": 0,
+      "bytes": 63209,
+      "sha256": "a30b194bbd4962ecbcec7c74598aea83fa920f4c28cc571fc7b4cbf3e1f138a5"
+    },
+    "A:7313": {
+      "file": "A%3A7313.json",
+      "scope": "dong",
+      "villa": 849,
+      "detached": 210,
+      "missing": 0,
+      "bytes": 63209,
+      "sha256": "c1ca5da11e9e151715c9a9f28b12125cec973a30de1c18db0bbf0ef88fc3f452"
+    },
+    "A:7312": {
+      "file": "A%3A7312.json",
+      "scope": "dong",
+      "villa": 849,
+      "detached": 210,
+      "missing": 0,
+      "bytes": 63209,
+      "sha256": "329bb052a174ddcd4dcc94cf35582e1e608c03c9ecef6b1408c316011699b4a0"
+    },
+    "A:7311": {
+      "file": "A%3A7311.json",
+      "scope": "dong",
+      "villa": 849,
+      "detached": 210,
+      "missing": 0,
+      "bytes": 63209,
+      "sha256": "dc2a4e70ec4afff1de2641fab7833de4c06bf895983bf4cc75acc36fe799d889"
+    },
+    "A:7310": {
+      "file": "A%3A7310.json",
+      "scope": "parcel",
+      "villa": 409,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 78034,
+      "sha256": "8883c3b02e2bbfd59e6a4b58c2327863dcba638081249f198dda1093ff824511"
+    },
+    "A:7309": {
+      "file": "A%3A7309.json",
+      "scope": "parcel",
+      "villa": 7,
+      "detached": 61,
+      "missing": 0,
+      "bytes": 10146,
+      "sha256": "a2d594d83a7bb5f3c88b8456a6a02eb647722d473457c6529d3c6023de277139"
+    },
+    "A:7308": {
+      "file": "A%3A7308.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 172,
+      "missing": 0,
+      "bytes": 15640,
+      "sha256": "01c00279f8426674baf53b0c1eddb63363aaf288b241e42b7ac989a26615bc4d"
+    },
+    "A:7307": {
+      "file": "A%3A7307.json",
+      "scope": "parcel",
+      "villa": 19,
+      "detached": 172,
+      "missing": 0,
+      "bytes": 17122,
+      "sha256": "1904b3c7824bdb18af4b9acf4810cad3cc43c44e8d072ef34373a10e093c4cb0"
+    },
+    "A:7304": {
+      "file": "A%3A7304.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 172,
+      "missing": 0,
+      "bytes": 15640,
+      "sha256": "59cca837bcfd227f028a4a36685e49be7b2a76148eed80160a375fa6cec43c42"
+    },
+    "A:7300": {
+      "file": "A%3A7300.json",
+      "scope": "parcel",
+      "villa": 9,
+      "detached": 49,
+      "missing": 0,
+      "bytes": 9710,
+      "sha256": "e7ddd23529d01dbd9fa068bb6941f25799ee84406f8e46991129ee65fd2959e3"
+    },
+    "A:7299": {
+      "file": "A%3A7299.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 49,
+      "missing": 0,
+      "bytes": 8929,
+      "sha256": "e4852ad970ec0b1ceb786d720a65eb809e910addc136d573c2dc8e18dd05a874"
+    },
+    "A:7293": {
+      "file": "A%3A7293.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 47,
+      "missing": 0,
+      "bytes": 8585,
+      "sha256": "ff1979d496b295dfc2d1ee23409fc4e652a4b01e5ad771c5a1be44c2ca0193e7"
+    },
+    "A:7291": {
+      "file": "A%3A7291.json",
+      "scope": "parcel",
+      "villa": 6,
+      "detached": 67,
+      "missing": 0,
+      "bytes": 10548,
+      "sha256": "357b4ddab4cc79cf2009c22bac790137783ba5d22dbf0ce997e90f5c4a7d0ef3"
+    },
+    "A:7286": {
+      "file": "A%3A7286.json",
+      "scope": "dong",
+      "villa": 140,
+      "detached": 36,
+      "missing": 0,
+      "bytes": 16529,
+      "sha256": "7e0668b78f65e0860a2011e95579ee6fff955f21fc3a947c24b9dbaa52028db4"
+    },
+    "A:7285": {
+      "file": "A%3A7285.json",
+      "scope": "dong",
+      "villa": 37,
+      "detached": 38,
+      "missing": 0,
+      "bytes": 10720,
+      "sha256": "733c229c997b7da865ac933c276dd14a12cc003d910c870ed043ca9ec8d86994"
+    },
+    "A:7284": {
+      "file": "A%3A7284.json",
+      "scope": "dong",
+      "villa": 37,
+      "detached": 38,
+      "missing": 0,
+      "bytes": 10720,
+      "sha256": "af09fa355f2562808ae1309fb2e69e2b0fde9260bd448c7b1ed5400a92547feb"
+    },
+    "A:7283": {
+      "file": "A%3A7283.json",
+      "scope": "dong",
+      "villa": 37,
+      "detached": 38,
+      "missing": 0,
+      "bytes": 10720,
+      "sha256": "146d3bc9a6acf59e781ca6c5540196a7219e78fd4e3017fae34a8ff67a833650"
+    },
+    "A:7282": {
+      "file": "A%3A7282.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 15,
+      "missing": 0,
+      "bytes": 6719,
+      "sha256": "f0b77e9c36a2044b97e772913fdf189ab2fc3fad47e16a295295d9b736fec810"
+    },
+    "A:7281": {
+      "file": "A%3A7281.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 47,
+      "missing": 0,
+      "bytes": 8720,
+      "sha256": "08eb26492b3cf46a91f45643475da554e0c2a8ef4cf48dd337f8f3b37ed02dc8"
+    },
+    "A:7280": {
+      "file": "A%3A7280.json",
+      "scope": "parcel",
+      "villa": 23,
+      "detached": 47,
+      "missing": 0,
+      "bytes": 10329,
+      "sha256": "c41870b7fee77d954c14143779ccc8eb01488f499ec11cf9a835a2ad3890da59"
+    },
+    "A:7279": {
+      "file": "A%3A7279.json",
+      "scope": "dong",
+      "villa": 109,
+      "detached": 199,
+      "missing": 0,
+      "bytes": 23444,
+      "sha256": "44b0bbec5fa7cfe380044a8ef5492e58dd31b546d6cbb7876a10e952a4cd8471"
+    },
+    "A:7278": {
+      "file": "A%3A7278.json",
+      "scope": "parcel",
+      "villa": 174,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 140970,
+      "sha256": "92b303db6aeef3737d4688a45a25c5947dd7f8cc39c7ec873f56bc3c929ab9c2"
+    },
+    "A:7277": {
+      "file": "A%3A7277.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 30,
+      "missing": 0,
+      "bytes": 7744,
+      "sha256": "b71477ac1bec6d99900bbfad0bb0287e62aa934f8d3743eb8b4b14470ca8a391"
+    },
+    "A:7276": {
+      "file": "A%3A7276.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 9,
+      "missing": 0,
+      "bytes": 6422,
+      "sha256": "8ffab3033a6eb74f09127e6495096d676f4ccec5b3c59733c87568b21d61d7fc"
+    },
+    "A:7275": {
+      "file": "A%3A7275.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 8,
+      "missing": 0,
+      "bytes": 6257,
+      "sha256": "d8307c2bbfc7f82b053cc2e7d9021e55787b62bdeb265a18f44d78e6d9e9f4b6"
+    },
+    "A:7274": {
+      "file": "A%3A7274.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 23,
+      "missing": 0,
+      "bytes": 7291,
+      "sha256": "5e389fd4617471eb3c551a8e44b4674ec142ba31fa98d4a076449638ec8b0e95"
+    },
+    "A:7273": {
+      "file": "A%3A7273.json",
+      "scope": "dong",
+      "villa": 5371,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 341875,
+      "sha256": "db8e23d5cda09e3a59375aae69d4d2928c83cf1cba0c1999f4ae84a35b27eea5"
+    },
+    "A:7272": {
+      "file": "A%3A7272.json",
+      "scope": "dong",
+      "villa": 5371,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 341875,
+      "sha256": "8c11da73bc633c430a17124c19382b5a8c300a5b821d74d1bf00616abbec2cb0"
+    },
+    "A:7271": {
+      "file": "A%3A7271.json",
+      "scope": "dong",
+      "villa": 824,
+      "detached": 542,
+      "missing": 0,
+      "bytes": 80239,
+      "sha256": "7f9c598d8d7ad69ee272c4b2d019f96cf34b55fc21e45e040f7cda63b61505e0"
+    },
+    "A:7270": {
+      "file": "A%3A7270.json",
+      "scope": "dong",
+      "villa": 482,
+      "detached": 284,
+      "missing": 0,
+      "bytes": 48311,
+      "sha256": "40c65f3af47a8b6ee0b0642a32bf0e22654726dac97ea53c0ad537f6a0afdf94"
+    },
+    "A:7269": {
+      "file": "A%3A7269.json",
+      "scope": "dong",
+      "villa": 482,
+      "detached": 284,
+      "missing": 0,
+      "bytes": 48311,
+      "sha256": "58b87789a0e7dcfc629d12e1a8c9581eb3f0ac7b7896e2b747a5a76fca42a32f"
+    },
+    "A:7268": {
+      "file": "A%3A7268.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 506,
+      "missing": 0,
+      "bytes": 33750,
+      "sha256": "103bc73ba5f888255c4d77f9bdbef03529f1d2074a0e7d6367fc333290bab772"
+    },
+    "A:7267": {
+      "file": "A%3A7267.json",
+      "scope": "parcel",
+      "villa": 2,
+      "detached": 213,
+      "missing": 0,
+      "bytes": 18266,
+      "sha256": "19d75a11d091a6957fd32054c73c7bf8bafcf10b2cc3561137c92209ebf3c289"
+    },
+    "A:7266": {
+      "file": "A%3A7266.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 522,
+      "missing": 0,
+      "bytes": 34513,
+      "sha256": "f28c5458eaa1e8b23fd2d1f9581d30c1b76000c582becf2525ffcdc93cbba7c3"
+    },
+    "A:7265": {
+      "file": "A%3A7265.json",
+      "scope": "dong",
+      "villa": 2288,
+      "detached": 522,
+      "missing": 0,
+      "bytes": 157199,
+      "sha256": "ad59fafc33608131861bd14b32be69461bcb54bad5296d2fb8e5be484868de40"
+    },
+    "A:7264": {
+      "file": "A%3A7264.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 731,
+      "missing": 0,
+      "bytes": 45341,
+      "sha256": "e2de4d7f4107ced24ccaa404af61104cd2d59a913e0aded762e2daefab105c3d"
+    },
+    "A:7263": {
+      "file": "A%3A7263.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 9,
+      "missing": 0,
+      "bytes": 6345,
+      "sha256": "b0bcf7e4a7f10888d7718f5fd9bdb5fc583123715b226f17a7fa3c6ac2456563"
+    },
+    "A:7262": {
+      "file": "A%3A7262.json",
+      "scope": "dong",
+      "villa": 389,
+      "detached": 168,
+      "missing": 0,
+      "bytes": 37058,
+      "sha256": "d08d6fb0055999a9bd838f3ad77663c52d626392d06a49037da19321c71afd51"
+    },
+    "A:7256": {
+      "file": "A%3A7256.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 126,
+      "missing": 0,
+      "bytes": 13148,
+      "sha256": "c4c3b0821b732dc41f8e0c4e094ffb7861b876b0e27b819822dfeb534edb2361"
+    },
+    "A:7255": {
+      "file": "A%3A7255.json",
+      "scope": "dong",
+      "villa": 1172,
+      "detached": 706,
+      "missing": 0,
+      "bytes": 107189,
+      "sha256": "a9f0b2731ff46dad5befb31309f66210ac093251c2f7d0fb09f1fc900e57fb9c"
+    },
+    "A:7254": {
+      "file": "A%3A7254.json",
+      "scope": "dong",
+      "villa": 1051,
+      "detached": 257,
+      "missing": 0,
+      "bytes": 76837,
+      "sha256": "ba6b3937c81d25e7b2ba16f115c49391643e1d60f7ccd3e67b111bb22c4d3387"
+    },
+    "A:7253": {
+      "file": "A%3A7253.json",
+      "scope": "dong",
+      "villa": 1051,
+      "detached": 257,
+      "missing": 0,
+      "bytes": 76837,
+      "sha256": "bb898df853d63c8267ae564fdd7d240fb26fa629824d01e1fee40ebc35e28e6e"
+    },
+    "A:7252": {
+      "file": "A%3A7252.json",
+      "scope": "dong",
+      "villa": 2560,
+      "detached": 201,
+      "missing": 0,
+      "bytes": 155032,
+      "sha256": "d238b4f6fc1683ff896f8e9cf87683d3b95bfc5b9535ce1106243487ef721e80"
+    },
+    "A:7251": {
+      "file": "A%3A7251.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 220,
+      "missing": 0,
+      "bytes": 18262,
+      "sha256": "226800d71df8685322d20234473c84ea2746315d1bbdaddcddc8f089f9c26955"
+    },
+    "A:7247": {
+      "file": "A%3A7247.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 220,
+      "missing": 0,
+      "bytes": 18262,
+      "sha256": "9f52691461542101a3b583c4ab1a3d72e59f061398941c505f8d1bd5d84db45a"
+    },
+    "A:7243": {
+      "file": "A%3A7243.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 220,
+      "missing": 0,
+      "bytes": 18262,
+      "sha256": "f9ab362575462fab1fb107929aff2c5413a905417c916e014ad3c96be35ce097"
+    },
+    "A:7238": {
+      "file": "A%3A7238.json",
+      "scope": "dong",
+      "villa": 184,
+      "detached": 220,
+      "missing": 0,
+      "bytes": 28921,
+      "sha256": "409ae06236c6e79f676f47f2f247edb2c54347331dab265355d593739f521187"
+    },
+    "A:7233": {
+      "file": "A%3A7233.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 220,
+      "missing": 0,
+      "bytes": 18262,
+      "sha256": "4b3c74265e529182369783f6f50cf5adc6b6cb1b3883a30dcefe346cd9eb22b9"
+    },
+    "A:7231": {
+      "file": "A%3A7231.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 220,
+      "missing": 0,
+      "bytes": 18262,
+      "sha256": "34ea08c9d6d82e0613478965403f5de214dee78154b055f89f375a0383770b8b"
+    },
+    "A:7229": {
+      "file": "A%3A7229.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 220,
+      "missing": 0,
+      "bytes": 18262,
+      "sha256": "30c40f3b61ddf2ecb1522e21bb896821e0045876011f40c9c42d585a3a5f6232"
+    },
+    "A:7223": {
+      "file": "A%3A7223.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 220,
+      "missing": 0,
+      "bytes": 18262,
+      "sha256": "23f6a5a090e39f03845da140a6876bab704b0502dce329633209b919cf865048"
+    },
+    "A:7214": {
+      "file": "A%3A7214.json",
+      "scope": "dong",
+      "villa": 184,
+      "detached": 220,
+      "missing": 0,
+      "bytes": 28921,
+      "sha256": "253c8ed89b28e90ea07f90e296100a168cb75b152bda1412510fa3ecbab0e452"
+    },
+    "A:7212": {
+      "file": "A%3A7212.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 171,
+      "missing": 0,
+      "bytes": 15567,
+      "sha256": "c75d110e727b5174727bae57208d4346af8d4338aac4f54509e05ac4332a7baa"
+    },
+    "A:7211": {
+      "file": "A%3A7211.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 171,
+      "missing": 0,
+      "bytes": 15567,
+      "sha256": "1d8e45aa817c66e212182d5bee8bb15d0879ab001122b2c976861be4449031e9"
+    },
+    "A:7210": {
+      "file": "A%3A7210.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 124,
+      "missing": 0,
+      "bytes": 13134,
+      "sha256": "d98bc3f30f1c54c83d55dd86574a08df3be30af88840fa8d08590933afbb65ff"
+    },
+    "A:7209": {
+      "file": "A%3A7209.json",
+      "scope": "dong",
+      "villa": 105,
+      "detached": 88,
+      "missing": 0,
+      "bytes": 17316,
+      "sha256": "a701e7fa50fade0a7e280dab1ccf938cef81413186529115420927562b56c4b2"
+    },
+    "A:7208": {
+      "file": "A%3A7208.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 124,
+      "missing": 0,
+      "bytes": 13134,
+      "sha256": "ce068aa7cd85854d19803ec6edb9b9643f1bd0fc4e20720a9e5bb3ad47ea6a3a"
+    },
+    "A:7206": {
+      "file": "A%3A7206.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 124,
+      "missing": 0,
+      "bytes": 13134,
+      "sha256": "decae20126e76f7372ed7ea899a7a319fa8272df517e1b0d2ba49534ae46229b"
+    },
+    "A:7205": {
+      "file": "A%3A7205.json",
+      "scope": "dong",
+      "villa": 744,
+      "detached": 557,
+      "missing": 0,
+      "bytes": 77260,
+      "sha256": "0de59c6f38fcc64509e33a979f29d55c0621651a1171eb48cda0275ff900a299"
+    },
+    "A:7204": {
+      "file": "A%3A7204.json",
+      "scope": "dong",
+      "villa": 1236,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 117700,
+      "sha256": "557d56d558ad43fd4fa3072389f1e19bfa2ee9850d2100f5a38794e50eaa7613"
+    },
+    "A:7203": {
+      "file": "A%3A7203.json",
+      "scope": "dong",
+      "villa": 1236,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 117700,
+      "sha256": "22a224b17bbbe2129142dddc7651ed287cd0f8e7e351adea3a96049bc5f29311"
+    },
+    "A:7202": {
+      "file": "A%3A7202.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 613,
+      "missing": 0,
+      "bytes": 39450,
+      "sha256": "8071993d56cf7089674f465a15279687f111871cbf809fd0562e8eda3e7feaa7"
+    },
+    "A:7201": {
+      "file": "A%3A7201.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 613,
+      "missing": 0,
+      "bytes": 39450,
+      "sha256": "5204eb7f2d58d7a4a6e374606541622007e707d35fd8583caf01cc80441cad5d"
+    },
+    "A:7198": {
+      "file": "A%3A7198.json",
+      "scope": "parcel",
+      "villa": 27,
+      "detached": 613,
+      "missing": 0,
+      "bytes": 41332,
+      "sha256": "f682e118d0f28ee17cf35fb3be6822fb68f9994d23b781606775ac829e79b76e"
+    },
+    "A:7197": {
+      "file": "A%3A7197.json",
+      "scope": "parcel",
+      "villa": 2,
+      "detached": 613,
+      "missing": 0,
+      "bytes": 39652,
+      "sha256": "e89248417a8362cecd0d0ddc7676aea5449a6d4a919e327524fdd7107e8acd46"
+    },
+    "A:7196": {
+      "file": "A%3A7196.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 613,
+      "missing": 0,
+      "bytes": 39450,
+      "sha256": "0f4679c1c9bff1dbe93c422d469cd64c37793685332f7bd5b24d511eaa8c39c1"
+    },
+    "A:7195": {
+      "file": "A%3A7195.json",
+      "scope": "dong",
+      "villa": 722,
+      "detached": 613,
+      "missing": 0,
+      "bytes": 79357,
+      "sha256": "86b800f987acbac61bf4c9557847d4b4ec414ce5f920deff17bec09072bfe595"
+    },
+    "A:7194": {
+      "file": "A%3A7194.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 613,
+      "missing": 0,
+      "bytes": 39450,
+      "sha256": "1954fd4b61f3f291755522485acd2ba6a26ed43469a08bd57e5cb26fd487eb3f"
+    },
+    "A:7193": {
+      "file": "A%3A7193.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 613,
+      "missing": 0,
+      "bytes": 39450,
+      "sha256": "1cff64b8537241bc4ca858ec041bebffedac9e7f4303eda4d99543c0873b359d"
+    },
+    "A:7192": {
+      "file": "A%3A7192.json",
+      "scope": "parcel",
+      "villa": 11,
+      "detached": 1508,
+      "missing": 0,
+      "bytes": 87936,
+      "sha256": "06dc5ccf1637814a05b47dd6a08e24940e809cb4f9830e727187a9224caa765a"
+    },
+    "A:7191": {
+      "file": "A%3A7191.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 493,
+      "missing": 0,
+      "bytes": 32917,
+      "sha256": "0f7822eaa6877f249654817e9732d52f0565da52f4009bee7c1a1db927cba1b5"
+    },
+    "A:7190": {
+      "file": "A%3A7190.json",
+      "scope": "parcel",
+      "villa": 72,
+      "detached": 84,
+      "missing": 0,
+      "bytes": 15578,
+      "sha256": "d9b1d360243a79980900164c4de6b03b95d939cf114f4950a9eb0d5c1789810a"
+    },
+    "A:7189": {
+      "file": "A%3A7189.json",
+      "scope": "parcel",
+      "villa": 3,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 55713,
+      "sha256": "55d5b17d2650aa2067fe75c42523d4855b4f45420c54ecec5b70bc86839e4554"
+    },
+    "A:7188": {
+      "file": "A%3A7188.json",
+      "scope": "dong",
+      "villa": 6049,
+      "detached": 1373,
+      "missing": 0,
+      "bytes": 404262,
+      "sha256": "5dde0f4c3d3ec8eb8cedf992429f4befc8a52dc7fea97771aed2010cf27951d4"
+    },
+    "A:7187": {
+      "file": "A%3A7187.json",
+      "scope": "dong",
+      "villa": 7399,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 547160,
+      "sha256": "8e5be21bf47ec6233bda2b5e7a49c28e0888d6b2636753352b849de40c45bef7"
+    },
+    "A:7186": {
+      "file": "A%3A7186.json",
+      "scope": "dong",
+      "villa": 7399,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 547160,
+      "sha256": "0035696756cd26a62a14e3802064f51e99a262fe9e91d1d8d50d01b217ad4a94"
+    },
+    "A:7185": {
+      "file": "A%3A7185.json",
+      "scope": "dong",
+      "villa": 7440,
+      "detached": 1262,
+      "missing": 0,
+      "bytes": 470314,
+      "sha256": "fb1ecd82a0b6ef10a67e543cff55acc87f1924fcfbaddc3b9c42baffe7371f0b"
+    },
+    "A:7184": {
+      "file": "A%3A7184.json",
+      "scope": "dong",
+      "villa": 7440,
+      "detached": 1262,
+      "missing": 0,
+      "bytes": 470314,
+      "sha256": "95535aa3378fcbec91bdb5df7ba95426542ea648196a7c2ec8084c7a5698c5ee"
+    },
+    "A:7180": {
+      "file": "A%3A7180.json",
+      "scope": "dong",
+      "villa": 2112,
+      "detached": 937,
+      "missing": 0,
+      "bytes": 171502,
+      "sha256": "909e6f53294239eba4473308f1a561fe6c051410341e571ef6dea6d07be31c1e"
+    },
+    "A:7178": {
+      "file": "A%3A7178.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5570,
+      "sha256": "f96f613d730124fb6d78c7a70cb2b180d819388a81229123e508f0f8d7fa12ca"
+    },
+    "A:7175": {
+      "file": "A%3A7175.json",
+      "scope": "parcel",
+      "villa": 99,
+      "detached": 312,
+      "missing": 0,
+      "bytes": 29893,
+      "sha256": "176e78905b9d0c6ff89567a14b4ba1c9e14dea74d9be2974e8bae5cfd9ea1672"
+    },
+    "A:7172": {
+      "file": "A%3A7172.json",
+      "scope": "dong",
+      "villa": 684,
+      "detached": 321,
+      "missing": 0,
+      "bytes": 60529,
+      "sha256": "8e446a83bd2152657f0901dfb2edcf7241429153735e978cbc7213f4d7965208"
+    },
+    "A:7170": {
+      "file": "A%3A7170.json",
+      "scope": "dong",
+      "villa": 5899,
+      "detached": 639,
+      "missing": 0,
+      "bytes": 355428,
+      "sha256": "ea2ebf0802190d28cc1c322a4b5b6ee7d110e47876905b9dc1ba4cae1966d5b5"
+    },
+    "A:7169": {
+      "file": "A%3A7169.json",
+      "scope": "parcel",
+      "villa": 836,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 101047,
+      "sha256": "26a8331f14bb6c3ad6793111bba299a8e7f359aa47ac05a9e13fbc657fff46b8"
+    },
+    "A:7168": {
+      "file": "A%3A7168.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 901,
+      "missing": 0,
+      "bytes": 55211,
+      "sha256": "cadde00bd7093d4f3195b1586e04c5431b147e452e4cbf0f569b2646198507e0"
+    },
+    "A:7163": {
+      "file": "A%3A7163.json",
+      "scope": "parcel",
+      "villa": 349,
+      "detached": 450,
+      "missing": 0,
+      "bytes": 50345,
+      "sha256": "88d4e2c4a2ad9276be78e6851037226080fb04273ad4f32a6d40f400bfafffb0"
+    },
+    "A:7162": {
+      "file": "A%3A7162.json",
+      "scope": "parcel",
+      "villa": 339,
+      "detached": 135,
+      "missing": 0,
+      "bytes": 32341,
+      "sha256": "a33cc9d10c496a73dce086115f8e291470f6ef31e7a0240aa5a77ced4f1b549e"
+    },
+    "A:7161": {
+      "file": "A%3A7161.json",
+      "scope": "parcel",
+      "villa": 109,
+      "detached": 553,
+      "missing": 0,
+      "bytes": 43220,
+      "sha256": "cda139f06425a2289c95674310cb36d04d34b8499788b997fdaea5fb59547af4"
+    },
+    "A:7159": {
+      "file": "A%3A7159.json",
+      "scope": "dong",
+      "villa": 258,
+      "detached": 7,
+      "missing": 0,
+      "bytes": 21438,
+      "sha256": "f26951ab80cf7aa1e5d1905ce8b81c050f292866fbcef96f94d6b6787faaa321"
+    },
+    "A:7158": {
+      "file": "A%3A7158.json",
+      "scope": "parcel",
+      "villa": 502,
+      "detached": 450,
+      "missing": 0,
+      "bytes": 58201,
+      "sha256": "35500f3ebbf2629a158ca37e7937938eedf1be9be5b2bab21b1f5ca346f324b8"
+    },
+    "A:7154": {
+      "file": "A%3A7154.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5576,
+      "sha256": "e0369a5b08bc06a38cbdd96c2bbedcedc96aba772d74459c52ffe7c3aaa4d61d"
+    },
+    "A:7152": {
+      "file": "A%3A7152.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5573,
+      "sha256": "5aac419940a74cca140558d5c6f07bd797d742df461930985a1c9d411298edd9"
+    },
+    "A:7151": {
+      "file": "A%3A7151.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 130959,
+      "sha256": "72678fcdaf5e37718ce4f60740ac5d3e3907422a116cea721928e72c46a1aac5"
+    },
+    "A:7150": {
+      "file": "A%3A7150.json",
+      "scope": "parcel",
+      "villa": 60,
+      "detached": 2297,
+      "missing": 0,
+      "bytes": 134843,
+      "sha256": "d627231465205aa98c7952b66f71645f6d4ee114e2959c04a7df997e494ac0ac"
+    },
+    "A:7140": {
+      "file": "A%3A7140.json",
+      "scope": "parcel",
+      "villa": 879,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 101246,
+      "sha256": "1145eab12b8965e9aca1aaddb88e193c7df77aa8d4a3ebe84254c55068b854d8"
+    },
+    "A:7135": {
+      "file": "A%3A7135.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5566,
+      "sha256": "93e146fbe9967435a5f4b32a3f2dd4dabad9c815edbe3022a1b33dbfae13b4b2"
+    },
+    "A:7132": {
+      "file": "A%3A7132.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 850,
+      "missing": 0,
+      "bytes": 53311,
+      "sha256": "f06d610c7ad12181d3ffe7b0ff7391b3c8238760d97d591c7022629b3519f732"
+    },
+    "A:7129": {
+      "file": "A%3A7129.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 501,
+      "missing": 0,
+      "bytes": 34131,
+      "sha256": "b6187ea745513b72f5933a76b0c969f94aa7ac376d2fbf305f6ad688e21f6a3d"
+    },
+    "A:7120": {
+      "file": "A%3A7120.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 158,
+      "missing": 0,
+      "bytes": 15358,
+      "sha256": "409b39999d517e9977c81584926699529fd8a79901a640677e5595b84b8dc7ea"
+    },
+    "A:7119": {
+      "file": "A%3A7119.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 177,
+      "missing": 0,
+      "bytes": 16190,
+      "sha256": "a21112c60499e3f048aff05f5a90d2a4fc8f9eb6bf9e224c7498f9e89c60da3a"
+    },
+    "A:7118": {
+      "file": "A%3A7118.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 178,
+      "missing": 0,
+      "bytes": 16344,
+      "sha256": "23d39c9ea9cf8c84cc86808c9df710b06b0583f3d91eab5bb0d89d08cdc3558b"
+    },
+    "A:7116": {
+      "file": "A%3A7116.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 177,
+      "missing": 0,
+      "bytes": 16190,
+      "sha256": "d294beff9ebeaa71d61c34cf3b04aafd4e3b1fdac80ec833a88fddfaa3e29719"
+    },
+    "A:7115": {
+      "file": "A%3A7115.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 144,
+      "missing": 0,
+      "bytes": 14381,
+      "sha256": "ded4b2ee2d58828c980b27edc2b38f164a01f3adfe8b36d4e55c69ed0b065175"
+    },
+    "A:7112": {
+      "file": "A%3A7112.json",
+      "scope": "parcel",
+      "villa": 488,
+      "detached": 537,
+      "missing": 0,
+      "bytes": 62236,
+      "sha256": "c06c3ff510ae3401171ad283e2a607afe4ac8b9a936b377b9f466b5fa70bcd80"
+    },
+    "A:7109": {
+      "file": "A%3A7109.json",
+      "scope": "parcel",
+      "villa": 52,
+      "detached": 1123,
+      "missing": 0,
+      "bytes": 69957,
+      "sha256": "3e916f31a5e2d6fa854c3bb584edeec16cbfc27697f25a5c288857dd80fd9d50"
+    },
+    "A:7108": {
+      "file": "A%3A7108.json",
+      "scope": "parcel",
+      "villa": 649,
+      "detached": 1654,
+      "missing": 0,
+      "bytes": 130906,
+      "sha256": "72ea25797a4ee3bab066335d315d47f3b893132cfb73620da48f01516063649f"
+    },
+    "A:7107": {
+      "file": "A%3A7107.json",
+      "scope": "parcel",
+      "villa": 1298,
+      "detached": 1654,
+      "missing": 0,
+      "bytes": 166409,
+      "sha256": "b5e065d4526133fb1e90278210f78eb29add170f49e1eb236465c5b82e28c0c4"
+    },
+    "A:7106": {
+      "file": "A%3A7106.json",
+      "scope": "parcel",
+      "villa": 75,
+      "detached": 1123,
+      "missing": 0,
+      "bytes": 71311,
+      "sha256": "e79f8cf6509266efe28cf6523c28fb96fd24c4f06aad0507d54df24dbda4e184"
+    },
+    "A:7105": {
+      "file": "A%3A7105.json",
+      "scope": "parcel",
+      "villa": 203,
+      "detached": 635,
+      "missing": 0,
+      "bytes": 52354,
+      "sha256": "e76cc4c7fb66b501f3c5316694a9c30e4eb3b839602e092772ba99daef8d9610"
+    },
+    "A:7090": {
+      "file": "A%3A7090.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 739,
+      "missing": 0,
+      "bytes": 47677,
+      "sha256": "b4c2651aaf80f372b96ccef4437a4c2801ff0ce3e23f8dd3634926931619daa8"
+    },
+    "A:7087": {
+      "file": "A%3A7087.json",
+      "scope": "parcel",
+      "villa": 239,
+      "detached": 435,
+      "missing": 0,
+      "bytes": 43760,
+      "sha256": "0eae2a36438e24853958404c3206bb69ecdc8204ed577f9ce3625d1945194201"
+    },
+    "A:7086": {
+      "file": "A%3A7086.json",
+      "scope": "parcel",
+      "villa": 42,
+      "detached": 522,
+      "missing": 0,
+      "bytes": 37332,
+      "sha256": "ebdc03485fd6c6e427ee65c88f19870f2c3533333d0c3117d4b1da31f96b55f1"
+    },
+    "A:7085": {
+      "file": "A%3A7085.json",
+      "scope": "parcel",
+      "villa": 224,
+      "detached": 522,
+      "missing": 0,
+      "bytes": 47306,
+      "sha256": "d2db01fa79c5b8d20e9e135476c2f230f31f9ef37b98aa78291552738aa1d80d"
+    },
+    "A:7082": {
+      "file": "A%3A7082.json",
+      "scope": "parcel",
+      "villa": 664,
+      "detached": 398,
+      "missing": 0,
+      "bytes": 64930,
+      "sha256": "7e2a2a1133e54262e089e93c6baf3273051990a570c527e0fbec102ed7620a52"
+    },
+    "A:7079": {
+      "file": "A%3A7079.json",
+      "scope": "parcel",
+      "villa": 157,
+      "detached": 1265,
+      "missing": 0,
+      "bytes": 85254,
+      "sha256": "8ef2f51815b243eda050d866b79f03d9dd3e0383b4646a36d9331a69e1f590fb"
+    },
+    "A:7073": {
+      "file": "A%3A7073.json",
+      "scope": "parcel",
+      "villa": 438,
+      "detached": 448,
+      "missing": 0,
+      "bytes": 55426,
+      "sha256": "0a00a72eb9e44d9082bf28097d68543ff5a00eb139bdc88bc2f1404a3579f042"
+    },
+    "A:7072": {
+      "file": "A%3A7072.json",
+      "scope": "parcel",
+      "villa": 234,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 64098,
+      "sha256": "e671b26c3feda96e8a1d8c1460dd3ec3251eb76741e51fd59e2773e795da4c13"
+    },
+    "A:7069": {
+      "file": "A%3A7069.json",
+      "scope": "parcel",
+      "villa": 107,
+      "detached": 819,
+      "missing": 0,
+      "bytes": 56995,
+      "sha256": "b38c84e805ba4904ff6a8d734364f106e6b3309a68e0cbc4e07dabb50a5b4906"
+    },
+    "A:7063": {
+      "file": "A%3A7063.json",
+      "scope": "parcel",
+      "villa": 274,
+      "detached": 640,
+      "missing": 0,
+      "bytes": 56978,
+      "sha256": "ad3547227772f7e5f52dd8c71802c635b24fd3800651a5c081f87ba794ebcf77"
+    },
+    "A:7061": {
+      "file": "A%3A7061.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 32,
+      "missing": 0,
+      "bytes": 7883,
+      "sha256": "f737b2cfa9160f40106fda6b70d6aea68aea60b5c922016d935a8aa2047a1bb2"
+    },
+    "A:7060": {
+      "file": "A%3A7060.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1014,
+      "missing": 0,
+      "bytes": 61084,
+      "sha256": "14020bc7bba037f29eb089381cb6f74189364f225b11805d803b40e218a903f3"
+    },
+    "A:7059": {
+      "file": "A%3A7059.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 1014,
+      "missing": 0,
+      "bytes": 61084,
+      "sha256": "50af6e818d9f299b04fe0f2a2d0bf6262ca417f49dba3b2fa78d2e19f0aa07b0"
+    },
+    "A:7056": {
+      "file": "A%3A7056.json",
+      "scope": "dong",
+      "villa": 0,
+      "detached": 0,
+      "missing": 0,
+      "bytes": 5566,
+      "sha256": "de3375f1f822d9124d449dd485676c3fe0bcb01a0085ee8e26606eb915d32a30"
+    },
+    "A:7051": {
+      "file": "A%3A7051.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 55435,
+      "sha256": "15d055aa360e63d7d1a07123d50af9e724876b6ddf707540031fbef91f539455"
+    },
+    "A:7050": {
+      "file": "A%3A7050.json",
+      "scope": "dong",
+      "villa": 3187,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 226143,
+      "sha256": "a01d9326729b867b2c777cd1a653623989d8327719e3c719a958c1ce93a07c23"
+    },
+    "A:7049": {
+      "file": "A%3A7049.json",
+      "scope": "parcel",
+      "villa": 299,
+      "detached": 737,
+      "missing": 0,
+      "bytes": 63561,
+      "sha256": "026d2b5e316c791714268ae16c15229fee07479f493d82481b976e2024e2c521"
+    },
+    "A:7046": {
+      "file": "A%3A7046.json",
+      "scope": "dong",
+      "villa": 3187,
+      "detached": 906,
+      "missing": 0,
+      "bytes": 226143,
+      "sha256": "b426a2ebeb901024056ca570f44dc5f68698cd277283b9ee6eee6127665a335f"
+    },
+    "A:7041": {
+      "file": "A%3A7041.json",
+      "scope": "dong",
+      "villa": 6634,
+      "detached": 1381,
+      "missing": 0,
+      "bytes": 435727,
+      "sha256": "f1d97ed0c4d91a88821fada48fc0a5732d491b2a3178a125b4da663ae1e5203a"
+    },
+    "A:7040": {
+      "file": "A%3A7040.json",
+      "scope": "dong",
+      "villa": 6049,
+      "detached": 1373,
+      "missing": 0,
+      "bytes": 404262,
+      "sha256": "521a9744a3e07e431c0321306fdc1daa86719225cdc5ed774d892b5ab9e349d5"
+    },
+    "A:7039": {
+      "file": "A%3A7039.json",
+      "scope": "dong",
+      "villa": 461,
+      "detached": 62,
+      "missing": 0,
+      "bytes": 35233,
+      "sha256": "29e2547bd7c0491561a3c6c9741296fca0cc225039c0dfaf917d9ec8069a03ca"
+    },
+    "A:7036": {
+      "file": "A%3A7036.json",
+      "scope": "parcel",
+      "villa": 83,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 189736,
+      "sha256": "97987bc0819e3ae57445e12822f3868f9bda476d2a7ef0667d802c06dbbdfbe5"
+    },
+    "A:7035": {
+      "file": "A%3A7035.json",
+      "scope": "parcel",
+      "villa": 1927,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 290299,
+      "sha256": "06b4970156c6cbf6891a50f843dbe1ca167f179beed05d1ebad4849498f39727"
+    },
+    "A:7034": {
+      "file": "A%3A7034.json",
+      "scope": "parcel",
+      "villa": 238,
+      "detached": 3251,
+      "missing": 0,
+      "bytes": 198129,
+      "sha256": "702561f1fde78dd3bb9be81e0fb826c8066d57c51ab391d15371be77fd56a664"
+    },
+    "A:7027": {
+      "file": "A%3A7027.json",
+      "scope": "dong",
+      "villa": 7399,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 547160,
+      "sha256": "ade1042c4cd1e4cbb39c60942dc86106845a08aa2ed45369c3476e66f3bee856"
+    },
+    "A:7026": {
+      "file": "A%3A7026.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 559,
+      "missing": 0,
+      "bytes": 36674,
+      "sha256": "b023ad6e59921eb0d4b86cb0e1d4f024029cb3c86b4fe9d9ddb8fb7d2e249d87"
+    },
+    "A:7025": {
+      "file": "A%3A7025.json",
+      "scope": "dong",
+      "villa": 7399,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 547160,
+      "sha256": "8ef4ed9c408067589d24a2cdaf9ff3e3f75ab67fa86ddd4f00efbd4b84cf78a4"
+    },
+    "A:7024": {
+      "file": "A%3A7024.json",
+      "scope": "parcel",
+      "villa": 171,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 156884,
+      "sha256": "56b83009e8842869ddad85b9dff77d2dbe48427d93f110d93d8a1e914dca1896"
+    },
+    "A:7023": {
+      "file": "A%3A7023.json",
+      "scope": "dong",
+      "villa": 7399,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 547160,
+      "sha256": "de62767c90c87209abc0f99ea8ae4c2a5d32973377d7e3443bada5737c743220"
+    },
+    "A:7021": {
+      "file": "A%3A7021.json",
+      "scope": "parcel",
+      "villa": 310,
+      "detached": 2626,
+      "missing": 0,
+      "bytes": 164846,
+      "sha256": "f5a99b58dfd55cf954860a57629b6d3274f3b76ce8e29db4b2ba25ecd51dcc2b"
+    },
+    "A:7018": {
+      "file": "A%3A7018.json",
+      "scope": "parcel",
+      "villa": 0,
+      "detached": 95,
+      "missing": 0,
+      "bytes": 11690,
+      "sha256": "3b501414cac876c8d605ca98e8783ee1a950299a7453e9aef8e77bc8ddb15c6d"
+    }
+  },
+  "input_counts": {
+    "cancelled": 18471,
+    "invalid": 0,
+    "missing_land_villa": 0,
+    "missing_land_detached": 0
+  },
+  "row_columns": [
+    "month",
+    "land_price_manwon_py",
+    "floor",
+    "exclusive_or_total_m2",
+    "public_jibun",
+    "day",
+    "amount_manwon",
+    "land_m2"
+  ],
+  "annual_basis": "2016년 및 최근12개월 비교 창 중간일 간 연수(365.2425일/년)",
+  "parcel_zones": 514,
+  "approx_zones": 188,
+  "json_bytes": 60390103
+}

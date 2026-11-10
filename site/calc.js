@@ -36,26 +36,36 @@
       input.setAttribute("aria-invalid",String(!valid));
     };
     const saved=window.JJ.readLocal(key,{});
+    if(mode==="total"){
+      form.dataset.question=String(Math.max(0,Math.min(4,Number(saved?.question)||0)));
+      if(saved?.shareAnswered==="true")form.dataset.shareAnswered="true";
+    }
     for(const input of inputs){
       if(saved&&typeof saved[input.id]==="string")input.value=saved[input.id]||input.defaultValue||"";
       validate(input);
     }
-    const save=()=>window.JJ.writeLocal(key,Object.fromEntries(inputs.map(input=>[input.id,input.value])));
+    const save=()=>window.JJ.writeLocal(key,{...Object.fromEntries(inputs.map(input=>[input.id,input.value])),
+      ...mode==="total"?{question:form.dataset.question,shareAnswered:form.dataset.shareAnswered||""}:{}});
+    form.addEventListener("calc:save",save);
     const transfer=query.get("share");
     if(mode==="total"&&transfer!==null&&/^-?\d+(?:\.\d+)?$/.test(transfer)&&Math.abs(Number(transfer))<=100000000){
       g("contribution").value=Math.abs(Number(transfer)).toLocaleString("ko-KR",{maximumFractionDigits:20});
       validate(g("contribution"));
       g("direction").value=Number(transfer)<0?"refund":"pay";
+      form.dataset.shareAnswered="true";form.dataset.question=inputValue("purchase")==null?"0":"2";
       save();query.delete("share");
       history.replaceState(history.state,"",location.pathname+(query.size?"?"+query.toString():"")+location.hash);
     }
     const clear=document.createElement("button");
     clear.type="button";clear.className="clear-inputs wide";clear.textContent="입력 지우기";clear.id="clear-inputs";
+    if(mode==="total")clear.textContent="처음부터";
     form.append(clear);
     clear.addEventListener("click",()=>{
-      form.reset();delete form.dataset.submitted;inputs.forEach(validate);save();render();
+      form.reset();delete form.dataset.submitted;
+      if(mode==="total"){form.dataset.question="0";delete form.dataset.shareAnswered;}
+      inputs.forEach(validate);save();render();
     });
-    form.addEventListener("submit",e=>{e.preventDefault();form.dataset.submitted="true";render();});
+    form.addEventListener("submit",e=>{e.preventDefault();if(mode==="total"){g("total-next").click();return;}form.dataset.submitted="true";render();});
     form.addEventListener("keydown",e=>{
       if(e.key==="Enter"&&!e.isComposing&&e.target.matches("input[data-number]")){e.preventDefault();form.requestSubmit();}
     });
@@ -129,44 +139,68 @@
       bind(render);break;
     }
     case "total":{
-      // 지도 패널의 stageName을 현금 흐름 칸에 묶는다. 실제 납부 시점을 뜻하지 않는다.
       const CASH_STAGE_BY_NAME=Object.freeze(Object.fromEntries(
         Object.entries(window.ZoneCore.STAGE_BY_NAME).map(([name,i])=>[name,i<4?0:i===4?1:i<7?2:i<9?3:4])
       ));
-      layout(field("purchase","매입 가격")+field("contribution","추가분담금 또는 청산금","만원",`조합 분양신청 안내문·관리처분계획에 나오는 금액 · 모르면 <a href="calc_share.html${zone?"?zone="+encodeURIComponent(zone.id):""}">추가분담금 탭에서 먼저 계산 →</a>`)+`<label class="field" for="direction">분담금 방향<select id="direction"><option value="pay">추가분담금 납부</option><option value="refund">돌려받는 금액</option></select></label>`+
-        field("mortgage","매수 담보대출","만원","빈칸은 대출 없이 계산")+field("move-loan","이주비 대출","만원","빈칸은 대출 없이 계산")+
-        field("deposit","분담금 계약금 비율","%","흔한 예 10·60·30을 넣어 뒀어요 · 조합 안내문 비율로 바꾸세요 · 세 칸 합 100")+field("middle","분담금 중도금 비율","%")+field("balance","분담금 잔금 비율","%")+field("cash","가진 현금"));
+      const labels=["매입","관리처분","이주","착공·중도금","입주·청산"],icons=["🏠","📋","🚚","🏗️","🔑"];
+      const titles=["얼마에 사세요?","추가분담금은 얼마예요?","지금 쓸 수 있는 현금은 얼마예요?","대출을 받으세요?"];
+      const hints=["사려는 빌라·주택의 매입 가격이에요","조합 분양신청 안내문에 나오는 금액이에요","대출 없이 바로 낼 수 있는 돈이에요","빈칸이면 대출 없이 계산해요"];
+      const fields=["purchase","contribution","cash","mortgage"];
+      const chips=`<div class="total-chips" role="group" aria-label="금액 빠르게 더하기">${[[10000,"+1억"],[5000,"+5천만"],[1000,"+1천만"],[0,"지우기"]].map(([n,label])=>`<button type="button" data-add="${n}">${label}</button>`).join("")}</div>`;
+      host.classList.add("total-wizard");
+      host.innerHTML=`<div class="total-progress" aria-hidden="true"><i id="total-progress-bar"></i></div><div class="total-shell"><div class="total-heading"><button type="button" id="total-back" aria-label="이전 질문">←</button><span>총투자금 계산 · <b>${zone?esc(zone.name):"내 조건"}</b> <span>${zone?esc(zone.stageName||"단계 미상"):""}</span></span><small id="total-step"></small></div><ol id="total-answers" aria-label="넣은 값"></ol><form id="calc-form" autocomplete="off">${fields.map((id,i)=>`<section class="total-question" data-question="${i}" aria-labelledby="question-${i}"><h1 id="question-${i}">${titles[i]}</h1><p class="total-hint">${hints[i]}</p>${i===1?'<div class="total-direction" role="group" aria-label="분담금 방향"><button type="button" data-direction="pay">내야 하는 돈</button><button type="button" data-direction="refund">돌려받는 돈(청산금)</button></div><select id="direction" hidden><option value="pay">내야 하는 돈</option><option value="refund">돌려받는 돈(청산금)</option></select>':""}${field(id,["매입 가격","추가분담금 또는 청산금","가진 현금","매수 담보대출"][i])}<p class="total-amount-help" data-help="${id}"></p>${chips}${i===3?field("move-loan","이주비 대출")+'<p class="total-amount-help" data-help="move-loan"></p>':""}${i===1?`<a class="total-share-link" href="calc_share.html${zone?"?zone="+encodeURIComponent(zone.id):""}">분담금을 모르겠어요 → 추가분담금 계산 먼저</a>`:""}</section>`).join("")}<div id="total-navigation"><p id="total-error" role="status"></p><button type="button" id="total-next">다음</button><button type="button" id="no-loans">대출 없이 계산할게요</button></div><section id="calc-result" aria-live="polite" aria-label="계산 결과"></section><details id="payment-ratios"><summary>납부 비율 바꾸기</summary><div class="total-ratios">${field("deposit","분담금 계약금 비율","%")}${field("middle","분담금 중도금 비율","%")}${field("balance","분담금 잔금 비율","%")}</div></details></form><a class="total-map-link" href="zone.html">지도에서 구역 고르기 →</a><p class="source total-credit">이 페이지에는 토스팀에서 제공한 토스페이스가 적용되어 있습니다.</p>${foot}</div>`;
+      for(const id of [...fields,"move-loan"])g(id).placeholder=["mortgage","move-loan"].includes(id)?"빈칸이면 없음":"0";
       g("deposit").defaultValue="10";g("middle").defaultValue="60";g("balance").defaultValue="30";
-      let step=0;
-      const labels=["매입","관리처분","이주","착공·중도금","입주·청산"];
-      const descriptions=["매입 가격에서 매수 담보대출을 뺀 현금이에요. 세금·수수료는 별도예요.","이 단계에서 분담금이 정해질 수 있어요. 실제 납부 일정은 조합 계획을 확인하세요.","직접 입력한 이주비 대출을 받는 것으로 계산해요. 받은 대출은 입주 때 갚아요.","추가분담금의 계약금과 중도금을 납부하는 구간을 묶었어요.","분담금 잔금과 이주비 대출을 상환해요. 돌려받는 청산금은 이전고시 후의 값으로 같은 구간에 묶었어요."];
+      const form=g("calc-form");
+      function question(value){form.dataset.question=String(value);form.dispatchEvent(new Event("calc:save"));render();
+        const input=g(fields[value]);if(input)input.focus({preventScroll:true});}
       const render=()=>{
-        const out=g("calc-result"),refund=g("direction").value==="refund";
+        const q=Number(form.dataset.question||0),done=q===4,refund=g("direction").value==="refund";
+        const reset=g("clear-inputs");
+        if(reset.parentElement!==form)form.append(reset);
+        host.querySelectorAll("[data-question]").forEach(el=>{el.hidden=Number(el.dataset.question)!==q;});
+        g("total-navigation").hidden=done;g("calc-result").hidden=!done;g("payment-ratios").hidden=!done;
+        g("total-back").hidden=q===0;g("total-step").textContent=done?"결과":(q+1)+" / 4";
+        g("total-progress-bar").style.width=(q/4*100)+"%";
+        g("no-loans").hidden=q!==3;
+        g("total-next").textContent=q===3?"결과 보기":"다음";
+        g("clear-inputs").hidden=false;
+        const summaryLabels=["매입 가격",refund?"돌려받는 청산금":"추가분담금","가진 현금","대출"];
+        g("total-answers").innerHTML=fields.map((id,i)=>{
+          if(i>=q&&!(i===1&&form.dataset.shareAnswered==="true"))return "";
+          const value=i===3?(inputValue("mortgage")||0)+(inputValue("move-loan")||0):inputValue(id);
+          return `<li><button type="button" data-edit-question="${i}"><span>${summaryLabels[i]}</span><b>${value==null?"넣어 주세요":i===3&&value===0?"없음":amount(value)} <small>고치기</small></b></button></li>`;
+        }).join("");
+        for(const id of [...fields,"move-loan"]){const n=inputValue(id);host.querySelector(`[data-help="${id}"]`).textContent=n==null?"":amount(n);}
+        host.querySelectorAll("[data-direction]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.direction===g("direction").value)));
         ["deposit","middle","balance"].forEach(id=>{g(id).disabled=refund;});
-        const message=invalid(["purchase","contribution","cash",...refund?[]:["deposit","middle","balance"]]);
-        if(message){out.innerHTML=`<p class="empty" role="status">${message}</p>`;return;}
-        const purchase=inputValue("purchase"),contribution=inputValue("contribution"),cash=inputValue("cash");
-        const mortgage=inputValue("mortgage")??0,loan=inputValue("move-loan")??0;
-        const ratios=["deposit","middle","balance"].map(id=>inputValue(id));
-        if(mortgage>purchase||!refund&&Math.abs(ratios.reduce((s,n)=>s+n,0)-100)>.000001){
-          out.innerHTML=`<p class="empty negative" role="status">${mortgage>purchase?"매수 담보대출은 매입 가격 이하여야 해요.":"분담금 납부 비율의 합을 100%로 맞춰주세요."}</p>`;return;
-        }
-        // 16차 8구간의 0현금 구간을 합친다. 청산금은 최종 구간에서만 차감.
+        const bad=[...form.querySelectorAll("input:invalid")].find(input=>!input.closest("[hidden]"));
+        const mortgage=inputValue("mortgage")??0,purchase=inputValue("purchase"),loan=inputValue("move-loan")??0;
+        const loanError=q===3&&mortgage>purchase?"매수 담보대출은 매입 가격 이하여야 해요.":"";
+        g("total-error").textContent=bad?.validationMessage||loanError;
+        g("total-next").disabled=!!bad||!!loanError||(q<3&&inputValue(fields[q])==null);
+        if(!done){g("calc-result").innerHTML="";return;}
+        const out=g("calc-result"),message=invalid(["purchase","contribution","cash",...refund?[]:["deposit","middle","balance"]]);
+        if(message){out.innerHTML=`<p class="empty negative" role="status">${message}</p>`;return;}
+        const contribution=inputValue("contribution"),cash=inputValue("cash"),ratios=["deposit","middle","balance"].map(inputValue);
+        if(mortgage>purchase||!refund&&Math.abs(ratios.reduce((s,n)=>s+n,0)-100)>.000001){out.innerHTML='<p class="negative" role="status">'+(mortgage>purchase?"매수 담보대출은 매입 가격 이하여야 해요.":"분담금 납부 비율의 합을 100%로 맞춰주세요.")+'</p>';return;}
+        // 16차 계산식 그대로: 대출 수령/상환과 비용은 별개이며 청산금은 마지막에만 차감한다.
         const flows=[purchase-mortgage,0,-loan,refund?0:contribution*(ratios[0]+ratios[1])/100,loan+(refund?-contribution:contribution*ratios[2]/100)];
         const cumulative=[];let sum=0;for(const value of flows){sum+=value;cumulative.push(sum);}
         const peak=Math.max(0,...cumulative),shortage=Math.max(0,peak-cash),total=purchase+(refund?-contribution:contribution);
-        const stageNo=CASH_STAGE_BY_NAME[zone?.stageName]??-1;
-
-        out.innerHTML=`<div class="result-top"><div><p class="source">매입부터 입주·청산까지 총투자금</p><output class="big-value" id="total-investment" data-value="${total}">${amount(total)}</output><p class="source">대출은 조달 수단 · 세금·수수료·이자는 별도</p></div><div><p class="source">현금으로 더 모아야 할 돈</p><output id="shortage" class="${shortage?"negative":"positive"}" data-value="${shortage}">${amount(shortage)}</output></div></div>`+
-          (!refund&&ratios.every((value,i)=>value===[10,60,30][i])?'<p class="source">분담금 납부 비율은 흔한 예(10·60·30)로 계산했어요</p>':"")+
-          `<div class="stops" role="group" aria-label="현금 단계">${labels.map((label,i)=>`<button type="button" class="stop${i<step?" done":""}${i===step?" sel":""}" data-step="${i}" aria-pressed="${i===step}">${i===stageNo?'<span class="current-stage">지금 단계</span>':""}<i></i><b>${label}</b><small>${flows[i]===0?"현금 납부 없음":amount(flows[i])}</small></button>`).join("")}</div>`+
-          `<div class="det"><div><h2>${labels[step]}</h2><p class="why">${descriptions[step]}</p><p class="source">여기까지의 누적 필요 현금 ${amount(cumulative[step])}</p><div class="progress"><i style="width:${total>0?Math.max(0,Math.min(100,cumulative[step]/total*100)):0}%"></i></div><div class="pn"><button type="button" data-next="${step-1}"${step===0?" disabled":""}>← 이전 단계</button><span class="source">${step+1} / 5</span><button type="button" data-next="${step+1}"${step===4?" disabled":""}>다음 단계 →</button></div></div><div>${line(flows[step]<0?"이번에 들어오는 현금":"이번에 낼 현금",Math.abs(flows[step]),"stage-cash")}${line("이번 단계의 대출 수령",step===0?mortgage:step===2?loan:0)}${line("쌓인 필요 현금",cumulative[step],"cumulative-cash")}</div></div>`+
-          `<div class="cash-check"><div><p>최대로 필요한 현금</p><b id="peak-cash" data-value="${peak}">${amount(peak)}</b></div><div><p>가진 현금</p><b>${amount(cash)}</b></div><div><p>더 모아야 할 돈</p><b class="${shortage?"negative":"positive"}">${amount(shortage)}</b></div></div><p class="source">선택 구역의 현재 단계와 별개로 매입부터 전체 흐름을 계산합니다. 빈 대출 항목은 0원으로 제외해요.</p>`;
-        out.insertAdjacentHTML("beforeend",`<nav class="calc-next" aria-label="다음 계산"><a href="calc_profit.html${zone?"?zone="+encodeURIComponent(zone.id):""}">수익 분석 보기 →</a><a href="calc_zones.html${zone?"?zone="+encodeURIComponent(zone.id):""}">다른 구역과 비교 →</a></nav>`);
-        out.querySelectorAll("[data-step],[data-next]").forEach(b=>b.addEventListener("click",()=>{
-          step=Number(b.dataset.step??b.dataset.next);render();
-        }));
+        const current=CASH_STAGE_BY_NAME[zone?.stageName]??-1,peakIndex=cumulative.indexOf(peak);
+        out.innerHTML=`<p class="total-result-lead">매입부터 입주까지</p><h1>총 <output id="total-investment" data-value="${total}">${amount(total)}</output>이<br>필요해요</h1><p id="shortage" data-value="${shortage}" class="total-shortage ${shortage?"negative":"positive"}">${shortage?"현금은 "+amount(shortage)+" 더 모아야 해요":"가진 현금으로 충분해요"}</p><ol class="total-flows" aria-label="단계별 현금">${flows.map((value,i)=>`<li class="total-flow" data-step="${i}" data-flow="${value}" data-cumulative="${cumulative[i]}"><span class="tf-icon" aria-hidden="true">${icons[i]}</span><span><b>${labels[i]}</b>${i===current?'<small class="current-stage">지금 단계</small>':""}<small>여기까지 쌓인 현금 ${amount(cumulative[i])}</small>${i===peakIndex&&peak>0?'<small class="total-peak-label">현금이 가장 많이 필요한 때</small>':""}</span><b>${value===0?"없음":value<0?"받아요 "+amount(-value):amount(value)}</b></li>`).join("")}</ol><div class="total-cash"><span>가진 현금</span><b>${amount(cash)}</b></div><p class="source" id="peak-cash" data-value="${peak}">최대로 필요한 현금 ${amount(peak)}</p>${!refund&&ratios.every((n,i)=>n===[10,60,30][i])?'<p class="source">분담금 납부 비율은 흔한 예(10·60·30)로 계산했어요</p>':""}<p class="source">납부 비율 ${refund?"청산금은 입주·청산 때 돌려받아요":ratios.join("·")+"%"} · 세금·수수료·이자는 빠져 있어요 · 실제 일정은 조합 계획을 확인하세요</p><nav class="calc-next"><a href="calc_profit.html${zone?"?zone="+encodeURIComponent(zone.id):""}">수익 분석 이어서 보기 →</a></nav>`;
+        out.querySelector(".calc-next").prepend(reset);
       };
+      host.addEventListener("click",e=>{
+        const edit=e.target.closest("[data-edit-question]"),add=e.target.closest("[data-add]"),direction=e.target.closest("[data-direction]");
+        if(edit){question(Number(edit.dataset.editQuestion));return;}
+        if(add){const input=g(fields[Number(form.dataset.question)]),value=Number(add.dataset.add);input.value=value?String((inputValue(input.id)||0)+value):"";input.dispatchEvent(new Event("input",{bubbles:true}));return;}
+        if(direction){g("direction").value=direction.dataset.direction;g("direction").dispatchEvent(new Event("change",{bubbles:true}));}
+      });
+      g("total-back").addEventListener("click",()=>question(Math.max(0,Number(form.dataset.question)-1)));
+      g("total-next").addEventListener("click",()=>{if(Number(form.dataset.question)<4&&!g("total-next").disabled){const q=Number(form.dataset.question);question(q===0&&form.dataset.shareAnswered==="true"?2:q+1);}});
+      g("no-loans").addEventListener("click",()=>{g("mortgage").value="";g("move-loan").value="";g("mortgage").dispatchEvent(new Event("input",{bubbles:true}));g("move-loan").dispatchEvent(new Event("input",{bubbles:true}));question(4);});
       bind(render);break;
     }
     case "zones":{

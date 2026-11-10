@@ -3,7 +3,8 @@
   "use strict";
   const {zones,esc,number,data,search}=window.JJ, api=window.ZoneCore;
   const g=id=>document.getElementById(id);
-  g("zpName").insertAdjacentHTML("afterend",'<p id="zpStage"></p><p id="zpBoundaryNotice" class="map-message" hidden>이 구역은 경계 자료가 없어 위치만 표시해요</p>');
+  g("zpName").insertAdjacentHTML("beforebegin",'<p id="zpStage"></p>');
+  g("zpName").insertAdjacentHTML("afterend",'<p id="zpBoundaryNotice" class="map-message" hidden>이 구역은 경계 자료가 없어 위치만 표시해요</p>');
   g("zonePanel").insertAdjacentHTML("afterbegin",'<div class="panel-tools"><button id="panel-expand" type="button" aria-expanded="false">더 보기</button><button id="panel-collapse" type="button">접기</button></div>');
   g("zone-count").insertAdjacentHTML("afterend",'<button id="zone-list-open" type="button">목록</button>');
   const listDialog=document.createElement("dialog");
@@ -45,7 +46,7 @@
     const hidden=!g("legend-bands").hidden;g("legend-bands").hidden=hidden;
     g("legend-toggle").setAttribute("aria-expanded",String(!hidden));g("legend-toggle").textContent=hidden?"범례":"접기";g("legend-toggle").setAttribute("aria-label",hidden?"범례 펼치기":"범례 접기");
   });
-  let selected=null,tab="progress",kind="villa",range="12",previousFocus=null;
+  let selected=null,tab="progress",kind="all",range="all",tradeLimit=20,previousFocus=null;
   const band=z=>{const s=Number(z.stageNo)||0;return s===0?0:s<=2?1:s<=4?2:s<=7?3:4;};
   const tokens=getComputedStyle(document.body);
   const hoverPointer=matchMedia("(hover: hover) and (pointer: fine)");
@@ -72,7 +73,7 @@
     move.innerHTML=api.moveSummary(z);
     const estimate=move.querySelector("b").textContent,total=api.nz(z.plan?.total),area=api.nz(z.area_m2,true);
     hoverCard.style.setProperty("--jj-stage",tokens.getPropertyValue("--jj-stage-"+band(z)));
-    hoverCard.innerHTML=`<div class="hover-title"><span><i></i>${esc(z.kind)}</span><strong>${esc(z.name)}</strong></div><p class="hover-stage">${esc(z.sgg)} · ${esc(z.stageName||"단계 미상")}</p><div class="hover-metrics"><div><span>입주 예상</span><b>${esc(estimate==="계산 불가"?"–":estimate)}</b></div><div><span>총 세대</span><b>${total==null?"–":number(total)}</b></div><div><span>면적</span><b>${area>0?number(Math.round(area/3.305785)):"–"}</b>${area>0?"<small>평</small>":""}</div></div>`;
+    hoverCard.innerHTML=`<div class="hover-title"><span><i></i>${esc(z.kind)}</span><strong>${esc(z.name)}</strong></div><p class="hover-stage">${esc(z.sgg)} · ${esc(z.stageName||"단계 미상")}</p><div class="hover-metrics"><div><span>입주 예상</span><b>${esc(estimate==="계산 불가"?"–":estimate)}</b></div><div><span>총 세대</span><b>${total==null?"–":number(total)}</b></div><div><span>면적</span><b>${area>0?number(Math.round(area/3.305785)):"–"}</b>${area>0?"<small>평</small>":""}</div></div><p class="hover-hint">누르면 구역 정보가 열려요</p>`;
     hoverCard.hidden=false;
     const box=map.getContainer().getBoundingClientRect(),label=row.marker.getElement().querySelector(".jj-zone-label").getBoundingClientRect();
     const boundary=row.boundary?.getElement().getBoundingClientRect();
@@ -132,7 +133,7 @@
         [boundary.getBounds().getNorth(),boundary.getBounds().getCenter().lng]:[z.lat,z.lng]);
       marker.setZIndexOffset(active?1000:700);
       marker.setIcon(L.divIcon({className:"zonemarker jj-zonemarker",iconSize:[0,0],
-        html:`<div class="jj-zone-label${boundary?" has-boundary":""}${active?" is-selected":map.getZoom()<15?" is-distant":""}" data-jj-stage="${band(z)}" data-zone-id="${esc(z.id)}"><span class="jj-zone-name"><i>${esc(z.kind)}</i>${esc(z.name)}</span><span class="jj-zone-status">${esc(z.stageName||(Number(z.stageNo)===0?"후보지":api.STAGES[Number(z.stageNo)-1])||"단계 미상")}</span></div>`}));
+        html:`<div class="jj-zone-label${boundary?" has-boundary":""}${active?" is-selected":map.getZoom()<15?" is-distant":""}" data-jj-stage="${band(z)}" data-zone-id="${esc(z.id)}"><span class="jj-zone-name"><em aria-hidden="true"></em><i>${esc(z.kind)}</i><b>${esc(z.name)}</b></span><span class="jj-zone-status">${esc(z.stageName||(Number(z.stageNo)===0?"후보지":api.STAGES[Number(z.stageNo)-1])||"단계 미상")}</span></div>`}));
       if(visible&&!layer.hasLayer(marker))layer.addLayer(marker);
       if(!visible&&layer.hasLayer(marker))layer.removeLayer(marker);
       if(!boundary)continue;
@@ -196,12 +197,12 @@
     delete g("zpTrade").dataset.ready;
     g("zpTradeData").setAttribute("aria-busy","true");
     try{
-      const index=await data("data/zone_panel/index.json");
-      const [bundle,near]=await Promise.all([data("data/zone_panel/"+index.districts[z.sgg]+".json"),data("data/trades/"+encodeURIComponent(encodeURIComponent(z.id))+".json")]);
+      const bundle=await data("data/zone_trades/"+encodeURIComponent(encodeURIComponent(z.id))+".json");
       if(selected?.id!==z.id||request!==tradeRequest)return;
       const root=panelScroller(),anchor=[...g("panel-content").children].findLast(s=>s.getBoundingClientRect().top<=readingLine()+2);
       const before=anchor?.getBoundingClientRect().top;
-      g("zpTradeData").innerHTML=`<div class="jj-actual-trades">${window.MonthlyPanel.tradePanelHtml(bundle,z,tradeKind,tradeRange)}</div><h4>주변 아파트 실거래</h4>${nearHtml(near)}`;
+      g("zpTradeData").innerHTML=window.MonthlyPanel.tradePanelHtml(bundle,z,tradeKind,tradeRange,tradeLimit);
+      window.MonthlyPanel.bind(g("zpTradeData"),bundle);
       g("zpTradeData").setAttribute("aria-busy","false");g("zpTrade").dataset.ready="true";
       if(contentsTarget)scrollSection(contentsTarget);
       else if(anchor){
@@ -219,13 +220,14 @@
   function render(){
     const z=selected;if(!z)return;
     contentsTarget=null;
-    const source=`<p class="zp-foot">정보몽땅 자료 기준 ${esc(window.ZONES_DATA.asof)} · 공급은 계획값 · 법적 효력 없음</p>`;
+    const source=`<p class="zp-foot">정보몽땅 자료 기준 ${esc(window.ZONES_DATA.asof)} · 공급은 계획값 · 법적 효력 없음 · <a href="출처.html">자료 출처 보기 →</a><br>이 페이지에는 토스팀에서 제공한 토스페이스가 적용되어 있습니다.</p>`;
     const section=(id,key,title,item,html)=>`<section id="${id}" data-section="${key}" aria-labelledby="heading-${key}"><h3 class="panel-section-title" id="heading-${key}">${title}</h3>${html}<p class="zp-foot"><a href="knowledge.html?item=${item}#kb-answer">근거 지식 보기 →</a></p></section>`;
     g("panel-content").innerHTML=
-      section("zpProg","progress","진행상황","c1-07",api.progressHtml(z)+source)+
-      section("zpTrade","trade","실거래","c3-04",'<div id="zpTradeData" aria-busy="true"><p class="source">저장된 실거래 자료를 읽고 있어요.</p></div>')+
-      section("zpInfo","info","구역정보","c1-06",`${api.infoHtml(z)}<h4>공급 계획</h4>${api.supplyHtml(z)}<h4>생활권·가까운 역</h4>${api.lifeHtml(z)}<h4>관련 문서</h4>${api.docsHtml(z)}<p class="zp-foot">경계: 서울 열린데이터광장 · <a href="출처.html">자료 출처 보기 →</a></p>`)+
-      section("zpRegulation","regulation","규제","c2-07",`${window.MonthlyPanel.permitHtml(z)}<h4>규제 지역</h4>${api.regHtml(z)}`);
+      section("zpProg","progress","진행상황","c1-07",api.progressHtml(z))+
+      section("zpTrade","trade","실거래·규제","c3-04",`<div id="zpTradeData" aria-busy="true"><p class="source">저장된 실거래 자료를 읽고 있어요.</p></div><div id="zpRegulation">${window.MonthlyPanel.permitHtml(z)}<div class="zp-regulation-row"><span class="tf-icon" aria-hidden="true">🛡️</span><span>규제 지역</span></div>${api.regHtml(z)}<p class="zp-foot"><a href="knowledge.html?item=c2-07#kb-answer">규제 근거 지식 보기 →</a></p></div>`)+
+      section("zpSupply","supply","공급 계획","c1-06",api.supplyHtml(z))+
+      section("zpInfo","info","구역 정보","c1-06",`${api.infoHtml(z)}<h4>관련 문서</h4>${api.docsHtml(z)}`)+
+      section("zpNear","near","가까운 역","c1-06",api.lifeHtml(z,true)+source);
     g("zpBody").scrollTop=0;
     g("zonePanel").scrollTop=0;
     updateContents();renderTrade();requestAnimationFrame(()=>showCurrentStage());
@@ -263,10 +265,10 @@
     if(listDialog.open)listDialog.close();
     const wasOpen=g("zonePanel").classList.contains("show");
     if(!wasOpen)previousFocus=document.activeElement;
-    selected=z;tab="progress";kind="villa";range="12";
+     selected=z;tab="progress";kind="all";range="all";tradeLimit=20;
     window.JJ.rememberZone(z);
     g("zpName").textContent=z.name;g("zpAddr").textContent=z.addr||"";g("zpChip").textContent=z.kind;
-    g("zpStage").innerHTML=`지금 단계 · <b>${esc(z.stageName||"단계 미상")}</b>`;
+    g("zpStage").innerHTML=`<i style="background:var(--jj-stage-${band(z)})"></i>${esc(z.kind)} · <b>${esc(z.stageName||"단계 미상")}</b>`;
     g("zpBoundaryNotice").hidden=Boolean(window.ZONE_BOUNDS.items[z.id]);
     g("zone-calc").href="calc.html?zone="+encodeURIComponent(z.id);
     aiLink.href="ai.html?zone="+encodeURIComponent(z.id);
@@ -334,8 +336,11 @@
     e.preventDefault();buttons[next].focus();buttons[next].click();
   });
   g("panel-content").addEventListener("click",e=>{
-    const b=e.target.closest("[data-kind],[data-range]");if(!b)return;
-    if(b.dataset.kind)kind=b.dataset.kind;if(b.dataset.range)range=b.dataset.range;renderTrade();
+    const b=e.target.closest("button[data-kind],button[data-range],[data-more-trades]");if(!b)return;
+    if(b.dataset.kind){kind=b.dataset.kind;tradeLimit=20;}
+    if(b.dataset.range)range=b.dataset.range;
+    if(b.hasAttribute("data-more-trades"))tradeLimit+=20;
+    renderTrade();
   });
   L.DomEvent.disableScrollPropagation(g("zonePanel"));L.DomEvent.disableClickPropagation(g("zonePanel"));
   map.on("zoomend",()=>{
