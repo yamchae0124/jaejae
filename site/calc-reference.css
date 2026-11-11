@@ -1,5 +1,5 @@
 
-:root{--fg:#1a1c20;--muted:#4e5968;--sub:#6b7684;--ph:#b0b3ba;--brand:#3182f6;--brand-c:#1b64da;--pos:#079171;--crit:#fa342c;--line:#e5e8eb;--band:#f2f4f6;--font:Pretendard,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+:root{--fg:#1a1c20;--muted:#4e5968;--sub:#6b7684;--ph:#b0b3ba;--brand:#3182f6;--brand-c:#1b64da;--pos:#079171;--crit:#fa342c;--line:#e5e8eb;--band:#f2f4f6;--font:"Pretendard Variable",Pretendard,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
 body{margin:0;background:#fff;font-family:var(--font);color:var(--fg);-webkit-font-smoothing:antialiased}
 p{margin:0}
 h3{margin:0}
