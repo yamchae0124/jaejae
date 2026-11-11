@@ -1,0 +1,59 @@
+/* 모바일 가독성 보정. 다른 스타일시트 뒤에 불러와 760px 이하 화면에서만 덮어쓴다.
+   기준: 본문 보조 글씨 12px 이상, 입력 글씨 16px 이상(iOS 확대 방지), 터치 영역 40px 이상. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media(max-width:760px){
+  /* 한글은 어절 단위로 줄을 바꾸고, 제목 끝에 한 글자만 남지 않게 한다. */
+  body{word-break:keep-all;overflow-wrap:break-word}
+  h1,h2,h3{text-wrap:balance}
+  /* 어절 단위 줄바꿈은 최소 너비를 키우므로, 한 칸짜리 격자가 화면 밖으로 밀리지 않게 묶는다. */
+  .kb-layout,.det,.compare-layout .det,.compare-pickers,.home .plain-grid,.home .actual-example,.home .stats-layout,.home #actual-example .facts{grid-template-columns:minmax(0,1fr)}
+  .calc-inputs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+
+  /* 공통 머리·바닥 */
+  .nav a{white-space:nowrap}
+  .home .nav a{padding:8px 0}
+  .logo{display:inline-flex;align-items:center;min-height:40px}
+  .foot{font-size:13px;row-gap:0;align-items:center}
+  .foot a,.calc-foot a{display:inline-flex;align-items:center;min-height:44px}
+  .source{font-size:13px}
+
+  /* 입력: 16px 미만이면 iOS가 화면을 확대한다. */
+  .home .pill input,.search input,.search-row input,#zone-search,.map-filters select,#compare-input,.ai-compose textarea{font-size:16px}
+
+  /* 첫 화면 */
+  .home .chips a{font-size:13px}
+  .home .cap,.home .basis{left:20px;right:20px;max-width:none;text-align:left;font-size:12px;line-height:1.5}
+  .home .basis{bottom:16px}
+  .home .cap{bottom:38px}
+  .home .cue{bottom:72px}
+  .home .plain-grid article a{display:inline-flex;align-items:center;min-height:44px}
+  .home .final-search .search-row input{min-width:0}
+  .home .final-search input::placeholder{font-size:14px}
+
+  /* 재재 지식 */
+  .kb-categories button small{font-size:12px}
+  .kb-answer>a{display:flex;align-items:center;min-height:44px}
+
+  /* 계산기 */
+  .field small a,.source a,.zp-foot a{padding-block:12px}
+  .calc-next a{display:inline-flex;align-items:center;min-height:44px}
+  .total-chips button{min-height:40px}
+
+  /* 구역 지도 */
+  .map-filters label{font-size:13px}
+  .map-filters select{min-height:40px}
+  .finder #zone-count{font-size:12px}
+  .map-legend,#legend-bands,#legend-toggle{font-size:13px}
+  .map-legend{left:58px}
+  .leaflet-touch .leaflet-bar a{width:40px;height:40px;line-height:40px}
+  .map-boundary-credit{font-size:10px}
+  .leaflet-container .leaflet-control-attribution{font-size:11px}
+
+  /* 구역 패널 (panel.css의 body.mode-jaejae 규칙보다 앞서도록 같은 머리말을 쓴다) */
+  body.mode-jaejae #zonePanel :is(.zp-foot,.zp-distance,th){font-size:12px}
+  body.mode-jaejae #zonePanel :is(#zpAddr,.zp-duration,.zp-pace,.zp-doc,details,details>summary,details>p,details>a,.jj-summary-basis,.jj-summary-count,.jj-trade-unit,.jj-trade-scope){font-size:13px}
+  body.mode-jaejae #zonePanel details>summary{min-height:44px;padding-block:10px}
+  body.mode-jaejae #zonePanel details>a{display:inline-flex;align-items:center;min-height:44px}
+  body.mode-jaejae #zonePanel .zp-doc{padding-block:13px}
+  body.mode-jaejae #zonePanel .zone-ai-link{display:inline-flex;align-items:center;min-height:44px}
+}

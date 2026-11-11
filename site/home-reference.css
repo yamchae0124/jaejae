@@ -9,7 +9,7 @@
   --st-cand:#868b94; --st-early:#9b7821; --st-assoc:#079171; --st-mgmt:#e5603b; --st-build:#6d5bd0;
   --r2:8px; --r3:12px; --r4:16px; --r5:20px; --r6:28px;
   --ease:cubic-bezier(.2,.8,.2,1); --dur:.7s;
-  --font:Pretendard,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --font:"Pretendard Variable",Pretendard,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -45,7 +45,7 @@ svg.ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;str
 /* 하늘만 흐른다 — 뒤 하늘 한 장이 천천히 옆으로, 앞 도시 한 장은 고정 */
 .hero .photo .sky,.hero .photo .city{position:absolute;inset:0;background-position:center 60%;background-size:cover;background-repeat:no-repeat}
 .hero .photo .sky{right:-10%;background-image:url("img/hero_sky.jpg");animation:drift 26s ease-in-out infinite alternate;will-change:transform}
-.hero .photo .city{background-image:url("img/hero_city.png")}
+.hero .photo .city{background-image:url("img/hero_city.webp")}
 @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-8%,0,0)}}
 @keyframes kb{from{transform:scale(1.06)}to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,16,21,.40) 0%,rgba(15,16,21,.22) 40%,rgba(15,16,21,.04) 62%,rgba(15,16,21,.38) 100%)}
